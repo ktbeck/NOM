@@ -1,10 +1,10 @@
 ----- RELEASE PLAN -----
-Product Name: 	NOM Dining Hall Meal Exchange
-Team Name: 		Nom Slugs
-Release Name: 	NOM Release
-Release Date: 	December 4, 2018
-Revision Number: 	1
-Revision Date: 	October 9, 2018
+Product Name: NOM Dining Hall Meal Exchange
+Team Name: Nom Slugs
+Release Name: NOM Release
+Release Date: December 4, 2018
+Revision Number: 1
+Revision Date: October 9, 2018
 
 
 ----- HIGH LEVEL GOALS -----
@@ -34,9 +34,9 @@ Sprint 3: Be able to buy dining hall guest passes
   - [3] As a moderator, I want to have the ability to cancel or modify payouts so I handle disputes or cancellations.
 
 Sprint 4: Be able to match buyers and sellers at a specific time and location.
-  - [4]As a seller, I want to list when I go to the dining hall so I can easily swipe in buyers on my schedule.
-  - [5]As a buyer, I want to see the location of all available sellers so I know immediately where I can go to get into a dining hall.
-  - [3]As a user, I want to message the other user so I can set up meeting specifics.
+  - [4] As a seller, I want to list when I go to the dining hall so I can easily swipe in buyers on my schedule.
+  - [5] As a buyer, I want to see the location of all available sellers so I know immediately where I can go to get into a dining hall.
+  - [3] As a user, I want to message the other user so I can set up meeting specifics.
  
  
 ----- PRODUCT BACKLOG -----
