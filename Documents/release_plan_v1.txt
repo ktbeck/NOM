@@ -17,7 +17,7 @@ Revision Date: October 9, 2018
 
 ----- SPRINTS + USER STORIES -----
 [Effort required: 1 - very easy, 5 - very difficult]
-[11] Sprint 1: Learn how to build a cross-platform mobile app using Javascript and React. Set up a working React app connected to Firebase
+[11] Sprint 1: Learn how to build a cross-platform mobile app using Javascript and React. Set up a working React app connected to Firebase.
   - [2] As a developer, I want to learn Javascript fundamentals so I can use a framework to build an app.
   - [4] As a developer, I want to learn React so I can build a cross platform app in Javascript
   - [1] As a developer, I want to explore web apis and mobile dev tools so I can focus on building core features.
