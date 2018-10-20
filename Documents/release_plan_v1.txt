@@ -8,32 +8,32 @@ Revision Date: October 9, 2018
 
 
 ----- HIGH LEVEL GOALS -----
-- Learn how to build a cross-platform mobile app using Javascript and React.
-- Be able to sell dining hall guest passes.
-- Be able to buy dining hall guest passes.
-- Be able to able to match buyers and sellers at a specific time and location for exchange.
+- Learn how to build a cross-platform mobile app using Javascript and React. Set up a working React app connected to Firebase.
+- Sellers are able to list their dining hall guest passes at a specific price for buyers to view.
+- Buyers are matched with a seller to set up the purchase of their dining hall guest pass. Process the buyer's payment before sending to seller.
+- Be able to able to match buyers and sellers at a specific time and location for exchange. Once confirmed, process the payment to the seller's account.
 - Have all functionalities integrated on mobile platforms.
 
 
 ----- SPRINTS + USER STORIES -----
 [Effort required: 1 - very easy, 5 - very difficult]
-Sprint 1: Learn how to build a cross-platform mobile app using Javascript and React.
+[11] Sprint 1: Learn how to build a cross-platform mobile app using Javascript and React. Set up a working React app connected to Firebase
   - [2] As a developer, I want to learn Javascript fundamentals so I can use a framework to build an app.
   - [4] As a developer, I want to learn React so I can build a cross platform app in Javascript
   - [1] As a developer, I want to explore web apis and mobile dev tools so I can focus on building core features.
-  - [4] As a developer, I want to create a hello world mobile app so I can demonstrate understanding of app setup.
+  - [4] As a user, I want to be able to create an account so I can have a personalized experience.
 
-Sprint 2: Be able to sell dining hall guest passes
+[6] Sprint 2: Sellers are able to list their dining hall guest passes at a specific price for buyers to view.
   - [2] As a seller, I want to list my passes on the site so other students can buy them from me.
   - [3] As a seller, I want to have an account dashboard so I can keep track of my available guest passes.
   - [1] As a buyer, I want to see information about available passes so I can contact sellers and purchase them.
 
-Sprint 3: Be able to buy dining hall guest passes
+[12] Sprint 3: Buyers are matched with a seller to set up the purchase of their dining hall guest pass. Process the buyer's payment before sending to seller.
   - [5] As a seller, I want to receive payments through the app so I am guaranteed to be paid if the exchange happens.
   - [4] As a buyer, I want to give payments through the app so I can get a refund if the seller cancels.
   - [3] As a moderator, I want to have the ability to cancel or modify payouts so I handle disputes or cancellations.
 
-Sprint 4: Be able to match buyers and sellers at a specific time and location.
+[12] Sprint 4: Be able to able to match buyers and sellers at a specific time and location for exchange. Once confirmed, process the payment to the seller's account.
   - [4] As a seller, I want to list when I go to the dining hall so I can easily swipe in buyers on my schedule.
   - [5] As a buyer, I want to see the location of all available sellers so I know immediately where I can go to get into a dining hall.
   - [3] As a user, I want to message the other user so I can set up meeting specifics.
