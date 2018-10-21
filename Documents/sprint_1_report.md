@@ -28,5 +28,5 @@ Completed: [4] As a user, I want to be able to create an account so I can have a
 
 
 ----- WORK COMPLETION RATE -----
-[include burn up chart]
+![sprint 1 final burn up chart](images/sprint_1_burn_up_3.jpg)
 
