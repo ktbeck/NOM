@@ -1,9 +1,11 @@
-### ----- SPRINT 1 REPORT ----- 
+### ----- SPRINT 1 REPORT -----
 **Product Name:** NOM Dining Hall Meal Exchange  
 **Team Name:** Nom Slugs  
 **Sprint Completion Date:** October 21, 2018  
-
-
+  
+  
+  
+  
 
 ### ----- ACTIONS TO STOP DOING -----  
 **None** - As a team we are completely satisfied with our progress because everyone completed their work on time, without having extra time left over. The meeting times work for everyone, and have provided a sufficient amount of time to get work done as a team. We feel that sprint 1 was completed successfully.  
@@ -23,9 +25,13 @@
 
 ### ----- WORK COMPLETED / NOT COMPLETED -----  
 **Completed:** [2] As a developer, I want to learn Javascript fundamentals so I can use a framework to build an app. (all team members)  
-**Completed:** [4] As a developer, I want to learn React so I can build a cross platform app in Javascript. (all team members)  
+
+**Completed:** [4] As a developer, I want to learn React so I can build a cross platform app in Javascript. (all team members)
+
 **Completed:** [1] As a developer, I want to explore web apis and mobile dev tools so I can focus on building core features. (all team members)  
+
 **Completed:** [4] As a user, I want to be able to create an account so I can have a personalized experience. (all team members)  
+
 
 
 ### ----- WORK COMPLETION RATE -----  
