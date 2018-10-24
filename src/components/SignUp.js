@@ -31,19 +31,21 @@ class SignUpForm extends Component {
   }
 
   onSubmit = (event) => {
-	const {
-		username,
-		email,
-		passwordOne,
-	} = this.state;
-	
-	const {
-		history,
-	} = this.props;
-	
-	auth.doCreateUserWithEmailAndPassword(email, passwordOne)
-	  .then(authUser => {
-		db.doCreateUser(authUser.user.uid, username, email)
+    const {
+      username,
+      email,
+      passwordOne,
+    } = this.state;
+
+    const {
+      history,
+    } = this.props;
+
+    auth.doCreateUserWithEmailAndPassword(email, passwordOne)
+      .then(authUser => {
+
+        // Create a user in your own accessible Firebase Database too
+        db.doCreateUser(authUser.user.uid, username, email)
           .then(() => {
             this.setState({ ...INITIAL_STATE });
             history.push(routes.HOME);
@@ -59,7 +61,6 @@ class SignUpForm extends Component {
 
     event.preventDefault();
   }
-
   render() {
 	const {
 	  username,
