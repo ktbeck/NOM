@@ -19,9 +19,8 @@ Total for User Story 1: 20 hours
 User Story 2: As a seller, I want to have an account dashboard so I can keep track of my available guest passes and edit my information.
 	* Allow user to change profile picture (4 hours)
 	* Add user description (4 hours)
-	* Allow user to input contact information (2 hours)
+	* Allow user to input contact information (4 hours)
 	* Add a location so others can know the closest dining hall (4 hours)
-	* Make location editable (2 hours)
 	* Allow sellers to change price they’re selling meals for (2 hours) 
 	* Allow users to remove passes from the site (2 hours)
 Total for User Story 2: 20 hours
@@ -59,14 +58,8 @@ Kyler Beck:      User Story 1, List passes on the site
 
 Initial Burnup Chart
   
-
-
-
 Initial Scrum Board
   
-
-
-
 SCRUM Times
 Sunday: 2:00-4:00
 Tuesday: 6:30-9:00
