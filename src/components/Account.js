@@ -11,7 +11,7 @@ const AccountPage = () =>
   <AuthUserContext.Consumer>
     {authUser =>
       <div>
-        <h1>Welcome: {authUser.fullname}</h1>
+        <h1>Welcome: {authUser.username}</h1>
         {/*<h1>Account: {authUser.email}</h1>*/}
         <PasswordForgetForm />
         <PasswordChangeForm />
