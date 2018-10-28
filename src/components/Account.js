@@ -11,16 +11,17 @@ import withAuthorization from './withAuthorization';
 import { auth, db } from '../firebase';
 import firebase from 'firebase/app';
 
-const AccountPage = () =>
-  <AuthUserContext.Consumer>
-    {authUser =>
-      <div>
-        <h1>Welcome {authUser.username}</h1>
-        <PasswordForgetForm />
-        <PasswordChangeForm />
-      </div>
-    }
-    </AuthUserContext.Consumer>
+//Things to go on the account dashboard:
+//  1. their rating
+//  2. be able to list passes
+//  3. edit contact info
+//      a. phone
+//      b. name
+//      c. preferred location
+//      d. email
+// CURRENTLY WORKING ON:
+// adding user description
+// allow user to change profile picture
 
 
 class accountPage extends Component {
@@ -34,17 +35,33 @@ class accountPage extends Component {
     }
 
     render() {
+        return (
+            <div>
+            <h1>Account Page</h1>
+            <p>Hello this is the account page</p>
+            { < AccountPage /> }
+            </div>
 
-    return (
+
+
+        );
+    }
+
+} //end of class
+
+const AccountPage = () =>
+  <AuthUserContext.Consumer>
+    {authUser =>
       <div>
-        <h1>Account Page</h1>
-        <p>Hello this is the account page</p>
-        { <AccountPage />}
-      </div>
-    );
-  }
 
-}
+
+        <h1>Welcome {authUser.email}</h1>
+        <PasswordForgetForm />
+        <PasswordChangeForm />
+      </div>
+    }
+    </AuthUserContext.Consumer>
+
 
 
 
