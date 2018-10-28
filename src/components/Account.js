@@ -10,6 +10,8 @@ import withAuthorization from './withAuthorization';
 //needed?
 import { auth, db } from '../firebase';
 import firebase from 'firebase/app';
+// ???
+import FileUploader from "react-firebase-file-uploader";
 
 //Things to go on the account dashboard:
 //  1. their rating
@@ -25,32 +27,87 @@ import firebase from 'firebase/app';
 
 class accountPage extends Component {
 
-    constructor(props) {
-      super(props);
+    state = {
+        username: "",
+        avatar: "",
+        isUploading: false,
+        progress: 0,
+        avatarURL: ""
+    };
 
-      this.state = {
-        users: null,
-      };
-    }
+    handleChangeUsername = event =>
+        this.setState({ username: event.target.value });
+    handleUploadStart = () => this.setState({ isUploading: true, progress: 0 });
+    handleProgress = progress => this.setState({ progress });
+    handleUploadError = error => {
+        this.setState({ isUploading: false });
+        console.error(error);
+    };
+    handleUploadSuccess = filename => {
+        this.setState({ avatar: filename, progress: 100, isUploading: false });
+        firebase
+            .storage()
+            .ref("images")
+            .child(filename)
+            .getDownloadURL()
+            .then(url => this.setState({ avatarURL: url }));
+    };
+    // constructor(props) {
+    //   super(props);
+    //
+    //   this.state = {
+    //     users: null,
+    //   };
+    // }
 
     render() {
         return (
-            <div>
-            <h1>Account Page</h1>
-            { < DisplayUserInfo/> }
-            { < ChangeMyPassword/> }
-            </div>
+          <div>
+            <form>
+              <label>Username:</label>
+              <input
+                type="text"
+                value={this.state.username}
+                name="username"
+                onChange={this.handleChangeUsername}
+              />
+              <label>Avatar:</label>
+              {this.state.isUploading && <p>Progress: {this.state.progress}</p>}
+              {this.state.avatarURL && <img src={this.state.avatarURL} />}
+              <FileUploader
+                accept="image/*"
+                name="avatar"
+                randomizeFilename
+                storageRef={firebase.storage().ref("images")}
+                onUploadStart={this.handleUploadStart}
+                onUploadError={this.handleUploadError}
+                onUploadSuccess={this.handleUploadSuccess}
+                onProgress={this.handleProgress}
+              />
+            </form>
+          </div>
         );
+      }
     }
 
-} //end of class
+    // render() {
+    //     return (
+    //         <div>
+    //         <h1>Account Page</h1>
+    //         { < DisplayUserInfo/> }
+    //         { < ChangeMyPassword/> }
+    //         </div>
+    //     );
+    // }
+
+//} //end of class
 
 const DisplayUserInfo = () =>
   <AuthUserContext.Consumer>
     {authUser =>
       <div>
         <h2>Welcome </h2>
-        <p> Name: {authUser.name}</p>
+        <p> Name: {authUser.username} /*not working*/</p>
         <p> Email: {authUser.email}</p>
       </div>
     }
