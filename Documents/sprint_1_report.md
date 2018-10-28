@@ -34,6 +34,11 @@
 
 
 
-### ----- WORK COMPLETION RATE -----  
-![sprint 1 final burn up chart](images/sprint_1_burn_up_3.jpg)  
+### ----- WORK COMPLETION RATE ----- 
+**Total User Stories Completed:** 4/4  
+**Total Hours Completed:** 80/80  
+**Total Days:** 14 days, 6 scrums  
+![sprint 1 scrum board 2](images/sprint_1_scrum_board_2.jpg)  
+![sprint 1 final burn up chart](images/sprint_1_burn_up_3.jpg) 
+![sprint 1 burn down chart](images/sprint_1_burn_down.jpg) 
 
