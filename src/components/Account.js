@@ -15,7 +15,7 @@ const AccountPage = () =>
   <AuthUserContext.Consumer>
     {authUser =>
       <div>
-        <h1>Welcome {authUser.email}</h1>
+        <h1>Welcome {authUser.username}</h1>
         <PasswordForgetForm />
         <PasswordChangeForm />
       </div>
@@ -23,26 +23,28 @@ const AccountPage = () =>
     </AuthUserContext.Consumer>
 
 
-// class accountPage extends Component {
+class accountPage extends Component {
 
-//     constructor(props) {
-//       super(props);
-//
-//       this.state = {
-//         users: null,
-//       };
-//     }
-//
-//     render() {
-//     return (
-//       <div>
-//         <h1>Home</h1>
-//         <p>The Home Page is accessible by every signed in user.</p>
-//       </div>
-//     );
-//   }
-//
-// }
+    constructor(props) {
+      super(props);
+
+      this.state = {
+        users: null,
+      };
+    }
+
+    render() {
+
+    return (
+      <div>
+        <h1>Account Page</h1>
+        <p>Hello this is the account page</p>
+        { <AccountPage />}
+      </div>
+    );
+  }
+
+}
 
 
 
@@ -54,4 +56,4 @@ const AccountPage = () =>
 
 const authCondition = (authUser) => !!authUser;
 //export default withAuthorization(authCondition)(AccountPage)(accountPage);
-export default withAuthorization(authCondition)(AccountPage);
+export default withAuthorization(authCondition)(accountPage);
