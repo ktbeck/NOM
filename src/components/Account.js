@@ -19,10 +19,9 @@ import firebase from 'firebase/app';
 //      b. name
 //      c. preferred location
 //      d. email
-// CURRENTLY WORKING ON:
+// ***** CURRENTLY WORKING ON *****
 // adding user description
 // allow user to change profile picture
-
 
 class accountPage extends Component {
 
@@ -38,26 +37,34 @@ class accountPage extends Component {
         return (
             <div>
             <h1>Account Page</h1>
-            <p>Hello this is the account page</p>
-            { < AccountPage /> }
+            { < DisplayUserInfo/> }
+            { < ChangeMyPassword/> }
             </div>
-
-
-
         );
     }
 
 } //end of class
 
-const AccountPage = () =>
+const DisplayUserInfo = () =>
   <AuthUserContext.Consumer>
     {authUser =>
       <div>
+        <h2>Welcome </h2>
+        <p> Name: {authUser.name}</p>
+        <p> Email: {authUser.email}</p>
+      </div>
+    }
+    </AuthUserContext.Consumer>
 
 
-        <h1>Welcome {authUser.email}</h1>
-        <PasswordForgetForm />
-        <PasswordChangeForm />
+
+const ChangeMyPassword = () =>
+  <AuthUserContext.Consumer>
+    {authUser =>
+      <div>
+        <h3> Change My Password</h3>
+        <p> Forgot my password </p> <PasswordForgetForm />
+        <p> Change my password </p> <PasswordChangeForm />
       </div>
     }
     </AuthUserContext.Consumer>
@@ -65,12 +72,5 @@ const AccountPage = () =>
 
 
 
-
-
-
-
-
-
 const authCondition = (authUser) => !!authUser;
-//export default withAuthorization(authCondition)(AccountPage)(accountPage);
 export default withAuthorization(authCondition)(accountPage);
