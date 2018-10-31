@@ -31,7 +31,7 @@ class HomePage extends Component {
       <div>
         <h1>Home</h1>
 		{users && <UserList users={users} /> }
-		    Average Price:
+		    Average Price: $
           {avgSellingPrice(users)}
       </div>
     );
