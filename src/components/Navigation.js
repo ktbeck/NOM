@@ -5,6 +5,7 @@ import SignOutButton from './SignOut';
 import ListPassButton from './ListPass';
 import AuthUserContext from './AuthUserContext';
 import * as routes from '../constants/routes';
+import './Navigation.css';
 
 const Navigation = () =>
   <AuthUserContext.Consumer>
@@ -19,8 +20,8 @@ const NavigationAuth = () =>
     <li><Link to={routes.LANDING}>Landing</Link></li>
     <li><Link to={routes.HOME}>Home</Link></li>
     <li><Link to={routes.ACCOUNT}>Account</Link></li>
+    <li><ListPassButton /></li>
     <li><SignOutButton /></li>
-    <ListPassButton />
   </ul>
 
 const NavigationNonAuth = () =>

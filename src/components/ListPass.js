@@ -1,23 +1,43 @@
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
+import './ListPass.css';
 
 const auth = firebase.auth();
 const db = firebase.database();
 
-/*
-Eventually this will be a button and popup. But for now
-its just an empty container.
-*/
-const ListPassButton = () =>
-	<div>
-		Update your guest passes!
-		<ListPassForm />
-	</div>
+class ListPassButton extends Component {
+	constructor(props) {
+		super(props);
+		this.handleButtonClick = this.handleButtonClick.bind(this);
+		this.state = {formVisible: false};
+	}
 
-/*
-validate: For each key a user types (key press event), 
-this function is called and updates any errors
-*/
+	handleButtonClick() {
+		if (!this.state.formVisible) 
+			document.addEventListener('click', this.handleClick.bind(this), false);
+		else 
+			document.addEventListener('click', this.handleClick.bind(this), false);
+		this.setState({formVisible: !this.state.formVisible});
+	}
+
+	handleClick(e) {
+		if (!this.node.contains(e.target)) 
+			this.setState({formVisible: false});
+	}
+
+	render() {
+		const formVisible = this.state.formVisible;
+		return (
+			<div ref={node => { this.node = node; }}>
+				<button id="ListPassButton" onClick={this.handleButtonClick}>
+					Update Passes
+				</button>
+				{formVisible ? <ListPassForm /> : null}
+			</div>
+		);
+	}
+}
+
 function validate(numMeals, mealPrice) {
 	var nmError = '';
 	if (numMeals != parseInt(numMeals))
@@ -37,17 +57,11 @@ function validate(numMeals, mealPrice) {
 	};
 }
 
-/*
-ListPassForm: this form will allow users to update the number of
-meals they have, and the price they want to list it as
-*/
+
 class ListPassForm extends Component {
-	// constructor: called when page loads
 	constructor(props) {
 		super(props);
 
-		// When this ListPassForm class is created, we set up the state
-		// in the constructor so we can track any changes (eg typing / submit)
 		this.state = {
 			uid: auth.currentUser.uid,
 			numMeals: '',
@@ -55,8 +69,6 @@ class ListPassForm extends Component {
 		};
 	}
 
-	// componentDidMount: automatically called when form has finished loaded
-	// pulls data from firebase and displays it
 	componentDidMount() {
 		db.ref('users/' + this.state.uid).on('value', function(snapshot) {
 			this.setState({
@@ -66,7 +78,6 @@ class ListPassForm extends Component {
 		}.bind(this));
 	}
 
-	// onSubmit: updates firebase
 	onSubmit = (event) => {
 		db.ref('users/' + this.state.uid).update({
 			numMeals: this.state.numMeals,
@@ -75,30 +86,30 @@ class ListPassForm extends Component {
 		//event.preventDefault();
 	}
 
-	// render: where the form is displayed
 	render() {
 		const errors = validate(this.state.numMeals, this.state.mealPrice);
 		const isDisabled = Object.keys(errors).some(x => errors[x]);
 		return (
-			<div>
+			<div id='ListPassForm'>
+				<div className='form-title'>Update Your Listings</div>
 				<form onSubmit={this.onSubmit}>
-					<div>
-						<label>Meals Listed</label>
+					<div className='form-element'>
+						<label>Meals Listed </label>
 						<input 
-							type="text"
+							type='text'
 							value={this.state.numMeals}
 							onChange={e => this.setState({numMeals: e.target.value})}
 						/>
-						{errors.numMeals}
+						<div className="error">{errors.numMeals}</div>
 					</div>
-					<div>
-						<label>Meal Price</label>
+					<div className='form-element'>
+						<label>Meal Price </label>
 						<input 
-							type="text"
+							type='text'
 							value={this.state.mealPrice}
 							onChange={e => this.setState({mealPrice: e.target.value})}
 						/>
-						{errors.mealPrice}
+						<div className="error">{errors.mealPrice}</div>
 					</div>
 					<input type="submit" disabled={isDisabled} />
 				</form>

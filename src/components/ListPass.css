@@ -1,0 +1,25 @@
+#ListPassButton {
+	color: blue;
+}
+
+#ListPassForm {
+	border: 1px solid black;
+	background-color: white;
+	position: absolute;
+	padding: 20px;
+	width: 200px;
+}
+
+#ListPassForm .form-title {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+#ListPassForm .form-element {
+	height: 70px;
+}
+
+#ListPassForm .error {
+	color: red;
+	font-size: 12px;
+}
