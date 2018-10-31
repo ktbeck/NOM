@@ -62,15 +62,19 @@ class AccountPage extends Component {
           <h2>Welcome </h2>
           <p> <b> Name: </b>{this.state.username} </p>
           <p> <b> Email: </b>{this.state.email} </p>
-          <p> <b>About Me: </b> </p>
-          <p>{this.state.userDescription}</p>
-          <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
+          <br></br>
+          <div>
+            <p> <b> About Me: </b> </p>
+            <p>{this.state.userDescription}</p>
+            <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
+          </div>
         </div>
         <br></br>
         <div>
           <form onSubmit={this.onSubmit}>
           <h3>Update "About Me"</h3>
           <div>
+          <p>About Me</p>
           <input
             type="text"
             placeholder="Update user description here..."
@@ -79,6 +83,7 @@ class AccountPage extends Component {
           />
           </div>
           <div>
+          <p>Contact Info</p>
           <input
             type="text"
             placeholder="contact info..."
@@ -86,6 +91,7 @@ class AccountPage extends Component {
             onChange={event => this.setState({contactinfo: event.target.value})}
           />
           </div>
+    
           <button type="submit">
             Submit
           </button>
