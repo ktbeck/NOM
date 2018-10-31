@@ -1,15 +1,13 @@
-//import React from 'react';
-//below line is modified version of above
 import React, { Component } from 'react';
-
 import AuthUserContext from './AuthUserContext';
 import { PasswordForgetForm } from './PasswordForget';
 import PasswordChangeForm from './PasswordChange';
 import withAuthorization from './withAuthorization';
-
-//needed?
-import { auth, db } from '../firebase';
+//import { auth, db } from '../firebase';
 import firebase from 'firebase/app';
+
+const auth = firebase.auth();
+const db = firebase.database();
 
 //Things to go on the account dashboard:
 //  1. their rating
@@ -23,40 +21,49 @@ import firebase from 'firebase/app';
 // adding user description
 // allow user to change profile picture
 
-class accountPage extends Component {
+class AccountPage extends Component {
+    constructor(props) {
+        super(props);
 
-    // constructor(props) {
-    //   super(props);
-    //
-    //   this.state = {
-    //     users: null,
-    //   };
-    // }
+    this.state = {
+        uid: auth.currentUser.uid,
+        username: '',
+        email: '',
+        userDescription: '',
+      };
+    }
+
+    componentDidMount() {
+      db.ref('users/' + this.state.uid).on('value', function(snapshot) {
+  		 	this.setState({
+          username: snapshot.val().username,
+          email: snapshot.val().email,
+  		 		userDescription: snapshot.val().userDescription,
+  		});
+
+  		}.bind(this));
+    }
 
     render() {
         return (
             <div>
             <h1>Account Page</h1>
-            { < DisplayUserInfo/> }
+            <div>
+              <h2>Welcome </h2>
+              <p> Name: {this.state.username} </p>
+              <p> Email: {this.state.email} </p>
+              <p> About Me: {this.state.userDescription} </p>
+            </div>
+
+            <div>
+            </div>
+
             { < ChangeMyPassword/> }
             </div>
         );
     }
 
 } //end of class
-
-const DisplayUserInfo = () =>
-  <AuthUserContext.Consumer>
-    {authUser =>
-      <div>
-        <h2>Welcome </h2>
-        <p> Name: {authUser.username} /*not working*/</p>
-        <p> Email: {authUser.email}</p>
-      </div>
-    }
-    </AuthUserContext.Consumer>
-
-
 
 const ChangeMyPassword = () =>
   <AuthUserContext.Consumer>
@@ -68,9 +75,16 @@ const ChangeMyPassword = () =>
       </div>
     }
     </AuthUserContext.Consumer>
-
-
-
+    
+    // const DisplayUserInfo = () =>
+    //   <AuthUserContext.Consumer>
+    //     {authUser =>
+    //       <div>
+    //         <h2>Welcome </h2>
+    //         <p> Email: {authUser.email}</p>
+    //       </div>
+    //     }
+    //     </AuthUserContext.Consumer>
 
 const authCondition = (authUser) => !!authUser;
-export default withAuthorization(authCondition)(accountPage);
+export default withAuthorization(authCondition)(AccountPage);
