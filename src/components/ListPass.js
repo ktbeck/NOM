@@ -37,6 +37,7 @@ function validate(numMeals, mealPrice) {
 	};
 }
 
+
 /*
 ListPassForm: this form will allow users to update the number of
 meals they have, and the price they want to list it as

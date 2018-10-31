@@ -8,7 +8,7 @@ class HomePage extends Component {
     super(props);
 
     this.state = {
-      users: null,
+        users: null,
     };
   }
 
@@ -20,47 +20,71 @@ class HomePage extends Component {
 
   render() {
 	const { users } = this.state;
+	if(!this.state.users){
+	    return(
+        <div>
+        <h1>Home</h1>
+		{users && <UserList users={users} /> }
+		</div>);
+    }
     return (
       <div>
         <h1>Home</h1>
-        <p>The Home Page is accessible by every signed in user.</p>
 		{users && <UserList users={users} /> }
+		    Average Price:
+          {avgSellingPrice(users)}
       </div>
     );
   }
 }
+
+
+function avgSellingPrice(users){
+    console.log(users);
+    let sum = 0;
+    let size = 0;
+    for(let i in users) {
+        size++;
+        sum = sum + parseInt(users[i].mealPrice);
+    }
+    console.log(sum);
+    return (sum/size).toFixed(2);
+}
+
 const UserList = ({ users }) =>
-<div>
+    <div>
 		<h2> Available Passes</h2>
 		<table style={tableStyle}>
 			<tbody>
 				<tr>
 					<th>Name</th>
-					<th>Price</th> 
+					<th>Price</th>
 					<th>Number of Meals</th>
 				</tr>
 				{Object.keys(users).map(key =>
-				<tr key={key}> 
-						<td>{users[key].username}</td> 
-						<td> ${users[key].mealPrice}</td> 
-						<td>{users[key].numMeals}</td>
-				</tr>
+                    <tr key={key}>
+                        <td>{users[key].username}</td>
+                        <td> {users[key].mealPrice}</td>
+                        <td>{users[key].numMeals}</td>
+                        <td>
+                            <button onClick={() => buyPass(users[key].username)}>
+                                Buy Pass
+                            </button>
+                        </td>
+                    </tr>
 				)}
 			</tbody>
 		</table>
 	</div>
+
 	
 const tableStyle = {
   border: '3px solid black'
 };
 
-
-	// <div>
-		// {Object.keys(users).map(key =>
-			// <div key={key}>{users[key].email} <br/> Current Price: {users[key].mealPrice}<br/><br/></div>
-		// )}
-	// </div>
-
+ function buyPass(user) {
+        console.log("Buying from: " + user);
+}
 
 const authCondition = (authUser) => !!authUser;
 
