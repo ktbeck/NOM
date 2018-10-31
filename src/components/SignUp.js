@@ -52,13 +52,12 @@ class SignUpForm extends Component {
           })
           .catch(error => {
             this.setState(byPropKey('error', error));
-          });
-
-      })
+          })
+	  })
       .catch(error => {
         this.setState(byPropKey('error', error));
       });
-
+	
     event.preventDefault();
   }
   render() {
@@ -103,6 +102,7 @@ class SignUpForm extends Component {
 			  type="password"
 			  placeholder="Confirm Password"
 			/>
+		
 			<button disabled={isInvalid} type="submit">
 			  Sign Up
 			</button>
@@ -121,7 +121,6 @@ const SignUpLink = () =>
     <Link to={routes.SIGN_UP}>Sign Up</Link>
   </p>
 
-// export default SignUpPage;
 export default withRouter(SignUpPage);
 
 export {

@@ -24,17 +24,42 @@ class HomePage extends Component {
       <div>
         <h1>Home</h1>
         <p>The Home Page is accessible by every signed in user.</p>
-		{ !!users && <UserList users={users} /> }
+		{users && <UserList users={users} /> }
       </div>
     );
   }
 }
 const UserList = ({ users }) =>
-	<div>
-		{Object.keys(users).map(key =>
-			<div key={key}>{users[key].email} <br/> Current Price: {users[key].mealPrice}<br/><br/></div>
-		)}
+<div>
+		<h2> Available Passes</h2>
+		<table style={tableStyle}>
+			<tbody>
+				<tr>
+					<th>Name</th>
+					<th>Price</th> 
+					<th>Number of Meals</th>
+				</tr>
+				{Object.keys(users).map(key =>
+				<tr key={key}> 
+						<td>{users[key].username}</td> 
+						<td> ${users[key].mealPrice}</td> 
+						<td>{users[key].numMeals}</td>
+				</tr>
+				)}
+			</tbody>
+		</table>
 	</div>
+	
+const tableStyle = {
+  border: '3px solid black'
+};
+
+
+	// <div>
+		// {Object.keys(users).map(key =>
+			// <div key={key}>{users[key].email} <br/> Current Price: {users[key].mealPrice}<br/><br/></div>
+		// )}
+	// </div>
 
 
 const authCondition = (authUser) => !!authUser;
