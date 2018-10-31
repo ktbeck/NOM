@@ -30,6 +30,8 @@ class AccountPage extends Component {
       username: '',
       email: '',
       userDescription: '',
+      contactinfo: '',
+      //photoUrl: user.photoURL;
     };
   }
 
@@ -39,6 +41,7 @@ class AccountPage extends Component {
         username: snapshot.val().username,
         email: snapshot.val().email,
         userDescription: snapshot.val().userDescription,
+        contactinfo: snapshot.val().contactinfo,
       });
     }.bind(this));
   }
@@ -46,6 +49,7 @@ class AccountPage extends Component {
   onSubmit = (event) => {
     db.ref('users/' + this.state.uid).update({
       userDescription: this.state.userDescription,
+      contactinfo: this.state.contactinfo,
     });
   }
 
@@ -56,22 +60,36 @@ class AccountPage extends Component {
         <h1>Account Page</h1>
         <div>
           <h2>Welcome </h2>
-          <p> Name: {this.state.username} </p>
-          <p> Email: {this.state.email} </p>
-          <p> About Me: {this.state.userDescription} </p>
+          <p> <b> Name: </b>{this.state.username} </p>
+          <p> <b> Email: </b>{this.state.email} </p>
+          <p> <b>About Me: </b> </p>
+          <p>{this.state.userDescription}</p>
+          <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
         </div>
+        <br></br>
         <div>
           <form onSubmit={this.onSubmit}>
           <h3>Update "About Me"</h3>
+          <div>
           <input
             type="text"
             placeholder="Update user description here..."
             value={this.state.userDescription}
             onChange={event => this.setState({userDescription: event.target.value})}
           />
+          </div>
+          <div>
+          <input
+            type="text"
+            placeholder="contact info..."
+            value={this.state.contactinfo}
+            onChange={event => this.setState({contactinfo: event.target.value})}
+          />
+          </div>
           <button type="submit">
             Submit
           </button>
+
           </form>
 
         </div>
