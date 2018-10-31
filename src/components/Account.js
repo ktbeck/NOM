@@ -22,69 +22,86 @@ const db = firebase.database();
 // allow user to change profile picture
 
 class AccountPage extends Component {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
     this.state = {
-        uid: auth.currentUser.uid,
-        username: '',
-        email: '',
-        userDescription: '',
-      };
-    }
+      uid: auth.currentUser.uid,
+      username: '',
+      email: '',
+      userDescription: '',
+    };
+  }
 
-    componentDidMount() {
-      db.ref('users/' + this.state.uid).on('value', function(snapshot) {
-  		 	this.setState({
-          username: snapshot.val().username,
-          email: snapshot.val().email,
-  		 		userDescription: snapshot.val().userDescription,
-  		});
+  componentDidMount() {
+    db.ref('users/' + this.state.uid).on('value', function(snapshot) {
+      this.setState({
+        username: snapshot.val().username,
+        email: snapshot.val().email,
+        userDescription: snapshot.val().userDescription,
+      });
+    }.bind(this));
+  }
 
-  		}.bind(this));
-    }
+  onSubmit = (event) => {
+    db.ref('users/' + this.state.uid).update({
+      userDescription: this.state.userDescription,
+    });
+  }
 
-    render() {
-        return (
-            <div>
-            <h1>Account Page</h1>
-            <div>
-              <h2>Welcome </h2>
-              <p> Name: {this.state.username} </p>
-              <p> Email: {this.state.email} </p>
-              <p> About Me: {this.state.userDescription} </p>
-            </div>
+  render() {
 
-            <div>
-            </div>
+    return (
+      <div>
+        <h1>Account Page</h1>
+        <div>
+          <h2>Welcome </h2>
+          <p> Name: {this.state.username} </p>
+          <p> Email: {this.state.email} </p>
+          <p> About Me: {this.state.userDescription} </p>
+        </div>
+        <div>
+          <form onSubmit={this.onSubmit}>
+          <h3>Update "About Me"</h3>
+          <input
+            type="text"
+            placeholder="Update user description here..."
+            value={this.state.userDescription}
+            onChange={event => this.setState({userDescription: event.target.value})}
+          />
+          <button type="submit">
+            Submit
+          </button>
+          </form>
 
-            { < ChangeMyPassword/> }
-            </div>
-        );
-    }
+        </div>
+        { < ChangeMyPassword/> }
+      </div>
+    );
+  }
 
 } //end of class
 
 const ChangeMyPassword = () =>
-  <AuthUserContext.Consumer>
-    {authUser =>
-      <div>
-        <h3> Change My Password</h3>
-        <p> Forgot my password </p> <PasswordForgetForm />
-        <p> Change my password </p> <PasswordChangeForm />
-      </div>
-    }
-    </AuthUserContext.Consumer>
-    
-    // const DisplayUserInfo = () =>
-    //   <AuthUserContext.Consumer>
-    //     {authUser =>
-    //       <div>
-    //         <h2>Welcome </h2>
-    //         <p> Email: {authUser.email}</p>
-    //       </div>
-    //     }
-    //     </AuthUserContext.Consumer>
+<AuthUserContext.Consumer>
+{authUser =>
+  <div>
+  <h3> Change My Password</h3>
+  <p> Forgot my password </p> <PasswordForgetForm />
+  <p> Change my password </p> <PasswordChangeForm />
+  </div>
+}
+</AuthUserContext.Consumer>
+
+// const DisplayUserInfo = () =>
+//   <AuthUserContext.Consumer>
+//     {authUser =>
+//       <div>
+//         <h2>Welcome </h2>
+//         <p> Email: {authUser.email}</p>
+//       </div>
+//     }
+//     </AuthUserContext.Consumer>
 
 const authCondition = (authUser) => !!authUser;
 export default withAuthorization(authCondition)(AccountPage);
