@@ -24,23 +24,54 @@ class HomePage extends Component {
 	    return(
         <div>
         <h1>Home</h1>
-		{users && <UserList users={users} /> }
+		No users with meals for sale ):
 		</div>);
     }
+    const usersList = getUsersWithMeals(users);
     return (
       <div>
         <h1>Home</h1>
-		{users && <UserList users={users} /> }
-		    Average Price: $
-          {avgSellingPrice(users)}
+          <div>
+		    <h2> Available Passes</h2>
+            <table style={tableStyle}>
+			    <tbody>
+				    <tr>
+					    <th>Name</th>
+					    <th>Price</th>
+                        <th>Number of Meals</th>
+                    </tr>
+                    {usersList.map((user) =>
+                        <tr>
+                        <td>{user.username}</td>
+                        <td>{user.numMeals}</td>
+                        <td>{user.mealPrice}</td>
+                        <td>
+                            <button onClick={() => buyPass(user.username)}>
+                                Buy Pass
+                            </button>
+                        </td>
+                        </tr>)}
+                </tbody>
+            </table>
+            Average Price: $
+            {avgSellingPrice(users)}
+          </div>
       </div>
     );
   }
 }
-
-
+//returns array of all users with at least 1 meal
+function getUsersWithMeals(users){
+    let usersWithMeals = [];
+    for(let i in users){
+        if (parseInt(users[i].numMeals) > 0){
+            usersWithMeals.push(users[i]);
+        }
+    }
+    return usersWithMeals;
+}
+//returns average selling price of meals currently
 function avgSellingPrice(users){
-    console.log(users);
     let sum = 0;
     let size = 0;
     for(let i in users) {
@@ -51,38 +82,11 @@ function avgSellingPrice(users){
     return (sum/size).toFixed(2);
 }
 
-const UserList = ({ users }) =>
-    <div>
-		<h2> Available Passes</h2>
-		<table style={tableStyle}>
-			<tbody>
-				<tr>
-					<th>Name</th>
-					<th>Price</th>
-					<th>Number of Meals</th>
-				</tr>
-				{Object.keys(users).map(key =>
-                    <tr key={key}>
-                        <td>{users[key].username}</td>
-                        <td> {users[key].mealPrice}</td>
-                        <td>{users[key].numMeals}</td>
-                        <td>
-                            <button onClick={() => buyPass(users[key].username)}>
-                                Buy Pass
-                            </button>
-                        </td>
-                    </tr>
-				)}
-			</tbody>
-		</table>
-	</div>
-
-	
 const tableStyle = {
   border: '3px solid black'
 };
-
- function buyPass(user) {
+//temp function
+function buyPass(user) {
         console.log("Buying from: " + user);
 }
 
