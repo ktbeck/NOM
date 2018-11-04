@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import ViewUserInfoButton from './viewUserInfo';
+
+
 import withAuthorization from './withAuthorization';
 import { db } from '../firebase';
 
@@ -9,6 +12,9 @@ class HomePage extends Component {
 
 	this.state = {
 		users: null,
+
+		username: '', // i added
+			email: '', //me
 	};
   }
 
@@ -20,6 +26,7 @@ class HomePage extends Component {
 
   render() {
 	const { users } = this.state;
+	
 	if(!this.state.users){
 		return(
 		<div>
@@ -49,6 +56,11 @@ class HomePage extends Component {
 								<button onClick={() => buyPass(user.username)}>
 									Buy Pass
 								</button>
+
+							<button onClick={() => viewProf(user.email, user.username)}>
+									view prof
+								</button>
+
 							</td>
 						</tr>)}
 				</tbody>
@@ -93,6 +105,13 @@ const tableStyle = {
 //temp function
 function buyPass(user) {
 		console.log("Buying from: " + user);
+}
+
+function viewProf(email, username) {
+
+	console.log("Seller email: " + email);
+	console.log("Seller username: " + username);
+
 }
 
 const authCondition = (authUser) => !!authUser;
