@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
-import './ListPass.css';
+import './ListPass.css'; 
 
 const auth = firebase.auth();
 const db = firebase.database();
@@ -27,7 +27,14 @@ class ListPassButton extends Component {
 
 	render() {
 		const formVisible = this.state.formVisible;
-
+		/*var startPos;
+		var geoSuccess = function(position) {
+		startPos = position;
+			document.getElementById('startLat').innerHTML = startPos.coords.latitude;
+			document.getElementById('startLon').innerHTML = startPos.coords.longitude;
+		};
+		  navigator.geolocation.getCurrentPosition(geoSuccess);
+		  */
 		return (
 			<div ref={node => { this.node = node; }}>
 				<button id="ListPassButton" onClick={this.handleButtonClick}>
@@ -67,6 +74,8 @@ class ListPassForm extends Component {
 			uid: auth.currentUser.uid,
 			numMeals: '',
 			mealPrice: '',
+			preferredLocation: '',
+			locations: '',
 		};
 	}
 
@@ -74,7 +83,14 @@ class ListPassForm extends Component {
 		db.ref('users/' + this.state.uid).on('value', function(snapshot) {
 			this.setState({
 				numMeals: snapshot.val().numMeals,
-				mealPrice: snapshot.val().mealPrice
+				mealPrice: snapshot.val().mealPrice,
+				preferredLocation: snapshot.val().preferredLocation,
+			});
+		}.bind(this));
+
+		db.ref('locations').on('value', function(snapshot) {
+			this.setState({
+				locations: snapshot.val(),
 			});
 		}.bind(this));
 	}
@@ -82,12 +98,16 @@ class ListPassForm extends Component {
 	onSubmit = (event) => {
 		db.ref('users/' + this.state.uid).update({
 			numMeals: this.state.numMeals,
-			mealPrice : this.state.mealPrice,
+			mealPrice: this.state.mealPrice,
+			preferredLocation: this.state.preferredLocation,
 		});
 		//event.preventDefault();
 	}
 
 	render() {
+		var {
+			locations,
+		} = this.state;
 		const errors = validate(this.state.numMeals, this.state.mealPrice);
 		const isDisabled = Object.keys(errors).some(x => errors[x]);
 		return (
@@ -111,6 +131,20 @@ class ListPassForm extends Component {
 							onChange={e => this.setState({mealPrice: e.target.value})}
 						/>
 						<div className="error">{errors.mealPrice}</div>
+					</div>
+					<div className='form-element'>
+						<label>Preferred Dining Hall</label><br/>
+		
+						<select 
+							value={this.state.preferredLocation}
+							onChange={e => this.setState({preferredLocation: e.target.value})}
+						>
+							{Object.keys(this.state.locations).map(location=>(
+								<option value={location}>
+									{locations[location].name} 
+								</option>
+							))}
+						</select>
 					</div>
 					<input type="submit" disabled={isDisabled} />
 				</form>
