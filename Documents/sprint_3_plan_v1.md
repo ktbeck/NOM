@@ -69,7 +69,7 @@ while the buyer is able to receive payment and is notified if somebody buys a me
 
 
 ## --- INITIAL TASK ASSIGNMENT -----
-![sprint 3 initial burn up chart](images/sprint_3_burn_up_1.png =100x20)  
+![sprint 3 initial burn up chart](images/sprint_3_burn_up_1.png | width=30)  
 
 
 ## --- INITIAL SCRUM BOARD -----
