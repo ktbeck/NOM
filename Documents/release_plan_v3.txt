@@ -3,8 +3,8 @@ Product Name: NOM Dining Hall Meal Exchange
 Team Name: Nom Slugs
 Release Name: NOM Release
 Release Date: December 4, 2018
-Revision Number: 2
-Revision Date: October 21, 2018
+Revision Number: 3
+Revision Date: November 4, 2018
 
 
 ----- HIGH LEVEL GOALS -----
@@ -25,11 +25,11 @@ Revision Date: October 21, 2018
 
 [14] Sprint 2: Sellers are able to list their dining hall guest passes at a specific price for buyers to view.
   - [2] As a seller, I want to list my passes on the site so other students can buy them from me.
-  - [3] As a seller, I want to have an account dashboard so I can keep track of my available guest passes.
-  - [2] As a buyer, I want to see information about available passes so I can contact sellers and purchase them.
-  - [3] As a seller, I want to have a set price to sell guest passes for to make the process easier.
-  - [4] As a seller/buyer, I want a clean, easy to use layout for buying or selling passes.
-
+  - [3] As a seller, I want to have an account dashboard so I can keep track of my available guest passes and edit my information.
+  - [4] As a buyer, I want to see information about available passes so I can contact sellers and purchase them.
+  - [3] As a user I want a navigation bar at the top of the page to easily navigate to other places on the site.
+  - [2]  As a seller/buyer, I want a clean, easy to use layout for buying or selling passes.
+  
 [12] Sprint 3: Buyers are matched with a seller to set up the purchase of their dining hall guest pass. Process the buyer's payment before sending to seller.
   - [5] As a seller, I want to receive payments through the app so I am guaranteed to be paid if the exchange happens.
   - [4] As a buyer, I want to give payments through the app so I can get a refund if the seller cancels.
@@ -48,3 +48,5 @@ Revision Date: October 21, 2018
 - Be able to buy and sell flexi dollars and buddy meals.
 - As an app user, I want to have ratings on other users so I know how well the transaction will go.
 - As a moderator, I want to validate users via ucsc email address so I can verify student status.
+- Add profile picture/location to account.
+- Fix displaying other users accounts.
