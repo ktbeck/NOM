@@ -7,18 +7,22 @@ Team Name: Nom Slugs
 Sprint Completion Date: November 4th, 2018
 
 ----- ACTIONS TO STOP DOING -----
+
 Stop commiting to master. Use branches instead.
 Work on more accurate estimation of tasks. Tasks felt underestimated for the first part of the sprint, but at the end they felt a little more overestimated. As we grow more comfortable with the technologies, we should be able to more accurately estimate tasks.
 
 ----- ACTIONS TO START DOING -----
+
 Communication in work meetings is important. During work meetings after scrum meetings its important for members to explain how they fixed issues in case it may help other members with their problems.
 Use branches. Instead of all members working off master, use branches for additional features and keep master clean.
 
 ----- ACTIONS TO KEEP DOING -----
+
 Meeting times are working. Members have been on time and scrum meetings have been productive. Work meetings have also been helpful allowing members to help each other with difficulties. 
 Communication has been good. All members have been responsive in group chat.
 
 ----- WORK COMPLETED / NOT COMPLETED -----
+
 We completed most of our tasks. There were a few related tasks that could not be completed without the completion of other tasks. Overall, we accomplished most of what e wanted for this sprint, and hopefully can complete the few tasks we missed in sprint 3.
 
 Completed: User Story 1: As a seller, I want to list my passes on the site so other students can buy them from me.
@@ -34,8 +38,11 @@ Complete: User Story 4: As a user I want a navigation bar at the top of the page
 Complete: User Story 5: As a seller/buyer, I want a clean, easy to use layout for buying or selling passes.
 
 ----- WORK COMPLETION RATE -----
+
 Total User Stories Completed: ⅗
+
 Total Hours Completed: 54/70
+
 Total Days: 14 days, 6 scrum meetings
 
 
