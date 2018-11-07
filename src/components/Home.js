@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ViewUserInfoButton from './viewUserInfo';
+// import ViewUserInfoButton from './viewUserInfo';
 
 
 import withAuthorization from './withAuthorization';
@@ -48,7 +48,7 @@ class HomePage extends Component {
 						<th id="numMeals">Number of Meals</th>
 					</tr>
 					{usersList.map((user) =>
-						<tr align="center">
+						<tr align="center" key={user.email}>
 							<td headers="name">{user.username}</td>
 							<td>${user.mealPrice}</td>
 							<td>{user.numMeals}</td>
@@ -91,10 +91,13 @@ function avgSellingPrice(users){
 	let sum = 0;
 	let size = 0;
 	for(let i in users) {
-		size++;
-		sum = sum + parseInt(users[i].mealPrice);
+		if((users[i].mealPrice) > 0) {
+            sum = sum + parseInt(users[i].mealPrice);
+            console.log(users[i].mealPrice);
+            size++;
+        }
 	}
-	console.log(sum);
+	// console.log(sum);
 	return (sum/size).toFixed(2);
 }
 
