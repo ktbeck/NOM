@@ -92,8 +92,8 @@ function avgSellingPrice(users){
 	let size = 0;
 	for(let i in users) {
 		if((users[i].mealPrice) > 0) {
-            sum = sum + parseInt(users[i].mealPrice);
-            console.log(users[i].mealPrice);
+            sum = sum + parseFloat(users[i].mealPrice);
+            // console.log(parseInt(users[i].mealPrice));
             size++;
         }
 	}
