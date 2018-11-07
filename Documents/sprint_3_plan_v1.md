@@ -8,7 +8,7 @@
 
 ## ----- GOAL -----
 The buyer is able to buy a pass from the seller using the payment system integrated, 
-while the buyer is able to receive payment and is notified if somebody buys a meal from them.
+while the seller is able to receive payment and is notified if somebody buys a meal from them.
 
 ## ----- TASK LISTING -----
 ### User Story 1: As a seller/buyer, I want to give or receive payments through the app so the meal and money exchange can happen.
@@ -43,7 +43,8 @@ while the buyer is able to receive payment and is notified if somebody buys a me
 
  **Total for User Story 4:** 13 hours
  
-  
+ **TOTAL HOURS: 72**
+ 
 ## ----- TEAM ROLES -----
 **Megan Wu:**       Product Owner, Developer  
 **Nicolle Ayon:**   Scrum Master, Developer   
