@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import ViewProfile from './ViewProfile';
+import { BrowserRouter as  Route, Link } from "react-router-dom";
+//import ViewProfile from './ViewProfile';
 
 // import ViewUserInfoButton from './viewUserInfo';
 
@@ -53,6 +53,7 @@ class HomePage extends Component {
 						<tr align="center">
 							<td headers="name">
 									<div>
+											{/* Clicking on user leads to user profile */}
 										<Link to = {user.email}> {user.username} </Link>
 										<Route path={user.email} component = {viewProf(user)} />
 									</div>
@@ -98,10 +99,13 @@ function avgSellingPrice(users){
 	let sum = 0;
 	let size = 0;
 	for(let i in users) {
-		size++;
-		sum = sum + parseInt(users[i].mealPrice);
+		if((users[i].mealPrice) > 0) {
+            sum = sum + parseFloat(users[i].mealPrice);
+            // console.log(parseInt(users[i].mealPrice));
+            size++;
+        }
 	}
-	console.log(sum);
+	// console.log(sum);
 	return (sum/size).toFixed(2);
 }
 
@@ -116,9 +120,7 @@ function buyPass(user) {
 
 function viewProf(user) {
 	return(
-		
 			<div>
-				
 					 email: {user.email}<br/>
 					 User Desc: {user.userDescription}<br/>
 					 Current Price: {user.mealPrice}<br/>

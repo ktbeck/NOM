@@ -9,7 +9,7 @@ const auth = firebase.auth();
 
 */
 
-var name, email;
+// var name, email;
 /*var reff;
 
 var reff = db.ref('users');
@@ -94,8 +94,7 @@ class ViewUserForm extends Component {
     {
         db.ref('users/' + this.state.uid).on('value', function(snapshot)
         {
-            this.setState
-            ({
+            this.setState({
 				username: snapshot.val().username,
 				email: snapshot.val().email
 			});
@@ -104,8 +103,7 @@ class ViewUserForm extends Component {
 
     onSubmit = (event) => 
     {
-        db.ref('users/' + this.state.uid).update
-        ({
+        db.ref('users/' + this.state.uid).update({
 			username: this.state.username,
 			email : this.state.email,
 		});
