@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import ViewProfile from './ViewProfile';
 
-import ViewUserInfoButton from './viewUserInfo';
+// import ViewUserInfoButton from './viewUserInfo';
 
 
 import withAuthorization from './withAuthorization';
@@ -49,7 +51,12 @@ class HomePage extends Component {
 					</tr>
 					{usersList.map((user) =>
 						<tr align="center">
-							<td headers="name">{user.username}</td>
+							<td headers="name">
+									<div>
+										<Link to = {user.email}> {user.username} </Link>
+										<Route path={user.email} component = {viewProf(user)} />
+									</div>
+							</td>
 							<td>${user.mealPrice}</td>
 							<td>{user.numMeals}</td>
 							<td>
@@ -57,9 +64,9 @@ class HomePage extends Component {
 									Buy Pass
 								</button>
 
-							<button onClick={() => viewProf(user.email, user.username)}>
-									view prof
-								</button>
+							{/* <button onClick={() => viewProf(user)}>
+									View Profile
+								</button> */}
 
 							</td>
 						</tr>)}
@@ -107,12 +114,20 @@ function buyPass(user) {
 		console.log("Buying from: " + user);
 }
 
-function viewProf(email, username) {
+function viewProf(user) {
+	return(
+		
+			<div>
+				
+					 email: {user.email}<br/>
+					 User Desc: {user.userDescription}<br/>
+					 Current Price: {user.mealPrice}<br/>
+					 No. of Meals: {user.numMeals}<br/>
+			</div>            
+	 
+		 );
 
-	console.log("Seller email: " + email);
-	console.log("Seller username: " + username);
-
-}
+ }
 
 const authCondition = (authUser) => !!authUser;
 
