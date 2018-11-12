@@ -11,7 +11,6 @@ class AdminPage extends Component {
 	constructor(props) {
 		super(props);
 		
-		const role = '';
 		db.ref('users/' + auth.currentUser.uid).on('value', function(snapshot) {
 			if(snapshot.val().role !== 'admin') {
 				this.props.history.push(routes.LANDING);

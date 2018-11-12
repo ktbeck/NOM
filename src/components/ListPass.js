@@ -40,13 +40,13 @@ class ListPassButton extends Component {
 
 function validate(numMeals, mealPrice) {
 	var nmError = '';
-	if (numMeals !== parseInt(numMeals))
+	if (numMeals != parseInt(numMeals))
 		nmError = 'Please enter a number';
 	else if (numMeals < 0)
 		nmError = 'Please enter a positive number';
 
 	var mpError = '';
-	if (mealPrice !== parseFloat(mealPrice))
+	if (mealPrice != parseFloat(mealPrice))
 		mpError = 'Please enter a price';
 	else if (mealPrice < 0)
 		mpError = 'Please enter a positive number';
@@ -101,7 +101,7 @@ class ListPassForm extends Component {
 
 	// basic distance formula, distance small enough so assuming flat earth
 	getDistance(curLat, curLon, destLat, destLon) {
-		if (curLat == 0 || curLon == 0)
+		if (curLat === 0 || curLon === 0)
 			return "-";
 		var x = destLat - curLat;
 		x = x * x;
@@ -161,7 +161,7 @@ class ListPassForm extends Component {
 							onChange={e => this.setState({preferredLocation: e.target.value})}
 						>
 							{Object.keys(this.state.locations).map(location=>(
-								<option value={location}>
+								<option value={location} key={location}>
 									{locations[location].name}  
 									&nbsp;({this.getDistance(
 										this.state.currentLat,
