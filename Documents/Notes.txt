@@ -1,6 +1,11 @@
 Notes from Wednesday Meetings
 
-10/24/18
+-------------------------------------------------------------------------------
+10/7/18
+Organize documents folder in sprints (folder for sprint1, s2, s3) + images
+
+Make Third task more descriptive for U1 — implement payment system stripe to 
+allow users to put in their banking info. 
 
 -------------------------------------------------------------------------------
 10/17/18
