@@ -52,11 +52,11 @@ Learn how to build a cross-platform mobile app using Javascript and React. Set u
 
 
 ### --- INITIAL TASK ASSIGNMENT -----
-![sprint 1 initial burn up chart](images/sprint_1_burn_up_1.jpg)  
+![sprint 1 initial burn up chart](sprint_1_burn_up_1.jpg)  
 
 
 ### --- INITIAL SCRUM BOARD -----
-![sprint 1 initial scrum board](images/sprint_1_scrum_board_1.jpg)    
+![sprint 1 initial scrum board](sprint_1_scrum_board_1.jpg)    
 
 
 ### ----- SCRUM TIMES -----
