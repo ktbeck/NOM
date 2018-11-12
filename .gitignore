@@ -2,3 +2,6 @@ src/firebase/firebase.js
 node_modules/
 package.json
 package-lock.json
+.firebaserc
+firebase.json
+functions/
