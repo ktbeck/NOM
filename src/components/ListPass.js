@@ -27,14 +27,6 @@ class ListPassButton extends Component {
 
 	render() {
 		const formVisible = this.state.formVisible;
-		/*var startPos;
-		var geoSuccess = function(position) {
-		startPos = position;
-			document.getElementById('startLat').innerHTML = startPos.coords.latitude;
-			document.getElementById('startLon').innerHTML = startPos.coords.longitude;
-		};
-		  navigator.geolocation.getCurrentPosition(geoSuccess);
-		  */
 		return (
 			<div ref={node => { this.node = node; }}>
 				<button id="ListPassButton" onClick={this.handleButtonClick}>
@@ -76,6 +68,8 @@ class ListPassForm extends Component {
 			mealPrice: '',
 			preferredLocation: '',
 			locations: '',
+			currentLat: '',
+			currentLon: '',
 		};
 	}
 
@@ -93,6 +87,31 @@ class ListPassForm extends Component {
 				locations: snapshot.val(),
 			});
 		}.bind(this));
+		var startPos;
+		var geoSuccess = function(position) {
+			startPos = position;
+			this.setState({
+				currentLat: startPos.coords.latitude,
+				currentLon: startPos.coords.longitude,
+			});
+		}.bind(this);
+		navigator.geolocation.getCurrentPosition(geoSuccess);
+				 
+	}
+
+	// basic distance formula, distance small enough so assuming flat earth
+	getDistance(curLat, curLon, destLat, destLon) {
+		if (curLat == 0 || curLon == 0)
+			return "-";
+		var x = destLat - curLat;
+		x = x * x;
+
+		var y = destLon - curLon;
+		y = y * y;
+
+		x = Math.sqrt(x + y) * 65.02;
+
+		return x.toFixed(2);
 	}
 
 	onSubmit = (event) => {
@@ -103,7 +122,7 @@ class ListPassForm extends Component {
 		});
 		//event.preventDefault();
 	}
-
+ 
 	render() {
 		var {
 			locations,
@@ -112,7 +131,9 @@ class ListPassForm extends Component {
 		const isDisabled = Object.keys(errors).some(x => errors[x]);
 		return (
 			<div id='ListPassForm'>
-				<div className='form-title'>Update Your Listings</div>
+				<div className='form-title'>
+					Update Your Listings 
+				</div>
 				<form onSubmit={this.onSubmit}>
 					<div className='form-element'>
 						<label>Meals Listed </label>
@@ -141,7 +162,13 @@ class ListPassForm extends Component {
 						>
 							{Object.keys(this.state.locations).map(location=>(
 								<option value={location}>
-									{locations[location].name} 
+									{locations[location].name}  
+									&nbsp;({this.getDistance(
+										this.state.currentLat,
+										this.state.currentLon,
+										locations[location].lat,
+										locations[location].lon
+									)} mi)
 								</option>
 							))}
 						</select>
