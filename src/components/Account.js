@@ -32,6 +32,7 @@ class AccountPage extends Component {
       userDescription: '',
       contactinfo: '',
       //photoUrl: user.photoURL;
+      rating: ''
     };
   }
 
@@ -42,6 +43,7 @@ class AccountPage extends Component {
         email: snapshot.val().email,
         userDescription: snapshot.val().userDescription,
         contactinfo: snapshot.val().contactinfo,
+        rating: snapshot.val().rating
       });
     }.bind(this));
   }
@@ -68,6 +70,13 @@ class AccountPage extends Component {
             <p>{this.state.userDescription}</p>
             <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
           </div>
+        </div>
+        <br></br>
+        <div>
+          <h3> User Rating </h3>
+              <div>
+                   Average Rating: {this.state.rating}
+              </div>
         </div>
         <br></br>
         <div>
