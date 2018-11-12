@@ -70,11 +70,11 @@ while the seller is able to receive payment and is notified if somebody buys a m
 
 
 ## --- INITIAL TASK ASSIGNMENT -----
-![sprint 3 initial burn up chart](images/sprint_3_burn_up_1.png)  
+![sprint 3 initial burn up chart](sprint_3_burn_up_1.png)  
 
 
 ## --- INITIAL SCRUM BOARD -----
-![sprint 3 initial scrum board](images/sprint_3_scrum_board_1.png)    
+![sprint 3 initial scrum board](sprint_3_scrum_board_1.png)    
 
 
 ## ----- SCRUM TIMES -----
