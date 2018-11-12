@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as  Route, Link } from "react-router-dom";
+import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
 //import ViewProfile from './ViewProfile';
 
 // import ViewUserInfoButton from './viewUserInfo';
@@ -27,61 +27,62 @@ class HomePage extends Component {
   }
 
   render() {
-	const { users } = this.state;
+		const { users } = this.state;
 	
-	if(!this.state.users){
-		return(
-		<div>
-		<h1>Home</h1>
-		No users with meals for sale ):
-		</div>);
-	}
-	const usersList = getUsersWithMeals(users);
-	return (
-	  <div>
-		<h1>Home</h1>
-		  <div>
-			<h2> Available Passes</h2>
-			<table style={tableStyle}>
-				<tbody>
-					<tr>
-						<th id="name">Name</th>
-						<th id="price">Price</th>
-						<th id="numMeals">Number of Meals</th>
-					</tr>
-					{usersList.map((user) =>
-						<tr align="center">
-							<td headers="name">
-									<div>
-											{/* Clicking on user leads to user profile */}
-										<Link to = {user.email}> {user.username} </Link>
-										<Route path={user.email} component = {viewProf(user)} />
-									</div>
-							</td>
-							<td>${user.mealPrice}</td>
-							<td>{user.numMeals}</td>
-							<td>
-								<button onClick={() => buyPass(user.username)}>
-									Buy Pass
-								</button>
+		if(!this.state.users){
+			return(
+			<div>
+			<h1>Home</h1>
+			No users with meals for sale ):
+			</div>);
+		}
+		const usersList = getUsersWithMeals(users);
+		return (
+			<div>
+			<h1>Home</h1>
+				<div>
+				<h2> Available Passes</h2>
+				<table style={tableStyle}>
+					<tbody>
+						<tr>
+							<th id="name">Name</th>
+							<th id="price">Price</th>
+							<th id="numMeals">Number of Meals</th>
+						</tr>
+						{usersList.map((user) =>
+							<tr align="center">
+								<td headers="name">
+										<div>
+												{/* Clicking on user leads to user profile */}
+												
+											<Link to = {String(user.email)}> {user.username} </Link>
+											<Route path = {String(user.email)} component = {viewProf(user)} />
+										</div>
+								</td>
+								<td>${user.mealPrice}</td>
+								<td>{user.numMeals}</td>
+								<td>
+									<button onClick={() => buyPass(user.username)}>
+										Buy Pass
+									</button>
 
-							{/* <button onClick={() => viewProf(user)}>
-									View Profile
-								</button> */}
+								{/* <button onClick={() => viewProf(user)}>
+										View Profile
+									</button> */}
 
-							</td>
-						</tr>)}
-				</tbody>
-			</table>
-			  <div align="center">
-				  <h3>
-					Average Price:
-				  </h3>
-					  ${avgSellingPrice(users)}
-			  </div>
+								</td>
+							</tr>)}
+					</tbody>
+				</table>
+					<div align="center">
+						<h3>
+						Average Price:
+						</h3>
+							${avgSellingPrice(users)}
+					</div>
+				</div>
 			</div>
-	  </div>
-	);
+		);
   }
 }
 //returns array of all users with at least 1 meal
