@@ -40,12 +40,14 @@ class ListPassButton extends Component {
 
 function validate(numMeals, mealPrice) {
 	var nmError = '';
+	// eslint-disable-next-line
 	if (numMeals != parseInt(numMeals))
 		nmError = 'Please enter a number';
 	else if (numMeals < 0)
 		nmError = 'Please enter a positive number';
 
 	var mpError = '';
+	// eslint-disable-next-line
 	if (mealPrice != parseFloat(mealPrice))
 		mpError = 'Please enter a price';
 	else if (mealPrice < 0)
