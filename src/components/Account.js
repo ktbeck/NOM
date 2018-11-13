@@ -10,7 +10,7 @@ const auth = firebase.auth();
 const db = firebase.database();
 
 //Things to go on the account dashboard:
-//  1. their rating
+//  1. their rating (finished but need to abstract to component)
 //  2. be able to list passes
 //  3. edit contact info
 //      a. phone
@@ -32,7 +32,7 @@ class AccountPage extends Component {
       userDescription: '',
       contactinfo: '',
       //photoUrl: user.photoURL;
-      rating: ''
+      reviews: ''
     };
   }
 
@@ -43,7 +43,7 @@ class AccountPage extends Component {
         email: snapshot.val().email,
         userDescription: snapshot.val().userDescription,
         contactinfo: snapshot.val().contactinfo,
-        rating: snapshot.val().rating
+        reviews: snapshot.val().reviews
       });
     }.bind(this));
   }
@@ -56,7 +56,7 @@ class AccountPage extends Component {
   }
 
   render() {
-
+    const reviewers = getUserReviewers(this.state.reviews);
     return (
       <div>
         <h1>Account Page</h1>
@@ -75,7 +75,17 @@ class AccountPage extends Component {
         <div>
           <h3> User Rating </h3>
               <div>
-                   Average Rating: {this.state.rating}
+                  
+                   <h4>Avg Rating: {avgUserRating(reviewers)}</h4>
+                   {reviewers.map((review) =>
+                    <div>
+                      {getReviewerName(review)}&nbsp;
+                      User Rating : {getUserRating(review)}<br></br>
+                      {getUserReview(review)}<br></br>
+                    </div>
+                   )
+
+                   }
               </div>
         </div>
         <br></br>
@@ -114,6 +124,33 @@ class AccountPage extends Component {
   }
 
 } //end of class
+
+function avgUserRating(userReview){
+  var numOfReviews = 0;
+  var sumRating = 0;
+  for(let i in userReview){
+    sumRating += getUserRating(userReview[i]);
+    numOfReviews++;
+  }
+  return ( sumRating / numOfReviews).toFixed(1);
+}
+
+function getUserReviewers(reviews){
+  let userReviewers = [];
+  for(let i in reviews){
+    userReviewers.push(reviews[i]);
+  }
+  return userReviewers;
+}
+function getReviewerName(reviewer){
+  return reviewer.reviewer;
+}
+function getUserRating(reviewer){
+  return parseFloat(reviewer.rating);
+}
+function getUserReview(reviewer){
+  return reviewer.review;
+}
 
 const ChangeMyPassword = () =>
 <AuthUserContext.Consumer>
