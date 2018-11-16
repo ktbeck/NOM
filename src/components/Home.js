@@ -89,7 +89,7 @@ class HomePage extends Component {
 function getUsersWithMeals(users){
 	let usersWithMeals = [];
 	for(let i in users){
-		if (parseInt(users[i].numMeals) > 0 && (parseInt(users[i].mealPrice) > 0)){
+		if (parseFloat(users[i].numMeals) > 0 && (parseFloat(users[i].mealPrice) > 0)){
 			usersWithMeals.push(users[i]);
 		}
 	}
@@ -100,11 +100,11 @@ function avgSellingPrice(users){
 	let sum = 0;
 	let size = 0;
 	for(let i in users) {
-		if((users[i].mealPrice) > 0) {
-            sum = sum + parseFloat(users[i].mealPrice);
-            // console.log(parseInt(users[i].mealPrice));
-            size++;
-        }
+		if(parseFloat(users[i].mealPrice) > 0) {
+            		sum = sum + parseFloat(users[i].mealPrice);
+            		// console.log(parseInt(users[i].mealPrice));
+            		size++;
+        	}
 	}
 	// console.log(sum);
 	return (sum/size).toFixed(2);
