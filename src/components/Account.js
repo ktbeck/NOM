@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import StarRatings from 'react-star-ratings';
 import AuthUserContext from './AuthUserContext';
 import { PasswordForgetForm } from './PasswordForget';
 import PasswordChangeForm from './PasswordChange';
@@ -8,13 +7,11 @@ import withAuthorization from './withAuthorization';
 import firebase from 'firebase/app';
 import UserReview from './UserReview';
 
-import starRatings from 'react-star-ratings/build/star-ratings';
-
 const auth = firebase.auth();
 const db = firebase.database();
 
 //Things to go on the account dashboard:
-//  1. their rating (finished but need to abstract to component)
+//  1. their rating (working on styling and sorting)
 //  2. be able to list passes
 //  3. edit contact info
 //      a. phone
