@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
+// eslint-disable-next-line
 import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
-//import ViewProfile from './ViewProfile';
-
-// import ViewUserInfoButton from './viewUserInfo';
-
-//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 import withAuthorization from './withAuthorization';
 import { db } from '../firebase';
+import Checkout from '../Checkout.js'
 
 class HomePage extends Component {
   constructor(props) {
@@ -84,6 +81,11 @@ class HomePage extends Component {
 						</h3>
 							${avgSellingPrice(users)}
 					</div>
+					<Checkout
+						name={'I hate react tbh'}
+						description={'stripe+react test'}
+						amount={1.50}
+					/>
 				</div>
 			</div>
 		);

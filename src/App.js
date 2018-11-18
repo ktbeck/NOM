@@ -20,11 +20,6 @@ class App extends Component {
           >
             Learn React
           </a>
-	   <Checkout
-            name={'The Road to learn React'}
-            description={'Only the Book'}
-            amount={1}
-          />
         </header>
       </div>
     );
