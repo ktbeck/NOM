@@ -32,7 +32,8 @@ class AccountPage extends Component {
       userDescription: '',
       contactinfo: '',
       //photoUrl: user.photoURL;
-      reviews: ''
+      reviews: '',
+      reviewed: ''
     };
   }
 
@@ -43,7 +44,8 @@ class AccountPage extends Component {
         email: snapshot.val().email,
         userDescription: snapshot.val().userDescription,
         contactinfo: snapshot.val().contactinfo,
-        reviews: snapshot.val().reviews
+        reviews: snapshot.val().reviews,
+        reviewed: snapshot.val().reviewed
       });
     }.bind(this));
   }
@@ -52,11 +54,13 @@ class AccountPage extends Component {
     db.ref('users/' + this.state.uid).update({
       userDescription: this.state.userDescription,
       contactinfo: this.state.contactinfo,
+      reviewed: this.state.reviewed
     });
   }
 
   render() {
     const reviewers = getUserReviewers(this.state.reviews);
+
     return (
       <div>
         <h1>Account Page</h1>
@@ -84,10 +88,26 @@ class AccountPage extends Component {
                       {getUserReview(review)}<br></br>
                     </div>
                    )
-
                    }
               </div>
         </div>
+
+        <div>
+          <form onSubmit={this.onSubmit}>
+          <h3>send reviews</h3>
+          <div>
+          <p>write review</p>
+          <input
+            type="text"
+            placeholder="review goes here"
+        
+            value={this.state.reviewed}
+            onChange={event => this.setState({reviewed: event.target.value})}
+           />
+          </div>
+          </form>
+        </div>
+
         <br></br>
         <div>
           <form onSubmit={this.onSubmit}>
@@ -110,13 +130,10 @@ class AccountPage extends Component {
             onChange={event => this.setState({contactinfo: event.target.value})}
           />
           </div>
-    
           <button type="submit">
             Submit
           </button>
-
           </form>
-
         </div>
         { < ChangeMyPassword/> }
       </div>
