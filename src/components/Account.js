@@ -5,12 +5,13 @@ import PasswordChangeForm from './PasswordChange';
 import withAuthorization from './withAuthorization';
 //import { auth, db } from '../firebase';
 import firebase from 'firebase/app';
+import UserReview from './UserReview';
 
 const auth = firebase.auth();
 const db = firebase.database();
 
 //Things to go on the account dashboard:
-//  1. their rating (finished but need to abstract to component)
+//  1. their rating (working on styling and sorting)
 //  2. be able to list passes
 //  3. edit contact info
 //      a. phone
@@ -56,7 +57,6 @@ class AccountPage extends Component {
   }
 
   render() {
-    const reviewers = getUserReviewers(this.state.reviews);
     return (
       <div>
         <h1>Account Page</h1>
@@ -74,19 +74,7 @@ class AccountPage extends Component {
         <br></br>
         <div>
           <h3> User Rating </h3>
-              <div>
-                  
-                   <h4>Avg Rating: {avgUserRating(reviewers)}</h4>
-                   {reviewers.map((review) =>
-                    <div>
-                      {getReviewerName(review)}&nbsp;
-                      User Rating : {getUserRating(review)}<br></br>
-                      {getUserReview(review)}<br></br>
-                    </div>
-                   )
-
-                   }
-              </div>
+              <UserReview review={this.state.reviews} />
         </div>
         <br></br>
         <div>
@@ -124,33 +112,6 @@ class AccountPage extends Component {
   }
 
 } //end of class
-
-function avgUserRating(userReview){
-  var numOfReviews = 0;
-  var sumRating = 0;
-  for(let i in userReview){
-    sumRating += getUserRating(userReview[i]);
-    numOfReviews++;
-  }
-  return ( sumRating / numOfReviews).toFixed(1);
-}
-
-function getUserReviewers(reviews){
-  let userReviewers = [];
-  for(let i in reviews){
-    userReviewers.push(reviews[i]);
-  }
-  return userReviewers;
-}
-function getReviewerName(reviewer){
-  return reviewer.reviewer;
-}
-function getUserRating(reviewer){
-  return parseFloat(reviewer.rating);
-}
-function getUserReview(reviewer){
-  return reviewer.review;
-}
 
 const ChangeMyPassword = () =>
 <AuthUserContext.Consumer>
