@@ -14,7 +14,6 @@ class HomePage extends Component {
 
 		username: '', // i added
 		email: '', //me
-		reviews: ''
 
 	};
   }
@@ -54,9 +53,8 @@ class HomePage extends Component {
 								<td headers="name">
 										<div>
 												{/* Clicking on user leads to user profile */}
-											<Link to = "/viewing"> {user.username	} </Link>
-											
-											<Route path = "/viewing" component = {viewProf(user)} />
+											<Link to = {String(user.email)}> {user.username} </Link>
+											<Route path = {String(user.email)} component = {viewProf(user)} />
 										</div>
 							
 								</td>
