@@ -24,8 +24,9 @@ class AdminPage extends Component {
 				Secret Admin Page hello!!!<br/>
 				list of transactions here<br/>
 				action buttons here!! <br/>
-
+				<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 			</div>
+
 		);
 	}
 }
