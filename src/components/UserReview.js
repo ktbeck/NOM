@@ -3,13 +3,30 @@ import StarRatings from 'react-star-ratings';
 
 
 class UserReview extends Component {
+    constructor(props){
+      super(props);
+      this.state = {
+        new: true,
+        rating: false,
+        ascending: true,
+      }
+    }
+   reviewSort = (reviews) => {
+      if (this.state.rating === true){
+        return reviews.sort((a, b) => {return getUserRating(a) - getUserRating(b)});
+      }else return reviews;
+    }
     render() { 
-      const reviewers = getUserReviewers(this.props.review);
+      var reviewers = getUserReviewers(this.props.review);
       const avgRating = avgUserRating(reviewers);
+      reviewers = this.reviewSort(reviewers);
         return (  
           <div>
-          <h4>Avg Rating:  {avgRating}
-              </h4>
+          Sort By:
+          <button onclick = "() => this.setState({new: true, highRating: false})">New</button>
+          <button onclick = "() => this.setState({new: false, highRating: true})">Rating</button>
+
+          <h5>Avg Rating:  {avgRating} </h5>
               {reviewers.map((review) =>
               <div>
                 {getReviewerName(review)} &nbsp;
@@ -25,7 +42,7 @@ class UserReview extends Component {
         );
     }
 }
- 
+
 function avgUserRating(userReview){
   let numOfReviews = 0;
   let sumRating = 0;
