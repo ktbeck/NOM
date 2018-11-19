@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
 //import ViewProfile from './ViewProfile';
-
 // import ViewUserInfoButton from './viewUserInfo';
-
+import './Home.css';
 
 import withAuthorization from './withAuthorization';
 import { db } from '../firebase';
@@ -28,7 +27,7 @@ class HomePage extends Component {
 
   render() {
 		const { users } = this.state;
-	
+
 		if(!this.state.users){
 			return(
 			<div>
@@ -39,7 +38,7 @@ class HomePage extends Component {
 		const usersList = getUsersWithMeals(users);
 		return (
 			<div>
-			<h1>Home</h1>
+			<h1 id="home-title">Home</h1>
 				<div>
 				<h2> Available Passes</h2>
 				<table style={tableStyle}>
@@ -54,7 +53,7 @@ class HomePage extends Component {
 								<td headers="name">
 										<div>
 												{/* Clicking on user leads to user profile */}
-												
+
 											<Link to = {String(user.email)}> {user.username} </Link>
 											<Route path = {String(user.email)} component = {viewProf(user)} />
 										</div>
@@ -126,8 +125,8 @@ function viewProf(user) {
 					 User Desc: {user.userDescription}<br/>
 					 Current Price: {user.mealPrice}<br/>
 					 No. of Meals: {user.numMeals}<br/>
-			</div>            
-	 
+			</div>
+
 		 );
 
  }

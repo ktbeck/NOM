@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Account.css';
 import AuthUserContext from './AuthUserContext';
 import { PasswordForgetForm } from './PasswordForget';
 import PasswordChangeForm from './PasswordChange';
@@ -8,6 +9,7 @@ import firebase from 'firebase/app';
 
 const auth = firebase.auth();
 const db = firebase.database();
+
 
 //Things to go on the account dashboard:
 //  1. their rating (finished but need to abstract to component)
@@ -59,66 +61,68 @@ class AccountPage extends Component {
     const reviewers = getUserReviewers(this.state.reviews);
     return (
       <div>
-        <h1>Account Page</h1>
-        <div>
-          <h2>Welcome </h2>
-          <p> <b> Name: </b>{this.state.username} </p>
-          <p> <b> Email: </b>{this.state.email} </p>
+        <h1 id="account-title">Account</h1>
+        <div id="container">
+          <div>
+            <h2>Welcome {this.state.username}! </h2>
+            <p> <b> Email: </b>{this.state.email} </p>
+            <br></br>
+            <div>
+              <p> <b> About Me: </b> </p>
+              <p>{this.state.userDescription}</p>
+              <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
+            </div>
+          </div>
           <br></br>
           <div>
-            <p> <b> About Me: </b> </p>
-            <p>{this.state.userDescription}</p>
-            <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
-          </div>
-        </div>
-        <br></br>
-        <div>
-          <h3> User Rating </h3>
-              <div>
-                  
-                   <h4>Avg Rating: {avgUserRating(reviewers)}</h4>
-                   {reviewers.map((review) =>
-                    <div>
-                      {getReviewerName(review)}&nbsp;
-                      User Rating : {getUserRating(review)}<br></br>
-                      {getUserReview(review)}<br></br>
-                    </div>
-                   )
+            <h3> User Rating </h3>
+                <div>
 
-                   }
-              </div>
-        </div>
-        <br></br>
-        <div>
-          <form onSubmit={this.onSubmit}>
-          <h3>Update "About Me"</h3>
+                     <h4>Avg Rating: {avgUserRating(reviewers)}</h4>
+                     {reviewers.map((review) =>
+                      <div>
+                        {getReviewerName(review)}&nbsp;
+                        User Rating : {getUserRating(review)}<br></br>
+                        {getUserReview(review)}<br></br>
+                      </div>
+                     )
+
+                     }
+                </div>
+          </div>
+          <br></br>
           <div>
-          <p>About Me</p>
-          <input
-            type="text"
-            placeholder="Update user description here..."
-            value={this.state.userDescription}
-            onChange={event => this.setState({userDescription: event.target.value})}
-          />
-          </div>
-          <div>
-          <p>Contact Info</p>
-          <input
-            type="text"
-            placeholder="contact info..."
-            value={this.state.contactinfo}
-            onChange={event => this.setState({contactinfo: event.target.value})}
-          />
-          </div>
-    
-          <button type="submit">
-            Submit
-          </button>
+            <form onSubmit={this.onSubmit}>
+            <h3>Update "About Me"</h3>
+            <div>
+            <p>About Me</p>
+            <input
+              type="text"
+              placeholder="Update user description here..."
+              value={this.state.userDescription}
+              onChange={event => this.setState({userDescription: event.target.value})}
+            />
+            </div>
+            <div>
+            <p>Contact Info</p>
+            <input
+              type="text"
+              placeholder="contact info..."
+              value={this.state.contactinfo}
+              onChange={event => this.setState({contactinfo: event.target.value})}
+            />
+            </div>
 
-          </form>
+            <button type="submit">
+              Submit
+            </button>
+
+            </form>
+
+          </div>
+          { < ChangeMyPassword/> }
 
         </div>
-        { < ChangeMyPassword/> }
       </div>
     );
   }

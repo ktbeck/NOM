@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-//import {auth, db } from '../firebase'; 
+//import {auth, db } from '../firebase';
 import firebase from 'firebase/app';
 
 const db = firebase.database();
-const auth = firebase.auth(); 
+const auth = firebase.auth();
 /*
         click view buyer/seller info -> view other persons email/name/maybe picture
 
@@ -17,7 +17,7 @@ reff.on('value', gotData, errData);
 var user = firebase.auth().currentUser; //current user
 
 function gotData(data){
-        var users = data.val(); 
+        var users = data.val();
         var keys = Object.keys(users);
         console.log(users);
 
@@ -48,27 +48,27 @@ class ViewUserInfoButton extends Component
 		this.state = {formVisible: false};
     }
 
-    handleButtonClick() 
+    handleButtonClick()
     {
-	if (!this.state.formVisible) 
+	if (!this.state.formVisible)
 	document.addEventListener('click', this.handleClick.bind(this), false);
-	else 
+	else
 	document.addEventListener('click', this.handleClick.bind(this), false);
 	this.setState({formVisible: !this.state.formVisible});
-    }       
-        
-    handleClick(e) 
+    }
+
+    handleClick(e)
     {
-	if (!this.node.contains(e.target)) 
+	if (!this.node.contains(e.target))
 	    this.setState({formVisible: false});
     }
 
-    render() 
+    render()
     {
 	const formVisible = this.state.formVisible;
 	return (
 	<div ref={node => { this.node = node; }}>
-	<button id="ViewUserInfoButton" onClick={this.handleButtonClick}>
+	<button id="Button" onClick={this.handleButtonClick}>
         view seller/buyer info
 	</button>
 	{formVisible ? <ViewUserForm /> : null}
@@ -78,11 +78,11 @@ class ViewUserInfoButton extends Component
 
 }
 class ViewUserForm extends Component {
-    constructor(props) 
+    constructor(props)
     {
 		super(props);
 
-        this.state = 
+        this.state =
         {
 			uid: auth.currentUser.uid,
 			username: '',
@@ -90,7 +90,7 @@ class ViewUserForm extends Component {
 		};
 	}
 
-    componentDidMount() 
+    componentDidMount()
     {
         db.ref('users/' + this.state.uid).on('value', function(snapshot)
         {
@@ -101,7 +101,7 @@ class ViewUserForm extends Component {
 		}.bind(this));
 	}
 
-    onSubmit = (event) => 
+    onSubmit = (event) =>
     {
         db.ref('users/' + this.state.uid).update({
 			username: this.state.username,
@@ -109,7 +109,7 @@ class ViewUserForm extends Component {
 		});
 	}
 
-    render() 
+    render()
     {
 		return (
 			<div id='ViewUserForm'>
@@ -117,15 +117,15 @@ class ViewUserForm extends Component {
 				<form onSubmit={this.onSubmit}>
 					<div className='form-element'>
 						<label>their username: </label>
-						
-                        <label> 
+
+                        <label>
 				    	    {this.state.username}
 						</label>
 
 					</div>
 					<div className='form-element'>
 						<label>their emails: </label>
-                        <label> 
+                        <label>
 				    	    {this.state.email}
 						</label>
 
@@ -135,4 +135,4 @@ class ViewUserForm extends Component {
 		);
 	}
 }
-export default ViewUserInfoButton; 
+export default ViewUserInfoButton;
