@@ -3,41 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="41a6a640-018a-430c-a5a9-269657794e1a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Checkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Checkout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-express-stripe/backend/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-express-stripe/backend/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/routes/payment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-express-stripe/backend/routes/payment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-express-stripe/backend/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/src/serviceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/backend/yarn.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/src/Checkout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/src/serviceWorker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react-express-stripe/frontend/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ListPass.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListPass.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,11 +18,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Home.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="43" column="42" lean-forward="true" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+            <state relative-caret-position="375">
+              <caret line="77" column="26" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
+              <folding>
+                <element signature="e#70#143#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,9 +33,22 @@
       <file leaf-file-name="Checkout.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Checkout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="286">
+              <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,6 +89,14 @@
       <find>!=</find>
       <find>name</find>
       <find>euro</find>
+      <find>price</find>
+      <find>.tofix</find>
+      <find>.toFix</find>
+      <find>mealprice</find>
+      <find>validate</find>
+      <find>alert</find>
+      <find>buypass</find>
+      <find>.k</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -116,13 +110,14 @@
       <list>
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.js" />
-        <option value="$PROJECT_DIR$/src/components/ListPass.js" />
         <option value="$PROJECT_DIR$/src/components/viewUserInfo.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Checkout.js" />
         <option value="$PROJECT_DIR$/src/constants/serverFrontend.js" />
         <option value="$PROJECT_DIR$/src/constants/stripeFrontend.js" />
+        <option value="$PROJECT_DIR$/src/components/ListPass.js" />
         <option value="$PROJECT_DIR$/src/components/Home.js" />
+        <option value="$PROJECT_DIR$/src/components/Checkout.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
       </list>
     </option>
   </component>
@@ -164,14 +159,7 @@
               <item name="cs115testingstripe" type="b2602c69:ProjectViewProjectNode" />
               <item name="cs115testingstripe" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="react-express-stripe" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cs115testingstripe" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cs115testingstripe" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="react-express-stripe" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,10 +210,10 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16210938" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16210938" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3294423" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -278,6 +266,9 @@
         <state relative-caret-position="360">
           <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
           <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+          <folding>
+            <element signature="e#1#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -310,6 +301,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="109" column="33" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="33" />
+          <folding>
+            <element signature="e#70#143#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -317,6 +311,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+          <folding>
+            <element signature="e#70#143#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -353,6 +350,9 @@
         <state relative-caret-position="360">
           <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
           <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+          <folding>
+            <element signature="e#1#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -368,6 +368,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="117" column="1" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
+          <folding>
+            <element signature="e#70#143#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -393,6 +396,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+          <folding>
+            <element signature="e#70#143#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -429,6 +435,9 @@
         <state relative-caret-position="360">
           <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
           <caret line="49" column="21" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+          <folding>
+            <element signature="e#1#40#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -437,6 +446,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="117" column="1" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
+          <folding>
+            <element signature="e#70#143#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -499,25 +511,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ListPass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="50" column="20" selection-start-line="50" selection-start-column="20" selection-end-line="50" selection-end-column="20" />
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Checkout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -528,15 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Checkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/constants/stripeFrontend.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -544,10 +535,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ListPass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="122" column="43" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+          <folding>
+            <element signature="e#1#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="43" column="42" lean-forward="true" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+        <state relative-caret-position="375">
+          <caret line="77" column="26" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="26" />
+          <folding>
+            <element signature="e#70#143#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Checkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

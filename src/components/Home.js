@@ -49,7 +49,7 @@ class HomePage extends Component {
 							<th id="numMeals">Number of Meals</th>
 						</tr>
 						{usersList.map((user) =>
-							<tr align="center">
+							<tr align="center" key={user.email}>
 								<td headers="name">
 										<div>
 												{/* Clicking on user leads to user profile */}
@@ -61,14 +61,11 @@ class HomePage extends Component {
 								<td>${user.mealPrice}</td>
 								<td>{user.numMeals}</td>
 								<td>
-									<button onClick={() => buyPass(user.username)}>
-										Buy Pass
-									</button>
-
-								{/* <button onClick={() => viewProf(user)}>
-										View Profile
-									</button> */}
-
+									<Checkout
+										name={'NOM Meal'}
+										description={"Buying meal from: " + user.username}
+										amount={user.mealPrice}
+									/>
 								</td>
 							</tr>)}
 					</tbody>
@@ -79,11 +76,6 @@ class HomePage extends Component {
 						</h3>
 							${avgSellingPrice(users)}
 					</div>
-					<Checkout
-						name={'I hate react tbh'}
-						description={'stripe+react test'}
-						amount={1.50}
-					/>
 				</div>
 			</div>
 		);
@@ -106,11 +98,9 @@ function avgSellingPrice(users){
 	for(let i in users) {
 		if(parseFloat(users[i].mealPrice) > 0) {
             		sum = sum + parseFloat(users[i].mealPrice);
-            		// console.log(parseInt(users[i].mealPrice));
             		size++;
         	}
 	}
-	// console.log(sum);
 	return (sum/size).toFixed(2);
 }
 

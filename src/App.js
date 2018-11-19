@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './components/logo.svg';
 import './App.css';
-import Checkout from './components/Checkout';
 
 class App extends Component {
   render() {
