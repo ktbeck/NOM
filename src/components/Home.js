@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+// eslint-disable-next-line
 import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
+<<<<<<< HEAD
 //import ViewProfile from './ViewProfile';
 // import ViewUserInfoButton from './viewUserInfo';
 import './Home.css';
 
+=======
+>>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
 import withAuthorization from './withAuthorization';
 import { db } from '../firebase';
+import Checkout from '../Checkout.js'
 
 class HomePage extends Component {
   constructor(props) {
@@ -15,13 +20,15 @@ class HomePage extends Component {
 		users: null,
 
 		username: '', // i added
-			email: '', //me
+		email: '', //me
+
 	};
   }
 
   componentDidMount() {
 	db.onceGetUsers().then(snapshot =>
-	  this.setState({ users: snapshot.val() })
+	  this.setState({ users: snapshot.val() }),
+
 	);
   }
 
@@ -49,26 +56,27 @@ class HomePage extends Component {
 							<th id="numMeals">Number of Meals</th>
 						</tr>
 						{usersList.map((user) =>
-							<tr align="center">
+							<tr align="center" key={user.email}>
 								<td headers="name">
 										<div>
 												{/* Clicking on user leads to user profile */}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
 											<Link to = {String(user.email)}> {user.username} </Link>
 											<Route path = {String(user.email)} component = {viewProf(user)} />
 										</div>
+							
 								</td>
 								<td>${user.mealPrice}</td>
 								<td>{user.numMeals}</td>
 								<td>
-									<button onClick={() => buyPass(user.username)}>
-										Buy Pass
-									</button>
-
-								{/* <button onClick={() => viewProf(user)}>
-										View Profile
-									</button> */}
-
+									<Checkout
+										name={'NOM Meal'}
+										description={"Buying meal from: " + user.username}
+										amount={user.mealPrice}
+									/>
 								</td>
 							</tr>)}
 					</tbody>
@@ -88,7 +96,7 @@ class HomePage extends Component {
 function getUsersWithMeals(users){
 	let usersWithMeals = [];
 	for(let i in users){
-		if (parseInt(users[i].numMeals) > 0 && (parseInt(users[i].mealPrice) > 0)){
+		if (parseFloat(users[i].numMeals) > 0 && (parseFloat(users[i].mealPrice) > 0)){
 			usersWithMeals.push(users[i]);
 		}
 	}
@@ -99,13 +107,11 @@ function avgSellingPrice(users){
 	let sum = 0;
 	let size = 0;
 	for(let i in users) {
-		if((users[i].mealPrice) > 0) {
-            sum = sum + parseFloat(users[i].mealPrice);
-            // console.log(parseInt(users[i].mealPrice));
-            size++;
-        }
+		if(parseFloat(users[i].mealPrice) > 0) {
+            		sum = sum + parseFloat(users[i].mealPrice);
+            		size++;
+        	}
 	}
-	// console.log(sum);
 	return (sum/size).toFixed(2);
 }
 
@@ -113,6 +119,7 @@ const tableStyle = {
   border: '3px solid black',
   width: '100%',
 };
+
 //temp function
 function buyPass(user) {
 		console.log("Buying from: " + user);
@@ -120,6 +127,7 @@ function buyPass(user) {
 
 function viewProf(user) {
 	return(
+<<<<<<< HEAD
 			<div>
 					 email: {user.email}<br/>
 					 User Desc: {user.userDescription}<br/>
@@ -127,8 +135,17 @@ function viewProf(user) {
 					 No. of Meals: {user.numMeals}<br/>
 			</div>
 
+=======
+	<div>
+			<h3>
+					 email: {user.email}
+					 User Desc: {user.userDescription}
+					 Current Price: {user.mealPrice}
+					 No. of Meals: {user.numMeals}
+			</h3>            
+	 </div>
+>>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
 		 );
-
  }
 
 const authCondition = (authUser) => !!authUser;
