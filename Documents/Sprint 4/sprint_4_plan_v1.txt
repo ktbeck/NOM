@@ -1,0 +1,92 @@
+﻿SPRINT 4 PLAN 
+
+
+Product Name: NOM Dining Hall Meal Exchange
+Team Name: Nom Slugs
+Sprint Completion Date: December 2, 2018
+Revision Number: 1
+Revision Date: November 18, 2018
+
+
+GOAL
+        The goal is to finish important work and User Stories from previous Sprints. In addition, we will make our website look more appealing, nice, and bug free.
+
+
+TASK LISTING
+
+
+USER STORY 1: Sellers and buyers are able to use and see the unfinished Users Stories
+* []As a buyer, I want to be able to see the the seller’s profile(2.5 hours)
+* []As a moderator, I want to have the ability to cancel or modify payouts so I handle disputes or cancellations. (4 hours)
+* []As a buyer, I want to be able to write reviews and rate the sellers (2.5 hours)
+* []As a seller, I want to be notified when a buyer buys my meals(6 hours
+* []As a buyer, I want to see the seller’s picture( 4 hours)
+* []As a user, I want to see transaction/payment history[6 hours]
+Total for User Story 1: 25 hours
+
+
+USER STORY 2: As a user, I want to be able to access the website from the internet
+* []As a user, I want to be able to access the website from the internet(6 hours)
+* []As a developer, I want to find a domain and server for the website that’s HTTPS/SSL certified(0.5 hours)
+* []As a user, I want the name to be something easy to remember and know(0.5 hours)
+Total for User Story 2: 7 hours
+
+
+USER STORY 3: As a seller/buyer, I like to see the website look nice and appealing
+* []As a user, I would like to see the website styling to be appealing.(3 hours)
+* []As a user, I want the fonts, themes, and colors to be matching (3 hours)
+* []As a user, I want the website to be easy to read and understand the first time (3 hours)
+* [] As a developer, I want the website to provide meaningful error messages (3 hours)
+Total for User Story 3:  12 hours
+
+
+USER STORY 4: As a seller/buyer, I like the website to be bug free.
+* []As a user, I want there to be no error with payment(3 hours)
+* []As a buyer, I want the meal plans to be up to date (3 hours)
+* []As a user, I want every component to be tested and error free to prevent security issues and exploitation (6 hours)
+* []As a developer, I want meaningful comments and error messages in the code (4 hour)
+Total for User Story 4: 16 hours
+
+
+TOTAL HOURS: 60 hours
+
+
+TEAM ROLES
+Megan Wu: Product Owner, Developer
+Nicolle Ayon: Developer
+Eric Rong: Scrum Master, Developer
+Steve Chan: Scrum Master, Developer
+Kyler Beck: Developer
+
+
+INITIAL TASK ASSIGNMENT
+Megan Wu:
+
+
+Nicolle Ayon: 
+        US3:Tasks 1,2,3
+Eric Rong:
+
+
+Steve Chan:
+
+
+Kyler Beck:
+
+
+
+
+INITIAL BURNUP CHART
+
+
+
+
+INITIAL SCRUM BOARD
+
+
+
+
+SCRUM TIMES
+Sunday: 2:00-4:00 P.M.
+Tuesday: 6:30-9:00 P.M.
+Wednesday: 2-2:30 P.M. (TA)
