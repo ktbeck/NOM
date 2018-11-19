@@ -108,6 +108,7 @@ const tableStyle = {
   border: '3px solid black',
   width: '100%',
 };
+
 //temp function
 function buyPass(user) {
 		console.log("Buying from: " + user);

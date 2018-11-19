@@ -1,21 +1,17 @@
 import React, {Component} from 'react';
-
+import UserReview from './UserReview'
 class ViewProfile extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-           user: null
-        };
-    }
    
     render() { 
         const user = this.props.value
         return ( 
             <div>
+                {/* Profile Picture*/}
                  email: {user.email}<br/>
                  User Desc: {user.userDescription}<br/>
                  Current Price: {user.mealPrice}<br/>
                  No. of Meals: {user.numMeals}<br/>
+                 <UserReview review = {user.reviews}/>
             </div>            
          );
     }
