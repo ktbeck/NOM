@@ -45,12 +45,16 @@ Sellers are able to list their dining hall guest passes at a specific price for 
 ## ----- TEAM ROLES -----
 **Megan Wu:**       
 	Product Owner, Developer
+
 **Nicolle Ayon:**   
 	Developer
+
 **Eric Rong:**       
 	Developer
+
 **Steve Chan:**     
 	Developer
+
 **Kyler Beck:**     
 	Scrum Master, Developer
 
