@@ -45,5 +45,9 @@ Total Hours Completed: 54/70
 
 Total Days: 14 days, 6 scrum meetings
 
+![sprint_2_task_chart](sprint_2_task_chart.jpg)
+![sprint_2_burnup_chart](sprint_2_burnup_chart.jpg)
+![sprint_2_burndown_chart](sprint_2_burndown_chart.jpg)
+
 
 
