@@ -43,18 +43,28 @@ Sellers are able to list their dining hall guest passes at a specific price for 
 
 
 ## ----- TEAM ROLES -----
-**Megan Wu:**       Product Owner, Developer
-**Nicolle Ayon:**   Developer
-**Eric Rong:**       Developer
-**Steve Chan:**     Developer
-**Kyler Beck:**     Scrum Master, Developer
+**Megan Wu:**       
+	Product Owner, Developer
+**Nicolle Ayon:**   
+	Developer
+**Eric Rong:**       
+	Developer
+**Steve Chan:**     
+	Developer
+**Kyler Beck:**     
+	Scrum Master, Developer
 
 ## ---- Initial Task Assignment ----
-**Megan Wu:**        User Story 4, Add passes pop up
-**Nicolle Ayon:**    User Story 2, Account Dashboard
-**Eric Rong:**        User Story 3, Show information about available passes    
-**Steve Chan:**      User Story 3, Show information about available passes
-**Kyler Beck:**      User Story 1, List passes on the site
+**Megan Wu:**        
+	User Story 4, Add passes pop up
+**Nicolle Ayon:**    
+	User Story 2, Account Dashboard
+**Eric Rong:**        
+	User Story 3, Show information about available passes    
+**Steve Chan:**      
+	User Story 3, Show information about available passes
+**Kyler Beck:**      
+	User Story 1, List passes on the site
 
 
 ## ---- INITIAL BURN UP CHART -----
