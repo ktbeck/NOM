@@ -44,8 +44,10 @@ Complete: User Story 5: As a seller/buyer, I want a clean, easy to use layout fo
 **Total Hours Completed:** 43/72  
 **Total Days:** 14 days, 6 scrums     
 
-
-![sprint 3 scrum board](sprint_3_scrum_board_final.jpg)  
-![sprint 3 final burn up chart](sprint_3_burn_up_final.jpg) 
-![sprint 3 burn down chart](sprint_3_burn_down.jpg) 
+Scrum Board
+![sprint 3 scrum board](sprint_3_scrum_board_final.png)  
+Burn up chart
+![sprint 3 final burn up chart](sprint_3_burn_up_1.png) 
+Burn Down Chart
+![sprint 3 burn down chart](sprint_3_burn_down.png) 
 
