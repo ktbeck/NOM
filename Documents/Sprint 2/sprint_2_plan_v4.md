@@ -1,4 +1,4 @@
-﻿Sprint 2 Plan
+## ---- Sprint 2 Plan ----
 Product Name: NOM Dining Hall Meal Exchange
 Team Name: Nom Slugs
 Sprint Completion Date: November 4, 2018        
@@ -6,9 +6,10 @@ Revision Number: 4
 Revision Date: October 30, 2018
 
 
-Goal 
+## ---- Goal ---- 
 Sellers are able to list their dining hall guest passes at a specific price for buyers to view.
-Task Listing
+
+## ---- Task Listing ----
 User Story 1: As a seller, I want to list my passes on the site so other students can buy them from me.
 	* Allow users to list passes to the site (5 hours)
 	* Display all passes currently for sale on the site (4 hours) 
@@ -39,13 +40,15 @@ Total for User Story 5: 13 hours
 
 
 Total for All User Stories: 70
-Team Roles
+
+
+## ----- TEAM ROLES -----
 Megan Wu:       Product Owner, Developer
 Nicolle Ayon:   Developer
 Eric Rong:       Developer
 Steve Chan:     Developer
 Kyler Beck:     Scrum Master, Developer
-Initial Task Assignment
+## ---- Initial Task Assignment ----
 Megan Wu:        User Story 4, Add passes pop up
 Nicolle Ayon:    User Story 2, Account Dashboard
 Eric Rong:        User Story 3, Show information about available passes    
@@ -53,11 +56,11 @@ Steve Chan:      User Story 3, Show information about available passes
 Kyler Beck:      User Story 1, List passes on the site
 
 
-Initial Burnup Chart
-Initial Scrum Board
+## --- INITIAL BURN UP CHART -----
+![sprint_2_burn_up_2](sprint_2_burn_up_2.JPG)
 
-
-
+## --- INITIAL SCRUM BOARD -----
+![sprint_2_scrum_board_2](sprint_2_scrum_board_2.JPG)
 
 SCRUM Times
 Sunday: 2:00-4:00
