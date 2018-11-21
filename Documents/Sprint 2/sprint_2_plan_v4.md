@@ -27,12 +27,12 @@ Sellers are able to list their dining hall guest passes at a specific price for 
 	- Allow buyers to view seller’s profile and see their picture/ location (6 hours)
 	- Update account routing to ensure users see the information about the sellers account (5 hours)
 **Total for User Story 3: 11 hours**
-User Story 4: As a user I want a navigation bar at the top of the page to easily navigate to other places on the site.
+### User Story 4: As a user I want a navigation bar at the top of the page to easily navigate to other places on the site.
 	- Add navigation bar at the top of the page (4 hours)
 	- Make each button navigate user to a different part of the page (2 hours)
 	- Add a pop up form to add passes including number of passes and price (6 hours)
 **Total for User Story 4: 12 hours**
-User Story 5: As a seller/buyer, I want a clean, easy to use layout for buying or selling passes.
+### User Story 5: As a seller/buyer, I want a clean, easy to use layout for buying or selling passes.
 	- Make the website look better (5 hours)
 	- Make sure website responds quickly to actions by the user (6 hours) 
 	- Ensure the database is organized correctly (2 hours)
@@ -57,13 +57,13 @@ User Story 5: As a seller/buyer, I want a clean, easy to use layout for buying o
 **Kyler Beck:**      User Story 1, List passes on the site
 
 
-## --- INITIAL BURN UP CHART -----
+## ---- INITIAL BURN UP CHART -----
 ![sprint_2_burn_up_2](sprint_2_burn_up_2.JPG)
 
-## --- INITIAL SCRUM BOARD -----
+## ---- INITIAL SCRUM BOARD -----
 ![sprint_2_scrum_board_2](sprint_2_scrum_board_2.JPG)
 
-SCRUM Times
+## ---- SCRUM Times ----
 Sunday: 2:00-4:00
 Tuesday: 6:30-9:00
 Wednesday: 2-2:30 (TA)
