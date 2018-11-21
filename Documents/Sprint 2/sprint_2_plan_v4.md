@@ -61,12 +61,16 @@ Sellers are able to list their dining hall guest passes at a specific price for 
 ## ---- Initial Task Assignment ----
 **Megan Wu:**        
 	User Story 4, Add passes pop up
+
 **Nicolle Ayon:**    
 	User Story 2, Account Dashboard
+
 **Eric Rong:**        
 	User Story 3, Show information about available passes    
+
 **Steve Chan:**      
 	User Story 3, Show information about available passes
+
 **Kyler Beck:**      
 	User Story 1, List passes on the site
 
