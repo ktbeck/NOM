@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 // eslint-disable-next-line
 import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
-<<<<<<< HEAD
-//import ViewProfile from './ViewProfile';
-// import ViewUserInfoButton from './viewUserInfo';
 import './Home.css';
-
-=======
->>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
 import withAuthorization from './withAuthorization';
 import { db } from '../firebase';
 import Checkout from '../Checkout.js'
@@ -60,10 +54,6 @@ class HomePage extends Component {
 								<td headers="name">
 										<div>
 												{/* Clicking on user leads to user profile */}
-<<<<<<< HEAD
-
-=======
->>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
 											<Link to = {String(user.email)}> {user.username} </Link>
 											<Route path = {String(user.email)} component = {viewProf(user)} />
 										</div>
@@ -127,15 +117,6 @@ function buyPass(user) {
 
 function viewProf(user) {
 	return(
-<<<<<<< HEAD
-			<div>
-					 email: {user.email}<br/>
-					 User Desc: {user.userDescription}<br/>
-					 Current Price: {user.mealPrice}<br/>
-					 No. of Meals: {user.numMeals}<br/>
-			</div>
-
-=======
 	<div>
 			<h3>
 					 email: {user.email}
@@ -143,9 +124,8 @@ function viewProf(user) {
 					 Current Price: {user.mealPrice}
 					 No. of Meals: {user.numMeals}
 			</h3>            
-	 </div>
->>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
-		 );
+	</div>
+	);
  }
 
 const authCondition = (authUser) => !!authUser;

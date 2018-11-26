@@ -6,14 +6,13 @@ import PasswordChangeForm from './PasswordChange';
 import withAuthorization from './withAuthorization';
 //import { auth, db } from '../firebase';
 import firebase from 'firebase/app';
-import UserReview from './UserReview';
 
 const auth = firebase.auth();
 const db = firebase.database();
 
 
 //Things to go on the account dashboard:
-//  1. their rating (working on styling and sorting)
+//  1. their rating (finished but need to abstract to component)
 //  2. be able to list passes
 //  3. edit contact info
 //      a. phone
@@ -35,8 +34,7 @@ class AccountPage extends Component {
       userDescription: '',
       contactinfo: '',
       //photoUrl: user.photoURL;
-      reviews: '',
-      reviewed: ''
+      reviews: ''
     };
   }
 
@@ -47,8 +45,7 @@ class AccountPage extends Component {
         email: snapshot.val().email,
         userDescription: snapshot.val().userDescription,
         contactinfo: snapshot.val().contactinfo,
-        reviews: snapshot.val().reviews,
-        reviewed: snapshot.val().reviewed
+        reviews: snapshot.val().reviews
       });
     }.bind(this));
   }
@@ -57,11 +54,11 @@ class AccountPage extends Component {
     db.ref('users/' + this.state.uid).update({
       userDescription: this.state.userDescription,
       contactinfo: this.state.contactinfo,
-      reviewed: this.state.reviewed
     });
   }
 
   render() {
+    const reviewers = getUserReviewers(this.state.reviews);
     return (
       <div>
         <h1 id="account-title">Account</h1>
@@ -76,37 +73,7 @@ class AccountPage extends Component {
               <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
             </div>
           </div>
-<<<<<<< HEAD
           <br></br>
-=======
-        </div>
-        <br></br>
-        <div>
-          <h3> User Rating </h3>
-              <UserReview review={this.state.reviews} />
-        </div>
-
-        <div>
-          <form onSubmit={this.onSubmit}>
-          <h3>send reviews</h3>
-          <div>
-          <p>write review</p>
-          <input
-            type="text"
-            placeholder="review goes here"
-        
-            value={this.state.reviewed}
-            onChange={event => this.setState({reviewed: event.target.value})}
-           />
-          </div>
-          </form>
-        </div>
-
-        <br></br>
-        <div>
-          <form onSubmit={this.onSubmit}>
-          <h3>Update "About Me"</h3>
->>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
           <div>
             <h3> User Rating </h3>
                 <div>
@@ -125,7 +92,6 @@ class AccountPage extends Component {
           </div>
           <br></br>
           <div>
-<<<<<<< HEAD
             <form onSubmit={this.onSubmit}>
             <h3>Update "About Me"</h3>
             <div>
@@ -156,26 +122,39 @@ class AccountPage extends Component {
           </div>
           { < ChangeMyPassword/> }
 
-=======
-          <p>Contact Info</p>
-          <input
-            type="text"
-            placeholder="contact info..."
-            value={this.state.contactinfo}
-            onChange={event => this.setState({contactinfo: event.target.value})}
-          />
-          </div>
-          <button type="submit">
-            Submit
-          </button>
-          </form>
->>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
         </div>
       </div>
     );
   }
 
 } //end of class
+
+function avgUserRating(userReview){
+  var numOfReviews = 0;
+  var sumRating = 0;
+  for(let i in userReview){
+    sumRating += getUserRating(userReview[i]);
+    numOfReviews++;
+  }
+  return ( sumRating / numOfReviews).toFixed(1);
+}
+
+function getUserReviewers(reviews){
+  let userReviewers = [];
+  for(let i in reviews){
+    userReviewers.push(reviews[i]);
+  }
+  return userReviewers;
+}
+function getReviewerName(reviewer){
+  return reviewer.reviewer;
+}
+function getUserRating(reviewer){
+  return parseFloat(reviewer.rating);
+}
+function getUserReview(reviewer){
+  return reviewer.review;
+}
 
 const ChangeMyPassword = () =>
 <AuthUserContext.Consumer>
