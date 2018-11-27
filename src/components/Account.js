@@ -34,7 +34,8 @@ class AccountPage extends Component {
       userDescription: '',
       contactinfo: '',
       //photoUrl: user.photoURL;
-      reviews: ''
+      reviews: '',
+      paypal: ''
     };
   }
 
@@ -45,7 +46,8 @@ class AccountPage extends Component {
         email: snapshot.val().email,
         userDescription: snapshot.val().userDescription,
         contactinfo: snapshot.val().contactinfo,
-        reviews: snapshot.val().reviews
+        reviews: snapshot.val().reviews,
+        paypal: snapshot.val().paypal
       });
     }.bind(this));
   }
@@ -54,6 +56,7 @@ class AccountPage extends Component {
     db.ref('users/' + this.state.uid).update({
       userDescription: this.state.userDescription,
       contactinfo: this.state.contactinfo,
+      paypal: this.state.paypal
     });
   }
 
@@ -71,6 +74,7 @@ class AccountPage extends Component {
               <p> <b> About Me: </b> </p>
               <p>{this.state.userDescription}</p>
               <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
+              <p><b>PayPal Email: </b>{this.state.paypal}</p>
             </div>
           </div>
           <br></br>
@@ -110,6 +114,15 @@ class AccountPage extends Component {
               placeholder="contact info..."
               value={this.state.contactinfo}
               onChange={event => this.setState({contactinfo: event.target.value})}
+            />
+            </div>
+            <div>
+            <p>Paypal</p>
+            <input
+              type="text"
+              placeholder="Paypal Email"
+              value={this.state.paypal}
+              onChange={event => this.setState({paypal: event.target.value})}
             />
             </div>
 
@@ -167,15 +180,6 @@ const ChangeMyPassword = () =>
 }
 </AuthUserContext.Consumer>
 
-// const DisplayUserInfo = () =>
-//   <AuthUserContext.Consumer>
-//     {authUser =>
-//       <div>
-//         <h2>Welcome </h2>
-//         <p> Email: {authUser.email}</p>
-//       </div>
-//     }
-//     </AuthUserContext.Consumer>
 
 const authCondition = (authUser) => !!authUser;
 export default withAuthorization(authCondition)(AccountPage);
