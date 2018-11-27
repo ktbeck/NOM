@@ -35,7 +35,8 @@ class AccountPage extends Component {
       contactinfo: '',
       //photoUrl: user.photoURL;
       reviews: '',
-      paypal: ''
+      paypal: '',
+      location: ''
     };
   }
 
@@ -47,7 +48,8 @@ class AccountPage extends Component {
         userDescription: snapshot.val().userDescription,
         contactinfo: snapshot.val().contactinfo,
         reviews: snapshot.val().reviews,
-        paypal: snapshot.val().paypal
+        paypal: snapshot.val().paypal,
+        location: snapshot.val().preferredLocation
       });
     }.bind(this));
   }
@@ -61,6 +63,7 @@ class AccountPage extends Component {
   }
 
   render() {
+    const location = this.state.location;
     const reviewers = getUserReviewers(this.state.reviews);
     return (
       <div>
@@ -75,6 +78,7 @@ class AccountPage extends Component {
               <p>{this.state.userDescription}</p>
               <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
               <p><b>PayPal Email: </b>{this.state.paypal}</p>
+              <p><b>Preferred Location: </b>{returnLocation(location)}</p>
             </div>
           </div>
           <br></br>
@@ -152,6 +156,7 @@ function avgUserRating(userReview){
   return ( sumRating / numOfReviews).toFixed(1);
 }
 
+
 function getUserReviewers(reviews){
   let userReviewers = [];
   for(let i in reviews){
@@ -168,6 +173,31 @@ function getUserRating(reviewer){
 function getUserReview(reviewer){
   return reviewer.review;
 }
+function returnLocation(location){
+    let userLocation = '';
+    console.log(location);
+    switch(location){
+        case "location1":
+            userLocation = "Porter & Kresge";
+            break;
+        case "location2":
+            userLocation = "Rachel Carson & Oakes";
+            break;
+        case "location3":
+             userLocation = "College 9 & 10";
+             break;
+        case "location4":
+            userLocation = "Cowell & Stevenson";
+            break;
+        case "location5 ":
+            userLocation = "Crown & Merrill";
+            break;
+    }
+    return userLocation;
+}
+
+// const displayLocation = () =>
+//     returnLocation({this.state.location});
 
 const ChangeMyPassword = () =>
 <AuthUserContext.Consumer>

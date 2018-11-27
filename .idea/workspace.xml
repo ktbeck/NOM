@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41a6a640-018a-430c-a5a9-269657794e1a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Account.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +29,8 @@
       <file leaf-file-name="Account.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Account.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="76" column="61" selection-start-line="76" selection-start-column="61" selection-end-line="76" selection-end-column="61" />
+            <state relative-caret-position="213">
+              <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
             </state>
           </provider>
         </entry>
@@ -38,11 +39,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>avgSelling</find>
-      <find>render()</find>
-      <find>parsein</find>
-      <find>function</find>
-      <find>key</find>
       <find>users</find>
       <find>arra</find>
       <find>arrayvar</find>
@@ -68,6 +64,11 @@
       <find>buypass</find>
       <find>.k</find>
       <find>userdescription</find>
+      <find>&lt;p&gt; Change my password &lt;/p&gt; &lt;PasswordChangeForm /&gt;pas</find>
+      <find>contact info</find>
+      <find>paypal</find>
+      <find>location</find>
+      <find>location1</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -182,7 +183,7 @@
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.32356772" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16276042" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -515,8 +516,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Account.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="76" column="61" selection-start-line="76" selection-start-column="61" selection-end-line="76" selection-end-column="61" />
+        <state relative-caret-position="213">
+          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
         </state>
       </provider>
     </entry>
