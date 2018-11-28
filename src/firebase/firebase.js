@@ -8,7 +8,7 @@ const config = {
     databaseURL: "https://nom-cc25c.firebaseio.com",
     projectId: "nom-cc25c",
     storageBucket: "nom-cc25c.appspot.com",
-    messagingSenderId: "922157362655"
+    messagingSenderId: "922157362655",
 };
 
 if(!firebase.apps.length) {
