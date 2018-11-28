@@ -9,3 +9,13 @@
 #container{
   margin-left: 20px;
 }
+
+#welcome-user{
+  color: grey;
+  font-size: 40px;
+}
+
+.section{
+  color: grey;
+  font-size: 25px;
+}

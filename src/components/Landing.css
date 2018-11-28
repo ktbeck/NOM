@@ -11,7 +11,7 @@ body{
   font-family: "Futura", sans-serif;
   color: white;
   text-align: center;
-  height: 70vh;
+  min-height: 70vh;
 
 }
 .container{
@@ -23,22 +23,34 @@ body{
   margin-right: 15%;
   padding: 20px;
 }
+#team-cont{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.box{
+  margin: 10px;
+}
 #mission-cont{
   /* border: solid 5px #ff8d6d; */
   background-color: #7f3824;
   color: white;
-  height: 70vh;
+  min-height: 70vh;
+}
+#mission-statement-text{
+  font-size: 20px;
+  letter-spacing: 1.5px;
 }
 #meetus-cont{
   /* border: solid 5px #e56541; */
   background-color: #b24f33;
   color: white;
-  height: 70vh;
+  min-height: 70vh;
 }
 
 #contactus-cont{
   /* border: solid 5px #e56541; */
   background-color: #c1725b;
   color: white;
-  height: 70vh;
+  min-height: 70vh;
 }
