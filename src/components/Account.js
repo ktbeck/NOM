@@ -70,8 +70,7 @@ class AccountPage extends Component {
         <div id="container">
           <div>
             <h2>Welcome {this.state.username}! </h2>
-            <p> <b> Email: </b>{this.state.email} </p>
-            <br></br>
+
             <div>
               <p> <b> About Me: </b> </p>
               <p>{this.state.userDescription}</p>
@@ -85,16 +84,15 @@ class AccountPage extends Component {
             <h3> User Rating </h3>
                 <div>
 
-                     <h4>Avg Rating: {avgUserRating(reviewers)}</h4>
+                     <h4>Average Rating: {avgUserRating(reviewers)}</h4>
                      {reviewers.map((review) =>
                       <div>
-                        {getReviewerName(review)}&nbsp;
-                        User Rating : {getUserRating(review)}<br></br>
+                          <b>{getReviewerName(review)}</b> rates: <div> </div>
+                          {getUserRating(review)}/5<br></br>
+                          <b>Review: </b>
                         {getUserReview(review)}<br></br>
                       </div>
-                     )
-
-                     }
+                     )}
                 </div>
           </div>
           <br></br>
@@ -151,6 +149,9 @@ function avgUserRating(userReview){
   for(let i in userReview){
     sumRating += getUserRating(userReview[i]);
     numOfReviews++;
+  }
+  if(numOfReviews == 0){
+      return "No reviews yet."
   }
   return ( sumRating / numOfReviews).toFixed(1);
 }
