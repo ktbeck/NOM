@@ -16,13 +16,8 @@ class LandingPage extends Component {
 const WelcomeMessage = () =>
   <div id="welcome-message">
     <h1>Welcome to NOM</h1>
-<<<<<<< HEAD
-	  <h2>Fulfilling all of your eating needs</h2>
-  </div>
-=======
 	  <h2>Filling all of your eating needs</h2>
   </div>;
->>>>>>> 2b1536c2865d1f75403ba5adec8df0e1fcfa5300
 
 const MissionStatement = () =>
   <div className="container" id="mission-cont">

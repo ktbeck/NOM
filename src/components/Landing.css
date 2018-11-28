@@ -35,34 +35,18 @@ body{
   /* border: solid 5px #ff8d6d; */
   background-color: #7f3824;
   color: white;
-<<<<<<< HEAD
-  min-height: 70vh;
-}
-#mission-statement-text{
-  font-size: 20px;
-  letter-spacing: 1.5px;
-=======
-  height: 50vh;
->>>>>>> 2b1536c2865d1f75403ba5adec8df0e1fcfa5300
+  min-height: 50vh;
 }
 #meetus-cont{
   /* border: solid 5px #e56541; */
   background-color: #b24f33;
   color: white;
-<<<<<<< HEAD
-  min-height: 70vh;
-=======
-  height: 50vh;
->>>>>>> 2b1536c2865d1f75403ba5adec8df0e1fcfa5300
+  min-height: 50vh;
 }
 
 #contactus-cont{
   /* border: solid 5px #e56541; */
   background-color: #c1725b;
   color: white;
-<<<<<<< HEAD
-  min-height: 70vh;
-=======
-  height: 50vh;
->>>>>>> 2b1536c2865d1f75403ba5adec8df0e1fcfa5300
+  min-height: 50vh;
 }
