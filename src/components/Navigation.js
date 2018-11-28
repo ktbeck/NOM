@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import SignOutButton from './SignOut';
 import ListPassButton from './ListPass';
-import ViewUserInfoButton from './viewUserInfo';
 
 import AuthUserContext from './AuthUserContext';
 import * as routes from '../constants/routes';
@@ -25,7 +24,6 @@ const NavigationAuth = () =>
         <li><Link to={routes.HOME} id="linknav">Home</Link></li>
         <li><Link to={routes.ACCOUNT} id="linknav">Account</Link></li>
         <li><ListPassButton /></li>
-        <li><ViewUserInfoButton /></li>
         <li><SignOutButton /></li>
     </ul>
    </div>

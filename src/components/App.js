@@ -34,7 +34,7 @@ const App = () =>
       <ViewProfile/>      
 
     </div>
-  </Router>
+  </Router>;
 
 export default withAuthentication(App);
 // export default App;
