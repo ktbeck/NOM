@@ -3,7 +3,9 @@
 	background-color: white;
 	position: absolute;
 	padding: 20px;
+	padding-right: 32px;
 	width: 200px;
+	border-radius: 15px;
 }
 
 #ListPassForm .form-title {

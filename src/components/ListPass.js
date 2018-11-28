@@ -140,7 +140,7 @@ class ListPassForm extends Component {
 				</div>
 				<form onSubmit={this.onSubmit}>
 					<div className='form-element'>
-						<label>Meals Listed </label>
+						<label><b>Meals Listed</b> </label>
 						<input
 							type='text'
 							value={this.state.numMeals}
@@ -149,7 +149,7 @@ class ListPassForm extends Component {
 						<div className="error">{errors.numMeals}</div>
 					</div>
 					<div className='form-element'>
-						<label>Meal Price </label>
+						<label><b>Meal Price</b> </label>
 						<input
 							type='text'
 							value={this.state.mealPrice}
@@ -158,7 +158,7 @@ class ListPassForm extends Component {
 						<div className="error">{errors.mealPrice}</div>
 					</div>
 					<div className='form-element'>
-						<label>Preferred Dining Hall</label><br/>
+						<label><b>Preferred Dining Hall</b></label><br/>
 
 						<select
 							value={this.state.preferredLocation}

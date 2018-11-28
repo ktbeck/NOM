@@ -5,14 +5,17 @@ import './Home.css';
 import withAuthorization from './withAuthorization';
 import { db } from '../firebase';
 import Checkout from '../Checkout.js'
+import firebase2 from 'firebase/app';
+
+const auth2 = firebase2.auth();
+const db2 = firebase2.database();
 
 class HomePage extends Component {
   constructor(props) {
 	super(props);
-
 	this.state = {
 		users: null,
-
+		uid: auth2.currentUser.uid,
 		username: '', // i added
 		email: '', //me
 
@@ -28,7 +31,7 @@ class HomePage extends Component {
 
   render() {
 		const { users } = this.state;
-
+		const currentUser = this.state.uid;
 		if(!this.state.users){
 			return(
 			<div>
@@ -36,7 +39,7 @@ class HomePage extends Component {
 			No users with meals for sale ):
 			</div>);
 		}
-		const usersList = getUsersWithMeals(users);
+		const usersList = getUsersWithMeals(users, currentUser);
 		return (
 			<div>
 			<h1 id="home-title">Home</h1>
@@ -59,7 +62,7 @@ class HomePage extends Component {
 										</div>
 							
 								</td>
-								<td>${user.mealPrice}</td>
+								<td>${parseFloat(user.mealPrice).toFixed(2)}</td>
 								<td>{user.numMeals}</td>
 								<td>
 									<Checkout
@@ -75,7 +78,7 @@ class HomePage extends Component {
 						<h3>
 						Average Price:
 						</h3>
-							${avgSellingPrice(users)}
+							${avgSellingPrice(users, currentUser)}
 					</div>
 				</div>
 			</div>
@@ -83,24 +86,30 @@ class HomePage extends Component {
   }
 }
 //returns array of all users with at least 1 meal
-function getUsersWithMeals(users){
+function getUsersWithMeals(users, currentUser){
 	let usersWithMeals = [];
 	for(let i in users){
-		if (parseFloat(users[i].numMeals) > 0 && (parseFloat(users[i].mealPrice) > 0)){
-			usersWithMeals.push(users[i]);
-		}
+		if (parseFloat(users[i].numMeals) > 0 && (parseFloat(users[i].mealPrice) > 0)) {
+			if (i != null && i != currentUser){
+                usersWithMeals.push(users[i]);
+            }
+        }
 	}
 	return usersWithMeals;
 }
 //returns average selling price of meals currently
-function avgSellingPrice(users){
+function avgSellingPrice(users, currentUser){
 	let sum = 0;
 	let size = 0;
 	for(let i in users) {
 		if(parseFloat(users[i].mealPrice) > 0) {
-            		sum = sum + parseFloat(users[i].mealPrice);
-            		size++;
-        	}
+			console.log(i);
+			console.log("\n\n i ^ " + currentUser);
+			if(i != null && i != currentUser) {
+                sum = sum + parseFloat(users[i].mealPrice);
+                size++;
+            }
+		}
 	}
 	return (sum/size).toFixed(2);
 }
@@ -110,20 +119,15 @@ const tableStyle = {
   width: '100%',
 };
 
-//temp function
-function buyPass(user) {
-		console.log("Buying from: " + user);
-}
-
 function viewProf(user) {
 	return(
 	<div>
-			<h3>
-					 email: {user.email}
-					 User Desc: {user.userDescription}
-					 Current Price: {user.mealPrice}
-					 No. of Meals: {user.numMeals}
-			</h3>            
+		<h3>
+			 email: {user.email}
+			 User Desc: {user.userDescription}
+			 Current Price: {user.mealPrice}
+			 No. of Meals: {user.numMeals}
+		</h3>
 	</div>
 	);
  }
