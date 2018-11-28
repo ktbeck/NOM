@@ -23,8 +23,8 @@ class UserReview extends Component {
         return (  
           <div>
           Sort By:
-          <button onclick = "() => this.setState({new: true, highRating: false})">New</button>
-          <button onclick = "() => this.setState({new: false, highRating: true})">Rating</button>
+          <button onClick = {() => this.setState({new: true, highRating: false})}>New</button>
+          <button onClick = {() => this.setState({new: false, highRating: true})}>Rating</button>
 
           <h5>Avg Rating:  {avgRating} </h5>
               {reviewers.map((review) =>

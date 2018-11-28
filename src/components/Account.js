@@ -76,10 +76,7 @@ class AccountPage extends Component {
               <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
             </div>
           </div>
-<<<<<<< HEAD
-          <br></br>
-=======
-        </div>
+        
         <br></br>
         <div>
           <h3> User Rating </h3>
@@ -100,32 +97,9 @@ class AccountPage extends Component {
            />
           </div>
           </form>
-        </div>
-
-        <br></br>
-        <div>
-          <form onSubmit={this.onSubmit}>
-          <h3>Update "About Me"</h3>
->>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
-          <div>
-            <h3> User Rating </h3>
-                <div>
-
-                     <h4>Avg Rating: {avgUserRating(reviewers)}</h4>
-                     {reviewers.map((review) =>
-                      <div>
-                        {getReviewerName(review)}&nbsp;
-                        User Rating : {getUserRating(review)}<br></br>
-                        {getUserReview(review)}<br></br>
-                      </div>
-                     )
-
-                     }
-                </div>
-          </div>
+        </div>   
           <br></br>
           <div>
-<<<<<<< HEAD
             <form onSubmit={this.onSubmit}>
             <h3>Update "About Me"</h3>
             <div>
@@ -156,20 +130,6 @@ class AccountPage extends Component {
           </div>
           { < ChangeMyPassword/> }
 
-=======
-          <p>Contact Info</p>
-          <input
-            type="text"
-            placeholder="contact info..."
-            value={this.state.contactinfo}
-            onChange={event => this.setState({contactinfo: event.target.value})}
-          />
-          </div>
-          <button type="submit">
-            Submit
-          </button>
-          </form>
->>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
         </div>
       </div>
     );

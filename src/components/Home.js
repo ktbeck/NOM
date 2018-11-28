@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 // eslint-disable-next-line
-import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
-<<<<<<< HEAD
-//import ViewProfile from './ViewProfile';
+import { BrowserRouter as  Router, Link } from "react-router-dom";
 // import ViewUserInfoButton from './viewUserInfo';
 import './Home.css';
-
-=======
->>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
 import withAuthorization from './withAuthorization';
 import { db } from '../firebase';
 import Checkout from '../Checkout.js'
@@ -58,15 +53,10 @@ class HomePage extends Component {
 						{usersList.map((user) =>
 							<tr align="center" key={user.email}>
 								<td headers="name">
-										<div>
-												{/* Clicking on user leads to user profile */}
-<<<<<<< HEAD
-
-=======
->>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
-											<Link to = {String(user.email)}> {user.username} </Link>
-											<Route path = {String(user.email)} component = {viewProf(user)} />
-										</div>
+									<div>
+										{/* Clicking on user leads to user profile */}
+										<Link to = {`/${String(user.email)}`}> {user.username} </Link>
+									</div>
 							
 								</td>
 								<td>${user.mealPrice}</td>
@@ -86,8 +76,11 @@ class HomePage extends Component {
 						Average Price:
 						</h3>
 							${avgSellingPrice(users)}
+							
 					</div>
 				</div>
+				
+						
 			</div>
 		);
   }
@@ -124,29 +117,6 @@ const tableStyle = {
 function buyPass(user) {
 		console.log("Buying from: " + user);
 }
-
-function viewProf(user) {
-	return(
-<<<<<<< HEAD
-			<div>
-					 email: {user.email}<br/>
-					 User Desc: {user.userDescription}<br/>
-					 Current Price: {user.mealPrice}<br/>
-					 No. of Meals: {user.numMeals}<br/>
-			</div>
-
-=======
-	<div>
-			<h3>
-					 email: {user.email}
-					 User Desc: {user.userDescription}
-					 Current Price: {user.mealPrice}
-					 No. of Meals: {user.numMeals}
-			</h3>            
-	 </div>
->>>>>>> 97cc55184a3bd538f81591a5f35b59028b0bc0ef
-		 );
- }
 
 const authCondition = (authUser) => !!authUser;
 
