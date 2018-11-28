@@ -19,3 +19,14 @@
   color: grey;
   font-size: 25px;
 }
+
+#about-me-cont{
+  display: flex;
+  flex-direction: row;
+}
+#about-me-box-one{
+  margin-left: 30px;
+}
+#about-me-box-two{
+  margin-left: 40px;
+}
