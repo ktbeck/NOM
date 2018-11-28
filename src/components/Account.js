@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Account.css';
 import AuthUserContext from './AuthUserContext';
-import { PasswordForgetForm } from './PasswordForget';
 import PasswordChangeForm from './PasswordChange';
 import withAuthorization from './withAuthorization';
 //import { auth, db } from '../firebase';
@@ -175,7 +174,6 @@ function getUserReview(reviewer){
 }
 function returnLocation(location){
     let userLocation = '';
-    console.log(location);
     switch(location){
         case "location1":
             userLocation = "Porter & Kresge";
@@ -192,19 +190,17 @@ function returnLocation(location){
         case "location5 ":
             userLocation = "Crown & Merrill";
             break;
+        default:
+            userLocation = "No given location"
     }
     return userLocation;
 }
-
-// const displayLocation = () =>
-//     returnLocation({this.state.location});
 
 const ChangeMyPassword = () =>
 <AuthUserContext.Consumer>
 {authUser =>
   <div>
   <h3> Change My Password</h3>
-  <p> Forgot my password </p> <PasswordForgetForm />
   <p> Change my password </p> <PasswordChangeForm />
   </div>
 }

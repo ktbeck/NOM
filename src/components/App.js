@@ -32,7 +32,7 @@ const App = () =>
       <Route exact path={routes.ADMIN} component={AdminPage} />
 
     </div>
-  </Router>
+  </Router>;
 
 export default withAuthentication(App);
 // export default App;

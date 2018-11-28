@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import './Landing.css';
 
 class LandingPage extends Component {
-    constructor(props) {
-    super(props);
-    }
-
     render() {
         return (
             <div>
@@ -21,7 +17,7 @@ const WelcomeMessage = () =>
   <div id="welcome-message">
     <h1>Welcome to NOM</h1>
 	  <h2>Filling all of your eating needs</h2>
-  </div>
+  </div>;
 
 const MissionStatement = () =>
   <div className="container" id="mission-cont">
@@ -35,7 +31,7 @@ const MissionStatement = () =>
       Along the way, we hope that this will also help to alleviate
       food insecurity. </p>
     </div>
-  </div>
+  </div>;
 
 const MeetTheTeam = () =>
   <div className="container" id="meetus-cont">
@@ -54,10 +50,11 @@ const ContactUs = () =>
     <div className="statement">
       <h1>Contact Us</h1>
   	  <div> <h3>Want to give us some feedback? We would love to hear it! </h3>
-        <div> <b>Email:</b> testest@test.com </div>
+        <div> <b>Email:</b> test@test.com </div>
         <div> <b>Phone:</b> (123) 456-7890</div>
       </div>
-
+      Website made with help from tutorials on: https://www.robinwieruch.de
     </div>
-  </div>
+  </div>;
+
 export default LandingPage;
