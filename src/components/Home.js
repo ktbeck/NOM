@@ -78,9 +78,7 @@ class HomePage extends Component {
 						<h3>
 						Average Price:
 						</h3>
-							${avgSellingPrice(users)}
-							
-							${avgSellingPrice(users, currentUser)}
+						${avgSellingPrice(users, currentUser)}
 					</div>
 				</div>
 				
@@ -122,11 +120,6 @@ const tableStyle = {
   border: '3px solid black',
   width: '100%',
 };
-
-//temp function
-function buyPass(user) {
-		console.log("Buying from: " + user);
-}
 
 
 const authCondition = (authUser) => !!authUser;
