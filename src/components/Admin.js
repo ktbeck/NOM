@@ -146,12 +146,13 @@ function getType(e) {
 	else
 		var type = e.substr(dot1 + 1, dot2 - dot1 - 1);
 
-	var color = "yellow";
+	var color;
 	if (type == "succeeded") 
 		color = "green";
-	
-	if (type == "dispute" ||  type == "refund") 
+	else if (type == "dispute" ||  type == "refund") 
 		color = "red";
+	else
+		color = "yellow";
 	
 	return (
 		<div className={'type ' + color}>
