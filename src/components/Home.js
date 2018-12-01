@@ -52,6 +52,7 @@ class HomePage extends Component {
 							<th id="name">Name</th>
 							<th id="price">Price</th>
 							<th id="numMeals">Number of Meals</th>
+							<th id="location">Dining Hall</th>
 						</tr>
 						{usersList.map((user) =>
 							<tr align="center" key={user.email}>
@@ -64,6 +65,7 @@ class HomePage extends Component {
 								</td>
 								<td>${parseFloat(user.mealPrice).toFixed(2)}</td>
 								<td>{user.numMeals}</td>
+								<td>{returnLocation(user.preferredLocation)}</td>
 								<td>
 									<Checkout
 										name={'NOM Meal'}
@@ -115,7 +117,29 @@ function avgSellingPrice(users, currentUser){
 	}
 	return (sum/size).toFixed(2);
 }
-
+function returnLocation(location){
+    let userLocation = '';
+    switch(location){
+        case "location1":
+            userLocation = "Porter & Kresge";
+            break;
+        case "location2":
+            userLocation = "Rachel Carson & Oakes";
+            break;
+        case "location3":
+             userLocation = "College 9 & 10";
+             break;
+        case "location4":
+            userLocation = "Cowell & Stevenson";
+            break;
+        case "location5 ":
+            userLocation = "Crown & Merrill";
+            break;
+        default:
+            userLocation = "No given location"
+    }
+    return userLocation;
+}	
 const tableStyle = {
   border: '3px solid black',
   width: '100%',
