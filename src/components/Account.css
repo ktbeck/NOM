@@ -8,7 +8,10 @@
 
 #container{
   margin-left: 20px;
-
+  width: 50%;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
 }
 
 #welcome-user{
@@ -18,8 +21,9 @@
 
 .section{
   color: grey;
-  font-size: 25px;
+  font-size: 26px;
 }
+
 
 #about-me-cont{
   display: flex;
@@ -30,4 +34,14 @@
 }
 #about-me-box-two{
   margin-left: 40px;
+  text-align: center;
+}
+
+h3{
+  width:110%;
+}
+
+.footer{
+  height: 40px;
+  background: white;
 }

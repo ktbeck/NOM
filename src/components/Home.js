@@ -53,7 +53,7 @@ class HomePage extends Component {
 							<th id="price">Price</th>
 							<th id="numMeals">Number of Meals</th>
 							<th id="location">Dining Hall</th>
-							<th id="payment">Payment</th>g
+							<th id="payment">Payment</th>
 						</tr>
 						{usersList.map((user) =>
 							<tr align="center" key={user.email}>
@@ -62,7 +62,7 @@ class HomePage extends Component {
 										{/* Clicking on user leads to user profile */}
 										<Link to = {`/${String(user.email)}`}> {user.username} </Link>
 									</div>
-			
+
 								</td>
 								<td>${parseFloat(user.mealPrice).toFixed(2)}</td>
 								<td>{user.numMeals}</td>
@@ -84,8 +84,8 @@ class HomePage extends Component {
 						${avgSellingPrice(users, currentUser)}
 					</div>
 				</div>
-				
-						
+
+
 			</div>
 		);
   }
@@ -140,7 +140,7 @@ function returnLocation(location){
             userLocation = "No given location"
     }
     return userLocation;
-}	
+}
 const tableStyle = {
   border: '3px solid black',
   width: '100%',

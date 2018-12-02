@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 
 import SignOutButton from './SignOut';
 import ListPassButton from './ListPass';
-
+import "./Buttons.css";
 import AuthUserContext from './AuthUserContext';
 import * as routes from '../constants/routes';
 import './Navigation.css';
+
 
 const Navigation = () =>
   <AuthUserContext.Consumer>

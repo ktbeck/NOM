@@ -36,7 +36,7 @@ class AccountPage extends Component {
       //photoUrl: user.photoURL;
       reviews: '',
       paypal: '',
-      location: ''
+      location: '',
     };
   }
 
@@ -60,7 +60,9 @@ class AccountPage extends Component {
       contactinfo: this.state.contactinfo,
       paypal: this.state.paypal
     });
-  }
+  };
+
+
 
   render() {
     const location = this.state.location;
@@ -81,8 +83,7 @@ class AccountPage extends Component {
                 <div>
                  <UserReview review = {this.state.reviews}/>
                 </div>
-
-              { < ChangeMyPassword/> }
+                {<ChangeMyPassword/>}
             </div>
 
             <div id="about-me-box-two">
@@ -126,6 +127,9 @@ class AccountPage extends Component {
           </div>
 
         </div>
+          <footer>
+            <br></br><br></br><br></br><br></br>
+          </footer>
       </div>
     );
   }
@@ -155,6 +159,8 @@ function returnLocation(location){
     }
     return userLocation;
 }
+
+
 
 const ChangeMyPassword = () =>
 <AuthUserContext.Consumer>
