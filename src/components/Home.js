@@ -53,6 +53,7 @@ class HomePage extends Component {
 							<th id="price">Price</th>
 							<th id="numMeals">Number of Meals</th>
 							<th id="location">Dining Hall</th>
+							<th id="payment">Payment</th>g
 						</tr>
 						{usersList.map((user) =>
 							<tr align="center" key={user.email}>

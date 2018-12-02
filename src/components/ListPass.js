@@ -23,9 +23,11 @@ class ListPassButton extends Component {
 	}
 
 	handleClick(e) {
-		if (!this.node.contains(e.target))
-			this.setState({formVisible: false});
-	}
+        if (e.target != null) {
+            if (!this.node.contains(e.target))
+                this.setState({formVisible: false});
+        }
+    }
 
 	render() {
 		const formVisible = this.state.formVisible;

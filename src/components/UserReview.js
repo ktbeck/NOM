@@ -15,7 +15,7 @@ class UserReview extends Component {
       if (this.state.rating === true){
         return reviews.sort((a, b) => {return getUserRating(a) - getUserRating(b)});
       }else return reviews;
-    }
+    };
     render() { 
       var reviewers = getUserReviewers(this.props.review);
       const avgRating = avgUserRating(reviewers);
@@ -26,7 +26,7 @@ class UserReview extends Component {
           <button onClick = {() => this.setState({new: true, highRating: false})}>New</button>
           <button onClick = {() => this.setState({new: false, highRating: true})}>Rating</button>
 
-          <h5>Avg Rating:  {avgRating} </h5>
+          <h5>Average Rating:  {avgRating} </h5>
               {reviewers.map((review) =>
               <div>
                 {getReviewerName(review)} &nbsp;
