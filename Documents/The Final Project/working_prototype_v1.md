@@ -4,7 +4,7 @@
 **Date:** December 2, 2018  
 
 
-### ---- Log Out Exception ----
+### ----- Log Out Exception -----
 
 **Description:** On logout, an exception has appeared that says the element is null. We have not been able to reproduce the problem consistently. 
 
@@ -14,7 +14,7 @@
 
 
 
-### ---- Character Limit ----
+### ----- Character Limit -----
 
 **Description:** The inputs do not have a character limit or security checks. Although not a common use case, there is a possibility that users can input invalid things that will break the website / database. This may cause problems in the future.
 
@@ -24,7 +24,7 @@
 
 
 
-### ---- Name of Problem ----
+### ----- Name of Problem -----
 
 **Description:** 
 
