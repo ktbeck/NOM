@@ -1,8 +1,12 @@
 ## ---- Sprint 2 Plan ----
 **Product Name:** NOM Dining Hall Meal Exchange
+
 **Team Name:** Nom Slugs
+
 **Sprint Completion Date:** November 4, 2018        
+
 **Revision Number:** 4
+
 **Revision Date:** October 30, 2018
 
 
