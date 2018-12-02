@@ -1,34 +1,38 @@
 import React, { Component } from 'react';
-import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
-//import ViewProfile from './ViewProfile';
-
+// eslint-disable-next-line
 // import ViewUserInfoButton from './viewUserInfo';
-
-
+import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
+import './Home.css';
 import withAuthorization from './withAuthorization';
 import { db } from '../firebase';
+import Checkout from '../Checkout.js'
+import firebase2 from 'firebase/app';
+
+const auth2 = firebase2.auth();
+const db2 = firebase2.database();
 
 class HomePage extends Component {
   constructor(props) {
 	super(props);
-
 	this.state = {
 		users: null,
-
+		uid: auth2.currentUser.uid,
 		username: '', // i added
-			email: '', //me
+		email: '', //me
+
 	};
   }
 
   componentDidMount() {
 	db.onceGetUsers().then(snapshot =>
-	  this.setState({ users: snapshot.val() })
+	  this.setState({ users: snapshot.val() }),
+
 	);
   }
 
   render() {
 		const { users } = this.state;
-	
+		const currentUser = this.state.uid;
 		if(!this.state.users){
 			return(
 			<div>
@@ -36,10 +40,10 @@ class HomePage extends Component {
 			No users with meals for sale ):
 			</div>);
 		}
-		const usersList = getUsersWithMeals(users);
+		const usersList = getUsersWithMeals(users, currentUser);
 		return (
 			<div>
-			<h1>Home</h1>
+			<h1 id="home-title">Home</h1>
 				<div>
 				<h2> Available Passes</h2>
 				<table style={tableStyle}>
@@ -48,28 +52,26 @@ class HomePage extends Component {
 							<th id="name">Name</th>
 							<th id="price">Price</th>
 							<th id="numMeals">Number of Meals</th>
+							<th id="location">Dining Hall</th>
 						</tr>
 						{usersList.map((user) =>
-							<tr align="center">
+							<tr align="center" key={user.email}>
 								<td headers="name">
-										<div>
-												{/* Clicking on user leads to user profile */}
-												
-											<Link to = {String(user.email)}> {user.username} </Link>
-											<Route path = {String(user.email)} component = {viewProf(user)} />
-										</div>
+									<div>
+										{/* Clicking on user leads to user profile */}
+										<Link to = {`/${String(user.email)}`}> {user.username} </Link>
+									</div>
+			
 								</td>
-								<td>${user.mealPrice}</td>
+								<td>${parseFloat(user.mealPrice).toFixed(2)}</td>
 								<td>{user.numMeals}</td>
+								<td>{returnLocation(user.preferredLocation)}</td>
 								<td>
-									<button onClick={() => buyPass(user.username)}>
-										Buy Pass
-									</button>
-
-								{/* <button onClick={() => viewProf(user)}>
-										View Profile
-									</button> */}
-
+									<Checkout
+										name={'NOM Meal'}
+										description={"Buying meal from: " + user.username}
+										amount={user.mealPrice}
+									/>
 								</td>
 							</tr>)}
 					</tbody>
@@ -78,59 +80,71 @@ class HomePage extends Component {
 						<h3>
 						Average Price:
 						</h3>
-							${avgSellingPrice(users)}
+						${avgSellingPrice(users, currentUser)}
 					</div>
 				</div>
+				
+						
 			</div>
 		);
   }
 }
 //returns array of all users with at least 1 meal
-function getUsersWithMeals(users){
+function getUsersWithMeals(users, currentUser){
 	let usersWithMeals = [];
 	for(let i in users){
-		if (parseFloat(users[i].numMeals) > 0 && (parseFloat(users[i].mealPrice) > 0)){
-			usersWithMeals.push(users[i]);
-		}
+		if (parseFloat(users[i].numMeals) > 0 && (parseFloat(users[i].mealPrice) > 0)) {
+			if (i != null && i != currentUser){
+                usersWithMeals.push(users[i]);
+            }
+        }
 	}
 	return usersWithMeals;
 }
 //returns average selling price of meals currently
-function avgSellingPrice(users){
+function avgSellingPrice(users, currentUser){
 	let sum = 0;
 	let size = 0;
 	for(let i in users) {
 		if(parseFloat(users[i].mealPrice) > 0) {
-            		sum = sum + parseFloat(users[i].mealPrice);
-            		// console.log(parseInt(users[i].mealPrice));
-            		size++;
-        	}
+			console.log(i);
+			console.log("\n\n i ^ " + currentUser);
+			if(i != null && i != currentUser) {
+                sum = sum + parseFloat(users[i].mealPrice);
+                size++;
+            }
+		}
 	}
-	// console.log(sum);
 	return (sum/size).toFixed(2);
 }
-
+function returnLocation(location){
+    let userLocation = '';
+    switch(location){
+        case "location1":
+            userLocation = "Porter & Kresge";
+            break;
+        case "location2":
+            userLocation = "Rachel Carson & Oakes";
+            break;
+        case "location3":
+             userLocation = "College 9 & 10";
+             break;
+        case "location4":
+            userLocation = "Cowell & Stevenson";
+            break;
+        case "location5 ":
+            userLocation = "Crown & Merrill";
+            break;
+        default:
+            userLocation = "No given location"
+    }
+    return userLocation;
+}	
 const tableStyle = {
   border: '3px solid black',
   width: '100%',
 };
-//temp function
-function buyPass(user) {
-		console.log("Buying from: " + user);
-}
 
-function viewProf(user) {
-	return(
-			<div>
-					 email: {user.email}<br/>
-					 User Desc: {user.userDescription}<br/>
-					 Current Price: {user.mealPrice}<br/>
-					 No. of Meals: {user.numMeals}<br/>
-			</div>            
-	 
-		 );
-
- }
 
 const authCondition = (authUser) => !!authUser;
 

@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import './Account.css';
 import AuthUserContext from './AuthUserContext';
-import { PasswordForgetForm } from './PasswordForget';
 import PasswordChangeForm from './PasswordChange';
 import withAuthorization from './withAuthorization';
 //import { auth, db } from '../firebase';
 import firebase from 'firebase/app';
+import UserReview from './UserReview'
 
 const auth = firebase.auth();
 const db = firebase.database();
+
 
 //Things to go on the account dashboard:
 //  1. their rating (finished but need to abstract to component)
@@ -32,7 +34,9 @@ class AccountPage extends Component {
       userDescription: '',
       contactinfo: '',
       //photoUrl: user.photoURL;
-      reviews: ''
+      reviews: '',
+      paypal: '',
+      location: ''
     };
   }
 
@@ -43,7 +47,9 @@ class AccountPage extends Component {
         email: snapshot.val().email,
         userDescription: snapshot.val().userDescription,
         contactinfo: snapshot.val().contactinfo,
-        reviews: snapshot.val().reviews
+        reviews: snapshot.val().reviews,
+        paypal: snapshot.val().paypal,
+        location: snapshot.val().preferredLocation
       });
     }.bind(this));
   }
@@ -52,126 +58,114 @@ class AccountPage extends Component {
     db.ref('users/' + this.state.uid).update({
       userDescription: this.state.userDescription,
       contactinfo: this.state.contactinfo,
+      paypal: this.state.paypal
     });
   }
 
   render() {
-    const reviewers = getUserReviewers(this.state.reviews);
+    const location = this.state.location;
     return (
       <div>
-        <h1>Account Page</h1>
-        <div>
-          <h2>Welcome </h2>
-          <p> <b> Name: </b>{this.state.username} </p>
-          <p> <b> Email: </b>{this.state.email} </p>
-          <br></br>
-          <div>
-            <p> <b> About Me: </b> </p>
-            <p>{this.state.userDescription}</p>
-            <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
-          </div>
-        </div>
-        <br></br>
-        <div>
-          <h3> User Rating </h3>
+        <h1 id="account-title">Account</h1>
+        <div id="container">
+          <h2>Welcome {this.state.username}! </h2>
+          <div id="about-me-cont">
+            <div id="about-me-box-one">
+              <p className="section"> <b> About Me: </b> </p>
+              <p>{this.state.userDescription}</p>
+              <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
+              <p><b>PayPal Email: </b>{this.state.paypal}</p>
+              <p><b>Preferred Location: </b>{returnLocation(location)}</p>
+
+              <h3 className="section"> User Rating </h3>
+                <div>
+                 <UserReview review = {this.state.reviews}/>
+                </div>
+
+              { < ChangeMyPassword/> }
+            </div>
+
+            <div id="about-me-box-two">
+              <form onSubmit={this.onSubmit}>
+              <h3>Update "About Me"</h3>
               <div>
-                  
-                   <h4>Avg Rating: {avgUserRating(reviewers)}</h4>
-                   {reviewers.map((review) =>
-                    <div>
-                      {getReviewerName(review)}&nbsp;
-                      User Rating : {getUserRating(review)}<br></br>
-                      {getUserReview(review)}<br></br>
-                    </div>
-                   )
-
-                   }
+              <p>About Me</p>
+              <input
+                type="text"
+                placeholder="Tell us about yourself"
+                value={this.state.userDescription}
+                onChange={event => this.setState({userDescription: event.target.value})}
+              />
               </div>
-        </div>
-        <br></br>
-        <div>
-          <form onSubmit={this.onSubmit}>
-          <h3>Update "About Me"</h3>
-          <div>
-          <p>About Me</p>
-          <input
-            type="text"
-            placeholder="Update user description here..."
-            value={this.state.userDescription}
-            onChange={event => this.setState({userDescription: event.target.value})}
-          />
-          </div>
-          <div>
-          <p>Contact Info</p>
-          <input
-            type="text"
-            placeholder="contact info..."
-            value={this.state.contactinfo}
-            onChange={event => this.setState({contactinfo: event.target.value})}
-          />
-          </div>
-    
-          <button type="submit">
-            Submit
-          </button>
+              <div>
+              <p>Contact Info</p>
+              <input
+                type="text"
+                placeholder="Email or Phone"
+                value={this.state.contactinfo}
+                onChange={event => this.setState({contactinfo: event.target.value})}
+              />
+              </div>
+              <div>
+              <p>Paypal</p>
+              <input
+                type="text"
+                placeholder="Paypal Email"
+                value={this.state.paypal}
+                onChange={event => this.setState({paypal: event.target.value})}
+              />
+              </div>
 
-          </form>
+              <button type="submit">
+                Submit
+              </button>
+
+              </form>
+
+            </div>
+          </div>
 
         </div>
-        { < ChangeMyPassword/> }
       </div>
     );
   }
 
 } //end of class
 
-function avgUserRating(userReview){
-  var numOfReviews = 0;
-  var sumRating = 0;
-  for(let i in userReview){
-    sumRating += getUserRating(userReview[i]);
-    numOfReviews++;
-  }
-  return ( sumRating / numOfReviews).toFixed(1);
-}
-
-function getUserReviewers(reviews){
-  let userReviewers = [];
-  for(let i in reviews){
-    userReviewers.push(reviews[i]);
-  }
-  return userReviewers;
-}
-function getReviewerName(reviewer){
-  return reviewer.reviewer;
-}
-function getUserRating(reviewer){
-  return parseFloat(reviewer.rating);
-}
-function getUserReview(reviewer){
-  return reviewer.review;
+function returnLocation(location){
+    let userLocation = '';
+    switch(location){
+        case "location1":
+            userLocation = "Porter & Kresge";
+            break;
+        case "location2":
+            userLocation = "Rachel Carson & Oakes";
+            break;
+        case "location3":
+             userLocation = "College 9 & 10";
+             break;
+        case "location4":
+            userLocation = "Cowell & Stevenson";
+            break;
+        case "location5 ":
+            userLocation = "Crown & Merrill";
+            break;
+        default:
+            userLocation = "No given location"
+    }
+    return userLocation;
 }
 
 const ChangeMyPassword = () =>
 <AuthUserContext.Consumer>
 {authUser =>
   <div>
-  <h3> Change My Password</h3>
-  <p> Forgot my password </p> <PasswordForgetForm />
+  <h3 className="section"> Change My Password</h3>
   <p> Change my password </p> <PasswordChangeForm />
   </div>
 }
 </AuthUserContext.Consumer>
 
-// const DisplayUserInfo = () =>
-//   <AuthUserContext.Consumer>
-//     {authUser =>
-//       <div>
-//         <h2>Welcome </h2>
-//         <p> Email: {authUser.email}</p>
-//       </div>
-//     }
-//     </AuthUserContext.Consumer>
 
 const authCondition = (authUser) => !!authUser;
 export default withAuthorization(authCondition)(AccountPage);

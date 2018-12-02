@@ -1,6 +1,8 @@
+
 import React, {Component} from 'react';
 import firebase from 'firebase/app';
-import './ListPass.css'; 
+import './ListPass.css';
+import './Buttons.css';
 
 const auth = firebase.auth();
 const db = firebase.database();
@@ -13,15 +15,15 @@ class ListPassButton extends Component {
 	}
 
 	handleButtonClick() {
-		if (!this.state.formVisible) 
+		if (!this.state.formVisible)
 			document.addEventListener('click', this.handleClick.bind(this), false);
-		else 
+		else
 			document.addEventListener('click', this.handleClick.bind(this), false);
 		this.setState({formVisible: !this.state.formVisible});
 	}
 
 	handleClick(e) {
-		if (!this.node.contains(e.target)) 
+		if (!this.node.contains(e.target))
 			this.setState({formVisible: false});
 	}
 
@@ -29,7 +31,7 @@ class ListPassButton extends Component {
 		const formVisible = this.state.formVisible;
 		return (
 			<div ref={node => { this.node = node; }}>
-				<button id="ListPassButton" onClick={this.handleButtonClick}>
+				<button id="Button" onClick={this.handleButtonClick}>
 					Update Passes
 				</button>
 				{formVisible ? <ListPassForm /> : null}
@@ -98,7 +100,7 @@ class ListPassForm extends Component {
 			});
 		}.bind(this);
 		navigator.geolocation.getCurrentPosition(geoSuccess);
-				 
+
 	}
 
 	// basic distance formula, distance small enough so assuming flat earth
@@ -124,7 +126,7 @@ class ListPassForm extends Component {
 		});
 		//event.preventDefault();
 	}
- 
+
 	render() {
 		var {
 			locations,
@@ -134,12 +136,12 @@ class ListPassForm extends Component {
 		return (
 			<div id='ListPassForm'>
 				<div className='form-title'>
-					Update Your Listings 
+					Update Your Listings
 				</div>
 				<form onSubmit={this.onSubmit}>
 					<div className='form-element'>
-						<label>Meals Listed </label>
-						<input 
+						<label><b>Meals Listed</b> </label>
+						<input
 							type='text'
 							value={this.state.numMeals}
 							onChange={e => this.setState({numMeals: e.target.value})}
@@ -147,8 +149,8 @@ class ListPassForm extends Component {
 						<div className="error">{errors.numMeals}</div>
 					</div>
 					<div className='form-element'>
-						<label>Meal Price </label>
-						<input 
+						<label><b>Meal Price</b> </label>
+						<input
 							type='text'
 							value={this.state.mealPrice}
 							onChange={e => this.setState({mealPrice: e.target.value})}
@@ -156,15 +158,15 @@ class ListPassForm extends Component {
 						<div className="error">{errors.mealPrice}</div>
 					</div>
 					<div className='form-element'>
-						<label>Preferred Dining Hall</label><br/>
-		
-						<select 
+						<label><b>Preferred Dining Hall</b></label><br/>
+
+						<select
 							value={this.state.preferredLocation}
 							onChange={e => this.setState({preferredLocation: e.target.value})}
 						>
 							{Object.keys(this.state.locations).map(location=>(
 								<option value={location} key={location}>
-									{locations[location].name}  
+									{locations[location].name}
 									&nbsp;({this.getDistance(
 										this.state.currentLat,
 										this.state.currentLon,

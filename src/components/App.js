@@ -12,6 +12,7 @@ import PasswordForgetPage from './PasswordForget';
 import HomePage from './Home';
 import AccountPage from './Account';
 import AdminPage from './Admin';
+import ViewProfile from './ViewProfile';
 
 import * as routes from '../constants/routes';
 import withAuthentication from './withAuthentication';
@@ -30,9 +31,10 @@ const App = () =>
       <Route exact path={routes.HOME} component={HomePage} />
       <Route exact path={routes.ACCOUNT} component={AccountPage} />
       <Route exact path={routes.ADMIN} component={AdminPage} />
+      <ViewProfile/>      
 
     </div>
-  </Router>
+  </Router>;
 
 export default withAuthentication(App);
 // export default App;
