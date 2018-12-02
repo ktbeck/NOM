@@ -2,7 +2,7 @@
 **Product Name:** NOM Dining Hall Meal Exchange  
 **Team Name:** Nom Slugs  
 **Sprint Completion Date:** December 2, 2018  
-**Revision Number:** 2 
+**Revision Number:** 2   
 **Revision Date:** November 30, 2018
 
 

@@ -1,4 +1,5 @@
 import { auth } from './firebase';
+import LandingPage from "../components/Landing";
 
 //Sign up
 export const doCreateUserWithEmailAndPassword = (email, password) =>

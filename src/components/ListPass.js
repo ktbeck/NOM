@@ -124,7 +124,6 @@ class ListPassForm extends Component {
 			mealPrice: this.state.mealPrice,
 			preferredLocation: this.state.preferredLocation,
 		});
-		//event.preventDefault();
 	}
 
 	render() {

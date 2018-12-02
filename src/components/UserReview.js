@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings';
-
+import "./UserReview.css"
 
 class UserReview extends Component {
     constructor(props){
@@ -15,21 +15,17 @@ class UserReview extends Component {
       if (this.state.rating === true){
         return reviews.sort((a, b) => {return getUserRating(a) - getUserRating(b)});
       }else return reviews;
-    }
+    };
     render() { 
       var reviewers = getUserReviewers(this.props.review);
       const avgRating = avgUserRating(reviewers);
       reviewers = this.reviewSort(reviewers);
         return (  
           <div>
-          Sort By:
-          <button onClick = {() => this.setState({new: true, highRating: false})}>New</button>
-          <button onClick = {() => this.setState({new: false, highRating: true})}>Rating</button>
-
-          <h5>Avg Rating:  {avgRating} </h5>
+          <h3>Average Rating:  {avgRating}/5 </h3>
               {reviewers.map((review) =>
-              <div>
-                {getReviewerName(review)} &nbsp;
+              <div id="single-review">
+                  <b>{getReviewerName(review)}</b>&nbsp;
                 User Rating : <StarRatings rating = {getUserRating(review)}
                                             starDimension = '23px'
                                             starSpacing = '0px'
