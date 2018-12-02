@@ -23,11 +23,9 @@ class ListPassButton extends Component {
 	}
 
 	handleClick(e) {
-        if (e.target != null) {
-            if (!this.node.contains(e.target))
-                this.setState({formVisible: false});
-        }
-    }
+		if (!this.node.contains(e.target))
+			this.setState({formVisible: false});
+	}
 
 	render() {
 		const formVisible = this.state.formVisible;
@@ -126,7 +124,6 @@ class ListPassForm extends Component {
 			mealPrice: this.state.mealPrice,
 			preferredLocation: this.state.preferredLocation,
 		});
-		//event.preventDefault();
 	}
 
 	render() {
