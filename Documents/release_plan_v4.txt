@@ -49,4 +49,3 @@ Revision Date: December 2, 2018
 - As an app user, I want to have ratings on other users so I know how well the transaction will go.
 - As a moderator, I want to validate users via ucsc email address so I can verify student status.
 - Add profile picture/location to account.
-- Fix displaying other users accounts.
