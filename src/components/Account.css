@@ -1,0 +1,32 @@
+#account-title{
+  color: black;
+  text-align: center;
+  background-color:	#D8D8D8;
+  padding: 10px;
+  margin-top: 0;
+}
+
+#container{
+  margin-left: 20px;
+}
+
+#welcome-user{
+  color: grey;
+  font-size: 40px;
+}
+
+.section{
+  color: grey;
+  font-size: 25px;
+}
+
+#about-me-cont{
+  display: flex;
+  flex-direction: row;
+}
+#about-me-box-one{
+  margin-left: 30px;
+}
+#about-me-box-two{
+  margin-left: 40px;
+}
