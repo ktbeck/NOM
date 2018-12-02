@@ -21,3 +21,5 @@ Make sure Home page doesn't scroll.
 Menu consistency.
 
 Error log.
+
+Class Demo (any material needed for this)
