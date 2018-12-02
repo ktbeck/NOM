@@ -3,12 +3,21 @@ Our project will involve creating a a meal-plan exchange app to allow students t
 
 
 Checklist for end of sprint 4:
+
 Add to each developer's description landing page.
+
 Update viewprofile to look like account page.
+
 Host website.
+
 Email notifications on meal sell.
+
 Subtract meal from database.
+
 Cleanup signin and singup.
+
 Make sure Home page doesn't scroll.
+
 Menu consistency.
+
 Error log.
