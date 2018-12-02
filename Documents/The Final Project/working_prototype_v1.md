@@ -3,6 +3,7 @@
 **Team Name:** Nom Slugs  
 **Date:** December 2, 2018  
 
+Note: This document contains all known errors that will be shipped with the final product.
 
 ### ----- Log Out Exception -----
 
