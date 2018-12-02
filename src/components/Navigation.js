@@ -21,7 +21,6 @@ const NavigationAuth = () =>
   <div>
     <div className="title">NOM</div>
     <ul>
-        <li><Link to={routes.LANDING} id="linknav">Landing</Link></li>
         <li><Link to={routes.HOME} id="linknav">Home</Link></li>
         <li><Link to={routes.ACCOUNT} id="linknav">Account</Link></li>
         <li><ListPassButton /></li>
@@ -36,5 +35,5 @@ const NavigationNonAuth = () =>
       <li><Link to={routes.LANDING}>Landing</Link></li>
       <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
       </ul>
-  </div>
+  </div>;
 export default Navigation;

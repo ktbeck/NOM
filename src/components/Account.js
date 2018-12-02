@@ -88,7 +88,7 @@ class AccountPage extends Component {
 
             <div id="about-me-box-two">
               <form onSubmit={this.onSubmit}>
-              <h3>Update "About Me"</h3>
+              <h3>Update Information</h3>
               <div>
               <p>About Me</p>
               <input
@@ -117,7 +117,7 @@ class AccountPage extends Component {
               />
               </div>
 
-              <button type="submit">
+              <button id="submit-button" type="submit">
                 Submit
               </button>
 
