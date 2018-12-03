@@ -41,7 +41,7 @@ We should keep the meeting times the same and have Scrum Meetings. We should kee
 **Total Days:** 14 days, 6 scrums
 
 
-![Sprint 4 Scrum Board](https://github.com/nicolleayon/NOM/blob/master/Documents/Sprint%204/FinishedScrumBoard.jpggit )
+![Sprint 4 Scrum Board](https://github.com/nicolleayon/NOM/blob/master/Documents/Sprint%204/FinishedScrumBoard.jpg)
 ![Sprint 4 Burn Up Chart](https://github.com/nicolleayon/NOM/blob/master/Documents/Sprint%204/BurnUpChart.jpg)
 ![Sprint 4 Burn Down Chart](https://github.com/nicolleayon/NOM/blob/master/Documents/Sprint%204/burndown4.jpg)
 
