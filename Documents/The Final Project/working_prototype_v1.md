@@ -105,6 +105,14 @@ Note: This document contains all known errors that will be shipped with the fina
 
 **Suggested Action:**  Place restrictions on the format that users can input into the paypal email.
 
+### ----- If user doesn't accept location tracking distance will be incorrect  -----
+
+**Description:**  If user doesn't agree to give their location, distances from dining halls will be incorrect.
+
+**Location:** Whole site. 
+
+**Suggested Action:** Add a check for if the user doesn't give their location.
+
 
 
 
