@@ -9,8 +9,8 @@ Note: This document contains all of the style guidelines for our team. It will a
 
 - Capitalize all files
 - Camel case all variables
-- Add dash to (SOMETHING)
-- TODO: regular indentation
+- "-" for css id names
+- Identation with tabs
 
 
 ## TODO: ADD THINGS
