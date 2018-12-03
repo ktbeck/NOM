@@ -66,8 +66,6 @@ The goal is to finish important work and user stories from previous Sprints. In 
 **Kyler Beck:**  
   User story 3: tasks 1,2,3
 
-## --- INITIAL TASK ASSIGNMENT -----
-
 
 
 ## --- INITIAL SCRUM BOARD -----
