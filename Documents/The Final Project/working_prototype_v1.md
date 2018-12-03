@@ -79,13 +79,23 @@ Note: This document contains all known errors that will be shipped with the fina
 
 
 
-### ----- Name of Problem -----
+### ----- Descriptions break in the middle of words -----
 
-**Description:** 
+**Description:**  Descriptions in the About Me sometimes break in the middle of words.
 
-**Location:** 
+**Location:** Account page
 
-**Suggested Action:** 
+**Suggested Action:** Use a different styling for the descriptions such that text wraps around but does not break.
+
+
+
+### ----- Passes not listed on account page  -----
+
+**Description:**  Since removing one self's own passes from Home page (because users cannot buy meals from themselves) there is no other place except in "Update Pass" where a user can see how many passes they have listed. 
+
+**Location:** Account page
+
+**Suggested Action:**  List the amount of passes a user has and the price on the account page.
 
 
 
