@@ -39,6 +39,8 @@ Incomplete: User Story 4: Website still has bugs such as overlapping stripe butt
 Total User Stories Completed: 1/4
 Total Hours Completed: 40/61.5
 Total Days: 14 days, 6 scrums
+![alt text](https://github.com/nicolleayon/NOM/blob/master/Documents/Sprint%204/FinishedScrumBoard.jpg)
 ![alt text](https://github.com/nicolleayon/NOM/blob/master/Documents/Sprint%204/BurnUpChart.jpg)
+![alt text](https://github.com/nicolleayon/NOM/blob/master/Documents/Sprint%204/burndown4.jpg)
 
 
