@@ -121,7 +121,7 @@ Note: This document contains details provided by each team member about the modu
 - Test Cases: {account.external_account.created}
 - Expected Output: recieve 200 OK status, displayed on admin page under other
 
-### ----- Nicole Ayon Campos -----
+### ----- Nicolle Ayon Campos -----
 
 **EC: Password reset with a matching password with >= 6  characters**
 - Test Cases: {"qwerty", "qwerty"}
