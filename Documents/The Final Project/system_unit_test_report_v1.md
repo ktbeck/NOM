@@ -78,9 +78,69 @@ Note: This document contains a list of user stories and their corresponding scen
 
 **User Story:** As a seller/buyer, I want a clean, easy to use layout for buying or selling passes.
 
-**Scenario:**  As a developer user story, this does not have a full scenario. Coverage is implied because the website was build using web APIs.
+**Scenario:** As a design based user story, this would not have a full scenario. Coverage is decided by subjective appraisal.
 
+### ----- Sprint 3 | User Story 1 -----
+
+**User Story:** As a seller/buyer, I want to give or receive payments through the app so the meal and money exchange can happen.
+
+**Scenario:** 
+1. While logged in, go to 'Home'
+2. Pick a user with meals, and click 'Pay with card' button.
+3. Enter card information for stripe testing account:
+ - email: test@test.com
+ - Card number: 4242 4242 4242 4242
+ - Expiration Date: 02/20
+ - Security Code: 221
+ 4. Confirm alert of "Payment Successful" at top of website.
+
+### ----- Sprint 3 | User Story 2 -----
+
+**User Story:** As a moderator, I want to have the ability to cancel or modify payouts so I can handle disputes or cancellations.
+
+**Scenario:**  Incomplete. Cannot test because we don't have full functionality.
+
+### ----- Sprint 3 | User Story 3 -----
+
+**User Story:** As a buyer, I want to be able to review my seller so I know I am buying from a trustworthy person.
+
+**Scenario:**  Incomplete. Reviews show up on profiles, however, adding reviews is not functional.
   
-  
-# TODO: complete rest of sprints
+### ----- Sprint 3 | User Story 4 -----
+
+**User Story:** As a seller/buyer, I want a clean and easy to use layout for buying or selling passes.
+
+**Scenario:** As a design based user story, this would not have a full scenario. Coverage is decided by subjective appraisal.
+
+### ----- Sprint 4 | User Story 1 -----
+
+**User Story:** As a user I want to have features from previous sprints that were incomplete in the final product.
+
+**Scenario:** 
+1. While logged in, go to 'Home'
+2. Click on any user and you can view their public information.
+Many other features of user story imcomplete.
+
+### ----- Sprint 4 | User Story 2 -----
+
+**User Story:**  As a user, I want to be able to access the website from the internet.
+
+**Scenario:**
+1. Open web browser
+2. Go to: https://nommmin.herokuapp.com
+
+### ----- Sprint 4 | User Story 3 -----
+
+**User Story:**  As a seller/buyer, I want the website to look appealing.
+
+**Scenario:** As a design based user story, this would not have a full scenario. Coverage is decided by subjective appraisal.
+
+### ----- Sprint 4 | User Story 3 -----
+
+**User Story:**  As a seller/buyer, I would like the website to be bug free.
+
+**Scenario:**  As a design based user story, this would not have a full scenario. Coverage is decided by subjective appraisal.
+
+
+
 
