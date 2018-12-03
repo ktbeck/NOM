@@ -124,3 +124,21 @@ Note: This document contains all known errors that will be shipped with the fina
 **Suggested Action:** Add a restriction so that cents are restricted to the proper format.
 
 
+### ----- Non Admin, admin page  -----
+
+**Description:**  As a non admin role, if you browse to /admin, you will be able to see the admin page for a brief second
+
+**Location:** /admin
+
+**Suggested Action:** Change the routing to first check authentication before mounting or rendering component.
+
+
+### ----- Posting from any website  -----
+
+**Description:**  Security issue, posting to /payments will be allowed and saved to the database if formatted as json.
+
+**Location:** /payments 
+
+**Suggested Action:** Check the security credentials match stripe's before processing anything
+
+
