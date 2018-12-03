@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 // eslint-disable-next-line
-// import ViewUserInfoButton from './viewUserInfo';
 import { BrowserRouter as  Router, Route, Link } from "react-router-dom";
 import './Home.css';
 import withAuthorization from './withAuthorization';
@@ -70,7 +69,7 @@ class HomePage extends Component {
 								<td>
 									<Checkout
 										name={'NOM Meal'}
-										description={"Buying meal from: " + user.username}
+										description={user.email}
 										amount={user.mealPrice}
 									/>
 								</td>
@@ -102,14 +101,14 @@ function getUsersWithMeals(users, currentUser){
 	}
 	return usersWithMeals;
 }
+
+
 //returns average selling price of meals currently
 function avgSellingPrice(users, currentUser){
 	let sum = 0;
 	let size = 0;
 	for(let i in users) {
 		if(parseFloat(users[i].mealPrice) > 0) {
-			console.log(i);
-			console.log("\n\n i ^ " + currentUser);
 			if(i != null && i != currentUser) {
                 sum = sum + parseFloat(users[i].mealPrice);
                 size++;

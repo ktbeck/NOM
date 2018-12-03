@@ -11,29 +11,29 @@ import './Navigation.css';
 
 const Navigation = () =>
   <AuthUserContext.Consumer>
-    {authUser => authUser
-      ? <NavigationAuth />
-      : <NavigationNonAuth />
-    }
-  </AuthUserContext.Consumer>
+	{authUser => authUser
+	  ? <NavigationAuth />
+	  : <NavigationNonAuth />
+	}
+  </AuthUserContext.Consumer>;
 
 const NavigationAuth = () =>
   <div>
-    <div className="title">NOM</div>
-    <ul>
-        <li><Link to={routes.HOME} id="linknav">Home</Link></li>
-        <li><Link to={routes.ACCOUNT} id="linknav">Account</Link></li>
-        <li><ListPassButton /></li>
-        <li><SignOutButton /></li>
-    </ul>
-   </div>
+	<div className="title">NOM</div>
+	<ul>
+		<li><Link to={routes.HOME} id="linknav">Home</Link></li>
+		<li><Link to={routes.ACCOUNT} id="linknav">Account</Link></li>
+		<li><ListPassButton /></li>
+		<li><SignOutButton /></li>
+	</ul>
+   </div>;
 
 const NavigationNonAuth = () =>
   <div>
-    <div className="title">NOM</div>
-    <ul>
-      <li><Link to={routes.LANDING}>Landing</Link></li>
-      <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
-      </ul>
+	<div className="title">NOM</div>
+	<ul>
+	  <li><Link to={routes.LANDING}>Landing</Link></li>
+	  <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
+	  </ul>
   </div>;
 export default Navigation;
