@@ -30,6 +30,9 @@ class UserReview extends Component {
       });
     }      
     render() { 
+      if (this.props.review == null){
+        return(<p>There are no reviews!</p>);
+      }
       var reviewers = getUserReviewers(this.props.review)   ;
       const avgRating = avgUserRating(reviewers);
       reviewers = this.reviewSort(reviewers);
@@ -49,7 +52,7 @@ class UserReview extends Component {
                                             starRatedColor = "yellow"/><br></br>
                 {getUserReview(review)}<br></br>
             </div>  
-              
+              )}
           </div>
         );
     }
