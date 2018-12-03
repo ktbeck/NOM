@@ -69,6 +69,16 @@ Note: This document contains all known errors that will be shipped with the fina
 **Suggested Action:** Try different approach for subtracting users meals from database.
 
 
+### ----- Cannot Add Reviews -----
+
+**Description:** Cannot add reviews to other users page right now. Ran into bugs with accessing other users information in database.
+
+**Location:** Account and viewprofile
+
+**Suggested Action:** Find out how to edit other user's profile without changing anything else.
+
+
+
 ### ----- Name of Problem -----
 
 **Description:** 
