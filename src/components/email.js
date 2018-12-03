@@ -11,8 +11,8 @@ const gmailPassword = functions.config().gmail.password;
 const mailTransport = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: gmailEmail,
-    pass: gmailPassword,
+	user: gmailEmail,
+	pass: gmailPassword,
   },
 });
 
@@ -39,17 +39,17 @@ exports.sendBoughtEmail = functions.auth.user().onBuy((user) => {
 
   //Sends a "userBoughtMeal" emails
   function sendBoughtEmail(email, displayName) {
-    const mailOptions= {
-        from: `${NOM} <noreply@firebase.com>`,
-        to: email,
-    };
+	const mailOptions= {
+		from: `${NOM} <noreply@firebase.com>`,
+		to: email,
+	};
 
-    //Somebody has bought a pass from
-    mailOptions.subject = `NOM - Someone purchased a meal from you!`;
-    mailOptions.text = `Hey ${displayName || ''}!,
-    We wanted to notify you that someone has purchased a meal from you.
-    They should contact you shortly.`;
-    return mailTransport.sendMail(mailOptions).then(() => {
-      return console.log('Purchase notification sent to:', email);
+	//Somebody has bought a pass from
+	mailOptions.subject = `NOM - Someone purchased a meal from you!`;
+	mailOptions.text = `Hey ${displayName || ''}!,
+	We wanted to notify you that someone has purchased a meal from you.
+	They should contact you shortly.`;
+	return mailTransport.sendMail(mailOptions).then(() => {
+	  return console.log('Purchase notification sent to:', email);
   };
 }

@@ -6,7 +6,7 @@ Checklist for end of sprint 4:
 
 Add to each developer's description landing page.
 
-Update viewprofile to look like account page.
+Update viewprofile to look like account page. X
 
 Host website.
 
@@ -20,8 +20,12 @@ Make sure Home page doesn't scroll.
 
 Menu consistency.
 
-Error log.
+Class Demo (any material needed for this).
 
-Class Demo (any material needed for this)
+Update release plan.
 
-Update release plan
+Add all errors to error log. 
+
+Upload definition of done.
+
+Upload style documentation.
