@@ -81,12 +81,11 @@ Note: This document contains all known errors that will be shipped with the fina
 
 ### ----- Descriptions break in the middle of words -----
 
-**Description:**  Descriptions in the About Me sometimes break in the middle of words.
+**Description:**  Descriptions, paypal email, and contact info in the About Me sometimes break in the middle of words.
 
 **Location:** Account page
 
 **Suggested Action:** Use a different styling for the descriptions such that text wraps around but does not break.
-
 
 
 ### ----- Passes not listed on account page  -----
@@ -96,6 +95,15 @@ Note: This document contains all known errors that will be shipped with the fina
 **Location:** Account page
 
 **Suggested Action:**  List the amount of passes a user has and the price on the account page.
+
+
+### ----- Paypal email does not check format  -----
+
+**Description:**  Paypal email input does not check input for any formatting.
+
+**Location:** Account page
+
+**Suggested Action:**  Place restrictions on the format that users can input into the paypal email.
 
 
 
