@@ -24,7 +24,7 @@ Note: This document contains details provided by each team member about the modu
 - Test Cases: {"test@test.com", "ktbeck@ucsc.edu"}
 - Expected Output: form gives email address is already used error
 
-**EC: Signup with empty email**
+**EC: Sign up with empty email**
 - Test Cases: {""}
 - Expected Output: disable submit button
 
@@ -36,16 +36,18 @@ Note: This document contains details provided by each team member about the modu
 - Test Cases: {"asdfadsf", "", "asdfsa@asdf}
 - Expected Output: form allows submission, given all other fields are correct
 
-**EC: Signup with empty password**
+**EC: Sign up with empty password**
 - Test Cases: {""}
 - Expected Output: disable submit button
+
+### ----- Eric Rong -----
 
 **EC: Sign up with a password with < 6 characters**
 - Test Cases: {"asdfadsf", "asdfsa@asdf}
 - Expected Output: form gives password too short error
 
 **EC: Sign in with taken email**
-- Test Cases: {"ktbeck@ucsc.com", "erong@ucsc.com"}
+- Test Cases: {"erong@ucsc.com", "schan@ucsc.edu"}
 - Expected Output: form allows submission, given password correct
 
 **EC: Sign in with empty email**
@@ -64,7 +66,7 @@ Note: This document contains details provided by each team member about the modu
 - Test Cases: {"qwerty"}
 - Expected Output: form allows submission, given correct email
 
-**EC: Signup with empty password**
+**EC: Sign in with empty password**
 - Test Cases: {""}
 - Expected Output: disable submit button
 
@@ -84,8 +86,7 @@ Note: This document contains details provided by each team member about the modu
 - Test Cases: {"random@alsdjf.com"}
 - Expected Output: form gives no account error
 
-
-### ----- Eric Rong -----
+### ----- Steve Chan -----
 
 **EC: Stripe Checkout with valid Stripe test info**
 - Test Cases: {"erong@ucsc.edu", 4242 4242 4242 4242, 12/21, 123}
@@ -95,17 +96,32 @@ Note: This document contains details provided by each team member about the modu
 - Test Cases: {"erong", 0000, 12/12, ""}
 - Expected Output: Stripe refuses to submit payment
 
-**EC: Update account with anything for About Me**
+**EC: Update About Me with anything**
 - Test Cases: {"", "Here is a little about me"}
 - Expected Output: account info updated
 
-**EC: Update account with anything for Contact Ingo**
+**EC: Update Contact Info with anything**
 - Test Cases: {"", "0000000000"}
 - Expected Output: account info updated
 
-**EC: Update account with anything for Paypal Email**
+**EC: Update Paypal Email with valid email**
 - Test Cases: {"", "erong@ucsc.edu"}
 - Expected Output: account info updated
+
+**EC: Update Paypal Email with invalid email form**
+- Test Cases: {"sldkfj"}
+- Expected Output: form should give badly formated email error
+- Note: added to error log
+
+**EC: Stripe webhook sent as type Charge**
+- Test Cases: {charge.captured}
+- Expected Output: recieve 200 OK status, displayed on admin page under charge
+
+**EC: Stripe webhook sent as type anything but Charge**
+- Test Cases: {account.external_account.created}
+- Expected Output: recieve 200 OK status, displayed on admin page under other
+
+### ----- Nicole Ayon Campos -----
 
 **EC: Password reset with a matching password with >= 6  characters**
 - Test Cases: {"qwerty", "qwerty"}
@@ -126,3 +142,57 @@ Note: This document contains details provided by each team member about the modu
 **EC: Password reset outside of sensitive time range**
 - Test Cases: {"qwerty", "qwerty"}
 - Expected Output: field gives too late error
+
+**EC: Access /admin as admin**
+- Test Cases: {role = admin}
+- Expected Output: display admin page
+
+**EC: Access /admin as non admin**
+- Test Cases: {role != admin}
+- Expected Output: do not display admin page, redirect back
+- Actual Output: admin page displayed for a second
+- Note: added to error log
+
+### ----- Megan Wu -----
+
+**EC: Update meal listing with non negative integer**
+- Test Cases: {1, 40}
+- Expected Output: form allows submission, given price is correct
+
+**EC: Update meal listing without non negative integer**
+- Test Cases: {-1, asdf}
+- Expected Output: form shows error, does not allow submission
+
+**EC: Update meal price with valid, positive dollar amount**
+- Test Cases: {1, 40.32}
+- Expected Output: form allows submission, given quantity
+
+**EC: Update meal price with float with more than 2 decimals**
+- Test Cases: {1, 40.32}
+- Expected Output: form shows error, does not allow submission
+- Actual Output: form allows submission, given quantity
+- Note: added to error log
+
+**EC: Update meal price with invalid dollar amount**
+- Test Cases: {-1, asdf}
+- Expected Output: form shows error, does not allow submission
+
+**EC: Allow google position and set preferred dining hall**
+- Test Cases: {Click Allow}
+- Expected Output: distances outputted correctly
+
+**EC: Allow google position and set preferred dining hall**
+- Test Cases: {Click Block }
+- Expected Output: distances disabled
+- Actual Output: distances calculated from 0,0
+- Note: added to error log
+
+
+
+
+
+
+
+
+
+
