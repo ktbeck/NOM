@@ -8,31 +8,30 @@
 
 ### ----- ACTIONS TO STOP DOING -----
 
-We are overestimating the amount of tasks we can do it one sprint and we should stop assuming we can finish tasks on time. We should stop underestimating tasks as we do not have a complete understanding of the tasks. 
+We overestimated the number of tasks we can complete in one sprint, and need to stop skipping over time for individual features in sprint planning meeting. We should stop underestimating these tasks. 
 
 ### ----- ACTIONS TO START DOING -----
 
-We should have more upfront architecture. We need to discuss more about what we can do and what we can’t do. We should start discussing all our challenges and ask for help when needed. We should more estimating tasks more accurately and distributing tasks to people specifically.
+We should have more upfront architecture. We need to discuss more before starting code. We should discuss challenges and ask for help when needed. We should spend more time estimating tasks and distributing tasks to specific people.
 
 ### ----- ACTIONS TO KEEP DOING -----
 
-We should keep the meeting times the same and have Scrum Meetings. We should keep showing on time and communicate what we should do. Continue communicating more as we have improved on that. 
+We should keep the meeting times the same. We should keep showing up on time and communicate outside of meetings even more. Communicate more like we did in sprint 4. 
 
 ### ----- WORK COMPLETED / NOT COMPLETED -----
 
-    Most of the features in User Story 1 is incomplete. However, they are close to be done
-
-
-**Incomplete:** User Story 1: Writing Reviews, moderating payments, email notification when someone buys, profile picture, payment history
-
+**Incomplete:** User Story 1: Writing Reviews, moderating payments, email notification when someone buys, profile picture, payment history 
+Most of the features in User Story 1 are incomplete. However, many are close to completion.
 
 **Completed:** User Story 2: Able to access the NOM website on Internet
 
 
-**Incomplete:** User Story 3: Did not completely finish making the website look appealing, however, account and landing page have improvements in styling
+**Incomplete:** User Story 3: Website styling
+Website is does not look like a professional website, but we definitely made improvements from previous sprints.
 
 
-**Incomplete:** User Story 4: Website still has bugs such as overlapping stripe buttons and update pass. 
+**Incomplete:** User Story 4: Website bugs
+Website has many small bugs. We removed a lot of issues in sprint 4, and if we did a sprint 5 we could remove almost all the bugs.
 
 ### ----- WORK COMPLETION RATE -----
 
