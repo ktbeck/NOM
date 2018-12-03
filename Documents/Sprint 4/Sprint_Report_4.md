@@ -39,6 +39,8 @@ We should keep the meeting times the same and have Scrum Meetings. We should kee
 **Total User Stories Completed:** 1/4
 **Total Hours Completed:** 40/61.5
 **Total Days:** 14 days, 6 scrums
+
+
 ![Sprint 4 Scrum Board](https://github.com/nicolleayon/NOM/blob/master/Documents/Sprint%204/FinishedScrumBoard.jpggit )
 ![Sprint 4 Burn Up Chart](https://github.com/nicolleayon/NOM/blob/master/Documents/Sprint%204/BurnUpChart.jpg)
 ![Sprint 4 Burn Down Chart](https://github.com/nicolleayon/NOM/blob/master/Documents/Sprint%204/burndown4.jpg)
