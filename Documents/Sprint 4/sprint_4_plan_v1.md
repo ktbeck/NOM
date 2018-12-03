@@ -71,7 +71,7 @@ The goal is to finish important work and user stories from previous Sprints. In 
 
 
 ## --- INITIAL SCRUM BOARD -----
-    
+![sprint 4 initial scrum board](Sprint4ScrumBoard.jpg)     
 
 
 ## ----- SCRUM TIMES -----
