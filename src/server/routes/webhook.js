@@ -1,6 +1,6 @@
 const stripe = require('../constants/stripe');
 const firebase = require('firebase');
-const config = require('../../constants/firebase');
+const config = require('../constants/firebase');
 
 const webhookApi = app => {
   app.post('/', (req, res) => {
