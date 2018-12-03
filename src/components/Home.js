@@ -56,7 +56,7 @@ class HomePage extends Component {
 							<th id="payment">Payment</th>
 						</tr>
 						{usersList.map((user) =>
-							<tr align="center" key={user.email}>
+							<tr id="emails" key={user.email}>
 								<td headers="name">
 									<div>
 										{/* Clicking on user leads to user profile */}
@@ -77,7 +77,7 @@ class HomePage extends Component {
 							</tr>)}
 					</tbody>
 				</table>
-					<div align="center">
+					<div id="avg-price">
 						<h3>
 						Average Price:
 						</h3>

@@ -88,7 +88,7 @@ class AccountPage extends Component {
 
             <div id="about-me-box-two">
               <form onSubmit={this.onSubmit}>
-              <h3>Update Information</h3>
+              <h3 id="update-info">Update Information</h3>
               <div>
               <p>About Me</p>
               <input
