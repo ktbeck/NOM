@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings';
-import "./UserReview.css"
+import {db} from '../firebase';
+import firebase from 'firebase/app';
 
 class UserReview extends Component {
     constructor(props){
@@ -15,25 +16,43 @@ class UserReview extends Component {
       if (this.state.rating === true){
         return reviews.sort((a, b) => {return getUserRating(a) - getUserRating(b)});
       }else return reviews;
-    };
+    }
+    componentDidMount() {
+        db.onceGetUsers('users/' + this.state.uid).then(snapshot =>
+      this.setState({ 
+      reviews: snapshot.val().reviews
+       }),
+        );
+    }
+    onSubmit = (event) => {
+      db.ref('users/' + this.state.uid).update({
+        reviews: this.state.reviews,
+      });
+    }      
     render() { 
-      var reviewers = getUserReviewers(this.props.review);
+      if (this.props.review == null){
+        return(<p>There are no reviews!</p>);
+      }
+      var reviewers = getUserReviewers(this.props.review)   ;
       const avgRating = avgUserRating(reviewers);
       reviewers = this.reviewSort(reviewers);
         return (  
           <div>
-          <h3>Average Rating:  {avgRating}/5 </h3>
+          Sort By:
+          <button onClick = {() => this.setState({new: true, highRating: false})}>New</button>
+          <button onClick = {() => this.setState({new: false, highRating: true})}>Rating</button>
+
+          <h5>Avg Rating:  {avgRating} </h5>
               {reviewers.map((review) =>
-              <div id="single-review">
-                  <b>{getReviewerName(review)}</b>&nbsp;
+              <div>
+                {getReviewerName(review)} &nbsp;
                 User Rating : <StarRatings rating = {getUserRating(review)}
                                             starDimension = '23px'
                                             starSpacing = '0px'
                                             starRatedColor = "yellow"/><br></br>
                 {getUserReview(review)}<br></br>
-              </div>
-                )
-              }
+            </div>  
+              )}
           </div>
         );
     }
