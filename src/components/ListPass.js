@@ -31,9 +31,9 @@ class ListPassButton extends Component {
 		const formVisible = this.state.formVisible;
 		return (
 			<div ref={node => { this.node = node; }}>
-				<button id="Button" onClick={this.handleButtonClick}>
+				<span id="linknav" onClick={this.handleButtonClick}>
 					Update Passes
-				</button>
+				</span>
 				{formVisible ? <ListPassForm /> : null}
 			</div>
 		);

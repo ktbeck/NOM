@@ -52,9 +52,16 @@ const MeetTheTeam = () =>
 		<div className="box">
 		  <h3> Kyler</h3>
 		  <img src={require('../images/boy.png')} alt="Kyler" width="100" height="100"/>
-		  <p> "I'm a senior CS major at UCSC taking 115 to learn more about software development
-			  I like to program and eat at the dining halls, so this website matched up well with
-			  me. I don't really know what else to say about myself, so bye."</p>
+            <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+		  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+		  ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+		  aliquip ex ea commodo consequat. Duis aute irure dolor in
+		  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+		  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+		  culpa qui officia deserunt mollit anim id est laborum."</p>
+		  {/*<p> "I'm a senior CS major at UCSC taking 115 to learn more about software development*/}
+			  {/*I like to program and eat at the dining halls, so this website matched up well with*/}
+			  {/*me. I don't really know what else to say about myself, so bye."</p>*/}
 		</div>
 		<div className="box">
 		  <h3> Megan</h3>
