@@ -1,4 +1,4 @@
-﻿###----- SPRINT 4 REPORT -----
+﻿### ----- SPRINT 4 REPORT -----
 
 **Product Name:** NOM Dining Hall Meal Exchange
 
