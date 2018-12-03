@@ -26,7 +26,6 @@ Note: This document contains a list of user stories and their corresponding scen
 **Scenario:** As a developer user story, this does not have a full scenario. Coverage is implied because the website was build using web APIs.
 
 
-
 ### ----- Sprint 1 | User Story 4 -----
 
 **User Story:** As a user, I want to be able to create an account so I can have a personalized experience.
@@ -40,6 +39,47 @@ Note: This document contains a list of user stories and their corresponding scen
   - Confirm Password: qwerty
 3. Click 'Sign Up' button
 4. User should see their newly created account
+
+### ----- Sprint 2 | User Story 1 -----
+
+**User Story:** As a seller, I want to list my passes on the site so other students can buy them from me.
+
+**Scenario:**
+1. Log in or sign up
+2. Click 'Update meals' and add meals for sale.
+3. Switch accounts and ensure meal price, number of meals, and preferred location match up.
+
+### ----- Sprint 2 | User Story 2 -----
+
+**User Story:** As a seller, I want to have an account dashboard so I can keep track of my available guest passes and edit my information.
+
+**Scenario:** 
+1. While logged in to your account click the account page.
+2. Users can view and change public information.
+3. To see available guest passes click 'Update Passes'.
+
+### ----- Sprint 2 | User Story 3 -----
+
+**User Story:** As a buyer, I want to see information about available passes so I can contact sellers and purchase them.
+
+**Scenario:** 
+1. Login or sign up
+2. Go to 'Home' in the menu.
+
+### ----- Sprint 2 | User Story 4 -----
+
+**User Story:** As a user I want a navigation bar at the top of the page to easily navigate to other places on the site.
+
+**Scenario:** 
+1. If user is not logged in, navigation bar allows users to alternate between 'Sign In' page and 'Landing Page'.
+2. If user is logged in, navigation bar allows users to alternate between 'Sign out', 'Home', and 'Account' pages.
+
+### ----- Sprint 2 | User Story 5 -----
+
+**User Story:** As a seller/buyer, I want a clean, easy to use layout for buying or selling passes.
+
+**Scenario:**  As a developer user story, this does not have a full scenario. Coverage is implied because the website was build using web APIs.
+
   
   
 # TODO: complete rest of sprints
