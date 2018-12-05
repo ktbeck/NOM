@@ -46,19 +46,25 @@ class PasswordChangeForm extends Component {
 
 	return (
 	  <form onSubmit={this.onSubmit}>
-		<input
-		  value={passwordOne}
-		  onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
-		  type="password"
-		  placeholder="New Password"
-		/>
-		<input
-		  value={passwordTwo}
-		  onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
-		  type="password"
-		  placeholder="Confirm New Password"
-		/>
-		<button disabled={isInvalid} type="submit">
+	  	<div class="account-section">
+			<div class="label">New Password: </div>		
+			<input
+			  value={passwordOne}
+			  onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
+			  type="password"
+			  placeholder="New Password"
+			/>
+		</div>
+		<div class="account-section">
+			<div class="label">Confirm Password: </div>
+			<input
+			  value={passwordTwo}
+			  onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
+			  type="password"
+			  placeholder="Confirm New Password"
+			/>
+		</div>
+		<button disabled={isInvalid} type="submit" class="submit-button submit-button-orange">
 		  Reset My Password
 		</button>
 

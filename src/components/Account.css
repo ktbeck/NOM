@@ -1,11 +1,10 @@
 #account-title{
   color: black;
   text-align: center;
-  background-color:	#D8D8D8;
-  padding: 10px;
+  padding: 50px;
   margin-top: 0;
+  font-size: 40px;
 }
-
 #container{
   margin-left: 20px;
   width: 50%;
@@ -13,35 +12,37 @@
   word-wrap: break-word;
   word-break: break-all;
 }
-
-#welcome-user{
-  color: grey;
-  font-size: 40px;
+.section {
+  width: 70vw;
+  margin: 0 auto;
+  padding-bottom: 90px;
 }
-
-.section{
-  color: grey;
+.section-header {
   font-size: 26px;
+  color: #ff7149;
+  font-weight: 700;
+  width: 100%;
+  border-bottom: 1px solid #ececec;
+  line-height: 2em;
 }
-
-
-#about-me-cont{
-  display: flex;
-  flex-direction: row;
+.label {
+  float: left;
+  vertical-align: baseline;
+  font-weight: 700;
+  line-height: 3em;
 }
-#about-me-box-one{
-  margin-left: 30px;
+.account-section {
+  font-size: 20px;
+  border-bottom: 1px solid #ececec;
 }
-#about-me-box-two{
-  margin-left: 40px;
-  text-align: center;
+.account-section input {
+  height: 30px;
+  padding: 5px;
+  margin: 10px;
+  border: none;
+  font-size: 16px;
+  width: 70%;
 }
-
-#update-info{
-  width:110%;
-}
-
-.footer{
-  height: 40px;
-  background: white;
+.account-section input:focus {
+  outline: none;
 }
