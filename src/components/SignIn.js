@@ -7,11 +7,14 @@ import { PasswordForgetLink } from './PasswordForget';
 import * as routes from '../constants/routes';
 import "./SignIn.css";
 const SignInPage = ({ history }) =>
-  <div id="signin">
-	<h1>Sign In</h1>
-	<SignInForm history={history} />
+  <div id="signin-page"> 
+  	<div class="registration-form">
+		<h1>Sign In</h1>
+		<SignInForm history={history} />
+		
+	</div>
 	<PasswordForgetLink />
-	<SignUpLink />
+		<SignUpLink />
   </div>
 
 const byPropKey = (propertyName, value) => () => ({
@@ -78,7 +81,7 @@ class SignInForm extends Component {
 		  type="password"
 		  placeholder="Password"
 		/>
-		<button disabled={isInvalid} type="submit">
+		<button disabled={isInvalid} type="submit" class="submit-button">
 		  Sign In
 		</button>
 

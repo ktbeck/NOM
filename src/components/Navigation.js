@@ -32,7 +32,7 @@ const NavigationNonAuth = () =>
   <div class="nav">
 	<div className="title" id="title-landing"><a href="/">NOM</a></div>
 	<ul>
-	  <li class="nav-link" id="signin-link"><Link to={routes.SIGN_IN}>Log In</Link></li>
+	  <li class="nav-link" id="signin-link"><Link to={routes.SIGN_IN}>Sign In</Link></li>
 	  <li class="nav-link" id="signup-link"><Link to={routes.SIGN_UP}>Sign Up</Link></li>
 	</ul>
   </div>;

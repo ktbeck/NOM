@@ -4,7 +4,7 @@ body{
 .nav {
 	height: 45px;
 	padding: 0px 20px 4px 20px;
-	border-bottom: 1px solid grey;
+	border-bottom: 1px solid #ececec;
 }
 .title{
 	color: #ff7149; /* orange */

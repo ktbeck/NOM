@@ -6,9 +6,11 @@ import * as routes from '../constants/routes';
 import "./SignUp.css"
 
 const SignUpPage = ({history}) =>
-  <div id="signup-title">
-	<h1>SignUp</h1>
-	<SignUpForm history={history} />
+  <div id="signup-page">
+	  	<div class="registration-form">
+		<h1>Sign Up</h1>
+		<SignUpForm history={history} />
+	</div>
   </div>
   
 const INITIAL_STATE = {
@@ -112,7 +114,7 @@ class SignUpForm extends Component {
 				/>
 				<br></br>
 				<br></br>
-				<button disabled={isInvalid} type="submit">
+				<button disabled={isInvalid} type="submit" class="submit-button submit-button-orange">
 				  Sign Up
 				</button>
 
