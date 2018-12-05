@@ -30,6 +30,9 @@ class AdminPage extends Component {
 	render() {
 		return (
 			<div id="admin-page">
+				<div class="main-title">
+					Secret Admin Page
+				</div>
 				<Metrics events={this.state.events} />
 				<ChargesTable events={this.state.events} />
 				<AccountsTable events={this.state.events} />
@@ -42,10 +45,7 @@ class Metrics extends Component {
 	render() {
 		var events = this.props.events;
 		return (
-			<div>
-				
-
-			</div>
+			<div></div>
 		);
 	}
 }
@@ -59,10 +59,13 @@ class ChargesTable extends Component {
 		var events = this.props.events;
 		return (
 			<div class="activity-table">
-				<div class="table-header">Charges</div>
+				<div class="section-header">
+					Charge Activity
+				</div>
 				<table>
 					<thead><tr>
-						<th>User</th>
+						<th>From</th>
+						<th>To</th>
 						<th>Type</th>
 						<th>Status</th>
 						<th>Amount</th>
@@ -80,10 +83,11 @@ class ChargesTable extends Component {
 						if (e.type.startsWith("charge"))
 							return (
 								<tr key={data.id}>
-									<td></td>
+									<td>{data.source.name}</td>
+									<td>{data.description}</td>
 									<td>{getType(e.type)}</td>
 									<td>{getStatus(e.type)}</td>
-									<td>${data.amount}</td>
+									<td>${parseFloat(data.amount/100).toFixed(2)}</td>
 									<td>{date.toString()}</td>
 								</tr>
 								
@@ -102,11 +106,12 @@ class AccountsTable extends Component {
 		var events = this.props.events;
 		return (
 			<div class="activity-table">
-				<div class="table-header">Other Events</div>
+				<div class="section-header">
+					Other Activity
+				</div>
 				<table>
 					<thead><tr>
 						<th>Type</th>
-						<th>Amount</th>
 						<th>Date</th>
 						<th>Action</th>
 					</tr></thead>
@@ -124,7 +129,6 @@ class AccountsTable extends Component {
 							return (
 								<tr key={data.id}>
 									<td>{e.type}</td>
-									<td>${data.amount}</td>
 									<td>{date.toString()}</td>
 									<td>{action}</td>
 								</tr>

@@ -49,10 +49,12 @@ function UserProfile (props) {
 				<div class="section-header">
 					About the Seller
 				</div>
-				<div>
-					<p>About {user.username}: {user.userDescription}</p>
-					<p><b> Contact Info: </b>{user.contactinfo} </p>
-					<p><b>Preferred Location: </b>{returnLocation(user.preferredLocation)}</p>
+				<div class="text">
+					<p>{user.userDescription}</p>
+					<div><b>Contact me:</b> {user.contactinfo}</div>
+					<div>
+						<b>Location:</b> {returnLocation(user.preferredLocation)}
+					</div>
 
 				</div>
 			</div>

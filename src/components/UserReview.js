@@ -37,7 +37,7 @@ class UserReview extends Component {
 	  const avgRating = avgUserRating(reviewers);
 	  reviewers = this.reviewSort(reviewers);
 		return (
-		  <div>
+		  <div class="review-section">
 		  Sort By:
 		  <button onClick = {() => this.setState({new: true, highRating: false})}>New</button>
 		  <button onClick = {() => this.setState({new: false, highRating: true})}>Rating</button>
