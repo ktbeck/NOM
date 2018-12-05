@@ -19,9 +19,9 @@ class UserReview extends Component {
 	}
 	componentDidMount() {
 		db.onceGetUsers('users/' + this.state.uid).then(snapshot =>
-	  this.setState({
-	  reviews: snapshot.val().reviews
-	   }),
+			this.setState({
+				reviews: snapshot.val().reviews
+			}),
 		);
 	}
 	onSubmit = (event) => {
