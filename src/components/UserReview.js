@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import StarRatings from 'react-star-ratings';
 import {db} from '../firebase';
 import firebase from 'firebase/app';
+import "./UserReview.css";
 
 class UserReview extends Component {
 	constructor(props){
@@ -38,19 +39,39 @@ class UserReview extends Component {
 	  reviewers = this.reviewSort(reviewers);
 		return (
 		  <div class="review-section">
-		  Sort By:
-		  <button onClick = {() => this.setState({new: true, highRating: false})}>New</button>
-		  <button onClick = {() => this.setState({new: false, highRating: true})}>Rating</button>
+		  		<div class="rating">
+		  			<b>Average Rating:  {avgRating}</b>
+		  		</div>
 
-		  <h5>Avg Rating:  {avgRating} </h5>
+
+		  Sort By:
+		  <button 
+		  	class="submit-button" 
+		  	onClick = {() => 
+		  		this.setState({new: true, highRating: false})}
+		  >
+		  	New
+		  </button>
+		  <button 
+		  	class="submit-button submit-button-orange"
+		  	onClick = {() => 
+		  		this.setState({new: false, highRating: true})}
+		  >
+		  	Rating
+		  </button>
+
 			  {reviewers.map((review) =>
-			  <div>
-				{getReviewerName(review)} &nbsp;
-				User Rating : <StarRatings rating = {getUserRating(review)}
-											starDimension = '23px'
-											starSpacing = '0px'
-											starRatedColor = "yellow"/><br></br>
-				{getUserReview(review)}<br></br>
+			  <div class="single-review">
+				<div class="review-name">
+					{getReviewerName(review)} &nbsp;
+					<StarRatings rating = {getUserRating(review)}
+								starDimension = '23px'
+								starSpacing = '0px'
+								starRatedColor = "yellow"/><br></br>
+				</div>
+				<div class="review-text">
+					{getUserReview(review)}
+				</div>
 			</div>
 			  )}
 		  </div>

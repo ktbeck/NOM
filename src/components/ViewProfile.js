@@ -60,7 +60,7 @@ function UserProfile (props) {
 			</div>
 			<div class="section">
 				<div class="section-header">
-					Seller Ratings
+					Seller Rating
 				</div>
 				<div>
 					<UserReview review={user.reviews}/>
