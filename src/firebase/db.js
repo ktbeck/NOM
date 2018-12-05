@@ -8,7 +8,10 @@ export const doCreateUser = (id, username, email) =>
     email,
     userDescription: "",
     paypal:"",
-    contactinfo:""
+    contactinfo:"",
+    mealPrice:"",
+    numMeals:"",
+    preferredLocation:"location1"
   });
 
 export const onceGetUsers = () =>
