@@ -1,3 +1,9 @@
 node_modules/
 .firebaserc
-
+firebase.json
+functions/
+src/constants/firebase.js
+src/constants/frontend.js
+src/react-express-stripe/
+src/constants/server.js
+src/constants/stripe.js
