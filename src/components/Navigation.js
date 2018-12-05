@@ -18,22 +18,22 @@ const Navigation = () =>
   </AuthUserContext.Consumer>;
 
 const NavigationAuth = () =>
-  <div>
-	<div className="title">NOM</div>
+  <div class="nav">
+	<div className="title" id="title-home"><a href="/home">NOM</a></div>
 	<ul>
-		<li><Link to={routes.HOME} id="linknav">Home</Link></li>
-		<li><Link to={routes.ACCOUNT} id="linknav">Account</Link></li>
-		<li><ListPassButton /></li>
-		<li><SignOutButton /></li>
+		<li class="nav-link"><Link to={routes.HOME} id="linknav">Home</Link></li>
+		<li class="nav-link"><Link to={routes.ACCOUNT} id="linknav">Account</Link></li>
+		<li class="nav-link"><ListPassButton /></li>
+		<li class="nav-link"><SignOutButton /></li>
 	</ul>
    </div>;
 
 const NavigationNonAuth = () =>
-  <div>
-	<div className="title">NOM</div>
+  <div class="nav">
+	<div className="title" id="title-landing"><a href="/">NOM</a></div>
 	<ul>
-	  <li><Link to={routes.LANDING}>Landing</Link></li>
-	  <li><Link to={routes.SIGN_IN}>Sign In</Link></li>
-	  </ul>
+	  <li class="nav-link" id="signin-link"><Link to={routes.SIGN_IN}>Sign In</Link></li>
+	  <li class="nav-link" id="signup-link"><Link to={routes.SIGN_UP}>Sign Up</Link></li>
+	</ul>
   </div>;
 export default Navigation;
