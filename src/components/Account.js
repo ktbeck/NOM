@@ -52,7 +52,7 @@ class AccountPage extends Component {
 	const location = this.state.location;
 	return (
 		<div>
-			<h1 id="account-title">Account</h1>
+			<h1 class="main-title">Account</h1>
 			<div class="section">
 				<div class="section-header">
 					Profile Information
