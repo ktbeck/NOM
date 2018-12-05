@@ -47,6 +47,8 @@ function validate(numMeals, mealPrice) {
 		nmError = 'Please enter a number';
 	else if (numMeals < 0)
 		nmError = 'Please enter a positive number';
+	else if (numMeals > 999)
+		nmError = 'Please enter a number < 999';
 
 	var mpError = '';
 	// eslint-disable-next-line

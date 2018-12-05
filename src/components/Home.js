@@ -70,6 +70,8 @@ render() {
 									name={'NOM Meal'}
 									description={user.email}
 									amount={user.mealPrice}
+									seller={user.email}
+									numMeal={user.numMeals}
 								/>
 							</div>
 						</div>
