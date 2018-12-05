@@ -5,23 +5,40 @@ body{
 }
 
 #welcome-message{
-  padding: 10px;
+  padding: 20px 60px;
   background-image: url("../images/food.jpeg");
   background-size: cover;
   font-family: "Futura", sans-serif;
   color: white;
-  text-align: center;
-  min-height: 70vh;
-
+  text-align: left;
+  height: 80vh;
+}
+#welcome-message h1 {
+  padding-top: 190px;
+}
+.action-button {
+  margin-top: 5px;
+  border-radius: 25px;
+  background-color: #ff7149;
+  display: inline-block;
+  padding: 11px 24px;
+}
+.action-button a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
 }
 .container{
-  margin-top: 10px;
+  margin-top: 0px;
 }
 .statement{
   font-family: "Futura", sans-serif;
   margin-left: 15%;
   margin-right: 15%;
-  padding: 20px;
+  padding: 40px 20px;
+}
+#mission-statement-text {
+  line-height: 2em;
 }
 #team-cont{
   display: flex;
@@ -32,21 +49,22 @@ body{
   margin: 10px;
 }
 #mission-cont{
-  /* border: solid 5px #ff8d6d; */
-  background-color: #7f3824;
+  background-color: #ff7149;
   color: white;
   min-height: 50vh;
 }
 #meetus-cont{
-  /* border: solid 5px #e56541; */
-  background-color: #b24f33;
-  color: white;
+  background-color: white;
+  color: black;
   min-height: 50vh;
 }
 
 #contactus-cont{
-  /* border: solid 5px #e56541; */
-  background-color: #c1725b;
+  background-color: black;
   color: white;
   min-height: 50vh;
+}
+
+#contactus-cont .action-button{
+  margin: 40px 0;
 }
