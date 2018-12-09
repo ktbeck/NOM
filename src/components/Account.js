@@ -60,12 +60,14 @@ class AccountPage extends Component {
 				<form onSubmit={this.onSubmit}>
 					<div class="account-section">
 						<div class="label">About Me: </div>
-						<input
-							type="text"
-							placeholder="Tell us about yourself"
+						<textarea
 							value={this.state.userDescription}
+							maxLength="1000"
+							rows="10"
+							cols="100"
+							placeholder="Tell us about yourself (max 1000 characters)"
 							onChange={event => this.setState({userDescription: event.target.value})}
-						/>
+						></textarea>
 					</div>
 					<div class="account-section">
 						<div class="label">Contact Info: </div>

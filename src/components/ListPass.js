@@ -56,6 +56,8 @@ function validate(numMeals, mealPrice) {
 		mpError = 'Please enter a price';
 	else if (mealPrice < 0)
 		mpError = 'Please enter a positive number';
+	else if (mealPrice > 999)
+		mpError = 'Please enter a number < 999';
 
 	return {
 		numMeals: nmError,
