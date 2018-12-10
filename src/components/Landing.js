@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './Landing.css';
+import { Link } from 'react-router-dom';
+import * as routes from '../constants/routes';
+
 
 class LandingPage extends Component {
     render() {
@@ -15,8 +18,12 @@ class LandingPage extends Component {
 }
 const WelcomeMessage = () =>
   <div id="welcome-message">
-    <h1>Welcome to NOM</h1>
+    <h1>Poor, Dumb, Broke College Kids</h1>
 	  <h2>Filling all of your eating needs</h2>
+    <div class="action-button">
+      <Link to={routes.SIGN_UP}>Find Dining Hall Passes</Link>
+    </div>
+
   </div>;
 
 const MissionStatement = () =>
@@ -41,21 +48,15 @@ const MeetTheTeam = () =>
         <div className="box">
     	    <h3> Eric </h3>
           <img src={require('../images/boy.png')} alt="Eric" width="100" height="100"/>
-          <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          <p> "Labore et dolore magna aliqua. Ut enim
           ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."</p>
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat"</p>
         </div>
         <div className="box">
           <h3> Kyler</h3>
           <img src={require('../images/boy.png')} alt="Kyler" width="100" height="100"/>
-          <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          <p> "Ex ea commodo consequat. Duis aute irure dolor in
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum."</p>
@@ -63,32 +64,23 @@ const MeetTheTeam = () =>
         <div className="box">
           <h3> Megan</h3>
           <img src={require('../images/boy.png')} alt="Megan" width="100" height="100"/>
-          <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          <p> "Quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor in
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."</p>
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in."</p>
         </div>
         <div className="box">
           <h3> Nicolle</h3>
           <img src={require('../images/boy.png')} alt="Nicolle" width="100" height="100"/>
-          <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          <p> "Veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat. Duis aute irure dolor in
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."</p>
+          pariatur. Excepteur sint occaecat cupidatat."</p>
         </div>
         <div className="box">
           <h3> Steve</h3>
           <img src={require('../images/boy.png')} alt="Steve" width="100" height="100"/>
-          <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          <p> "Ea commodo consequat. Duis aute irure dolor in
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum."</p>
@@ -101,11 +93,14 @@ const ContactUs = () =>
   <div className="container" id="contactus-cont">
     <div className="statement">
       <h1>Contact Us</h1>
-  	  <div> <h3>Want to give us some feedback? We would love to hear it! </h3>
-        <div> <b>Email:</b> test@test.com </div>
-        <div> <b>Phone:</b> (123) 456-7890</div>
+  	  <div> 
+        <h3>Want to give us some feedback? We would love to hear it! </h3>
+        <div> <b>Email:</b> nom@nommm.in </div>
+        <div> <b>Phone:</b> (650) 345-3527</div>
       </div>
-      Website made with help from tutorials on: https://www.robinwieruch.de
+      <div class="action-button">
+        <Link to={routes.SIGN_UP}>Find Dining Hall Passes</Link>
+      </div>
     </div>
   </div>;
 

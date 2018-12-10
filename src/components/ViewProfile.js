@@ -44,26 +44,28 @@ function UserProfile (props) {
 	const user = props.user;
 	return (
 		<div>
-			<h1 id="account-title">Account</h1>
-			<div id="container">
-				<h2>Welcome {user.username}! </h2>
-				<div id="about-me-cont">
-					<div id="about-me-box-one">
-						<p className="section"><b> About Me: </b></p>
-						<p>{user.userDescription}</p>
-						<p><b> Contact Info: </b>{user.contactinfo} </p>
-						<p><b>Preferred Location: </b>{returnLocation(user.preferredLocation)}</p>
-
-						<h3 className="section"> User Rating </h3>
-						<div>
-							<UserReview review={user.reviews}/>
-						</div>
+			<h1 class="main-title">Hi, I'm {user.username}!</h1>
+			<div class="section">
+				<div class="section-header">
+					About the Seller
+				</div>
+				<div class="text">
+					<p>{user.userDescription}</p>
+					<div><b>Contact me:</b> {user.contactinfo}</div>
+					<div>
+						<b>Location:</b> {returnLocation(user.preferredLocation)}
 					</div>
+
 				</div>
 			</div>
-			<footer>
-				<br></br><br></br><br></br><br></br>
-			</footer>
+			<div class="section">
+				<div class="section-header">
+					Seller Rating
+				</div>
+				<div>
+					<UserReview review={user.reviews}/>
+				</div>
+			</div>
 		</div>
 	);
 }

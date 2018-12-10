@@ -1,3 +1,7 @@
+#home-page {
+	width: 80%;
+	margin: 0 auto;
+}
 #home-title{
   color: black;
   text-align: center;
@@ -5,11 +9,92 @@
   padding: 10px;
   margin-top: 0;
 }
+.home-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: 70px;
+}
+.subheader {
+	font-weight: 700;
+	color: #b5b5b5;
+}
+.single-pass {
+	width: 45%;
+	max-width: 350px;
+	line-height: 1.5em;
+	display: flex;
+	margin: 20px 0;
+	padding: 15px 30px;
+	font-weight: 700;
+	border-radius: 3px;
+	border: 1px solid #ececec;
+}
+.single-pass:hover {
+	border: 1px solid #ff7149;
+}
+.single-pass img {
+	margin: 10px 20px 7px 14px;
+}
+.pass-info {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.pass-name {
+	float: left;
+	display: table;
+	width: 70%;
+}
+.pass-name a {
+	text-decoration: none;
+	color: #ff7149;
+	font-size: 20px;
+}
+.pass-price {
+	font-weight: 500;
+	font-color: grey;
+	float: right;
+	text-align: right;
+}
+.pass-num {
+	font-weight: 200;
+	padding-right: 10px;
+	color: grey;
+	font-size: 14px;
+}
+.pass-location {
+	font-weight: 200;
+	font-size: 14px;
+}
+.pass-button {
+	margin-top: 10px;
+}
+.info-pass img {
+	margin: 4px 20px 6px 14px;
+}
+.info-pass .pass-info {
+	color: black;
+	width: 100%;
+	font-size: 20px;
+	margin-top: 12px;
+}
 
 #emails{
   text-align: center;
 }
-
 #avg-price{
   text-align:center;
+}
+#home-page tr {
+	border: 1px solid #ececec;
+}
+
+.StripeCheckout {
+	width: 60px;
+	background: linear-gradient(135deg, #f18cae, #ff7149)!important;
+}
+.StripeCheckout span {
+	background: linear-gradient(135deg, #f18cae, #ff7149)!important;
+
 }

@@ -16,9 +16,8 @@ class HomePage extends Component {
 	this.state = {
 		users: null,
 		uid: auth2.currentUser.uid,
-		username: '', // i added
-		email: '', //me
-
+		username: '', 
+		email: '', 
 	};
   }
 
@@ -29,64 +28,76 @@ class HomePage extends Component {
 	);
   }
 
-  render() {
-		const { users } = this.state;
-		const currentUser = this.state.uid;
-		if(!this.state.users){
-			return(
-			<div>
-			<h1>Home</h1>
-			No users with meals for sale ):
-			</div>);
-		}
-		const usersList = getUsersWithMeals(users, currentUser);
-		return (
-			<div>
-			<h1 id="home-title">Home</h1>
-				<div>
-				<h2> Available Passes</h2>
-				<table style={tableStyle}>
-					<tbody>
-						<tr>
-							<th id="name">Name</th>
-							<th id="price">Price</th>
-							<th id="numMeals">Number of Meals</th>
-							<th id="location">Dining Hall</th>
-							<th id="payment">Payment</th>
-						</tr>
-						{usersList.map((user) =>
-							<tr id="emails" key={user.email}>
-								<td headers="name">
-									<div>
-										{/* Clicking on user leads to user profile */}
-										<Link to = {`/${String(user.email)}`}> {user.username} </Link>
-									</div>
-
-								</td>
-								<td>${parseFloat(user.mealPrice).toFixed(2)}</td>
-								<td>{user.numMeals}</td>
-								<td>{returnLocation(user.preferredLocation)}</td>
-								<td>
-									<Checkout
-										name={'NOM Meal'}
-										description={user.email}
-										amount={user.mealPrice}
-									/>
-								</td>
-							</tr>)}
-					</tbody>
-				</table>
-					<div id="avg-price">
-						<h3>
-						Average Price:
-						</h3>
-						${avgSellingPrice(users, currentUser)}
+render() {
+	const { users } = this.state;
+	const currentUser = this.state.uid;
+	if(!this.state.users){
+		return(
+		<div>
+		<h1>Home</h1>
+		No users with meals for sale ):
+		</div>);
+	}
+	const usersList = getUsersWithMeals(users, currentUser);
+	return (
+		<div id="home-page">
+			<h1 class="main-title">Find Some Food!</h1>
+			<div class="subheader">
+				AVAILABLE PASSES
+			</div>
+			<div class="home-container">
+				{usersList.map((user) =>
+					<div class="single-pass" key={user.email}>
+						<img src={require('../images/pass.png')} width="50" height="50"/>
+						<div class="pass-info">
+							<div class="pass-name">
+								{/* Clicking on user leads to user profile */}
+								<Link to = {`/${String(user.email)}`}> {user.username} </Link>
+							</div>
+							<div class="pass-price">
+								${parseFloat(user.mealPrice).toFixed(2)}
+							</div>
+							<div>
+								<div class="pass-num">
+									{user.numMeals} Passes Left
+								</div>
+								<div class="pass-location">
+									{returnLocation(user.preferredLocation)}
+								</div>
+							</div>
+							<div class="pass-button">
+								<Checkout
+									name={'NOM Meal'}
+									description={user.email}
+									amount={user.mealPrice}
+									seller={user.email}
+									numMeal={user.numMeals}
+								/>
+							</div>
+						</div>
+					</div>)
+				}
+			</div>
+			<div class="subheader">
+				INFORMATION
+			</div>
+			<div class="home-container">
+				<div class="single-pass info-pass">
+					<img src={require('../images/info.png')} width="40" height="40"/>
+					<div class="pass-info">
+						<div class="pass-name">
+							Average Price
+						</div>
+						<div class="pass-price">
+							${avgSellingPrice(users, currentUser)}
+						</div>
 					</div>
 				</div>
 
 
 			</div>
-		);
+		</div>
+	);
   }
 }
 //returns array of all users with at least 1 meal
@@ -141,7 +152,6 @@ function returnLocation(location){
     return userLocation;
 }
 const tableStyle = {
-  border: '3px solid black',
   width: '100%',
 };
 

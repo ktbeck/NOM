@@ -48,78 +48,77 @@ class AccountPage extends Component {
 	});
   };
 
-
-
   render() {
 	const location = this.state.location;
 	return (
-	  <div>
-		<h1 id="account-title">Account</h1>
-		<div id="container">
-		  <h2>Welcome {this.state.username}! </h2>
-		  <div id="about-me-cont">
-			<div id="about-me-box-one">
-			  <p className="section"> <b> About Me: </b> </p>
-			  <p>{this.state.userDescription}</p>
-			  <p> <b> Contact Info: </b>{this.state.contactinfo} </p>
-			  <p><b>PayPal Email: </b>{this.state.paypal}</p>
-			  <p><b>Preferred Location: </b>{returnLocation(location)}</p>
-
-			  <h3 className="section"> User Rating </h3>
-				<div>
-				 <UserReview review = {this.state.reviews}/>
+		<div>
+			<h1 class="main-title">Account</h1>
+			<div class="section">
+				<div class="section-header">
+					Profile Information
 				</div>
-				{<ChangeMyPassword/>}
+				<form onSubmit={this.onSubmit}>
+					<div class="account-section">
+						<div class="label">About Me: </div>
+						<textarea
+							value={this.state.userDescription}
+							maxLength="1000"
+							rows="10"
+							cols="100"
+							placeholder="Tell us about yourself (max 1000 characters)"
+							onChange={event => this.setState({userDescription: event.target.value})}
+						></textarea>
+					</div>
+					<div class="account-section">
+						<div class="label">Contact Info: </div>
+						<input
+							type="text"
+							placeholder="Email or Phone"
+							value={this.state.contactinfo}
+							onChange={event => this.setState({contactinfo: event.target.value})}
+						/>
+					</div>
+					<div class="account-section">
+						<div class="label">Paypal Info: </div>
+						<input
+							type="text"
+							placeholder="Paypal Email"
+							value={this.state.paypal}
+							onChange={event => this.setState({paypal: event.target.value})}
+						/>
+					</div>
+					<button class="submit-button submit-button-orange" id="submit-button" type="submit">
+						Save
+					</button>
+				</form>
 			</div>
-
-			<div id="about-me-box-two">
-			  <form onSubmit={this.onSubmit}>
-			  <h3 id="update-info">Update Information</h3>
-			  <div>
-			  <p>About Me</p>
-			  <input
-				type="text"
-				placeholder="Tell us about yourself"
-				value={this.state.userDescription}
-				onChange={event => this.setState({userDescription: event.target.value})}
-			  />
-			  </div>
-			  <div>
-			  <p>Contact Info</p>
-			  <input
-				type="text"
-				placeholder="Email or Phone"
-				value={this.state.contactinfo}
-				onChange={event => this.setState({contactinfo: event.target.value})}
-			  />
-			  </div>
-			  <div>
-			  <p>Paypal</p>
-			  <input
-				type="text"
-				placeholder="Paypal Email"
-				value={this.state.paypal}
-				onChange={event => this.setState({paypal: event.target.value})}
-			  />
-			  </div>
-
-			  <button id="submit-button" type="submit">
-				Submit
-			  </button>
-
-			  </form>
-
+			<div class="section">
+				<div class="section-header">
+					Ratings
+				</div>
+				<div>
+					<UserReview review = {this.state.reviews}/>
+				</div>
 			</div>
-		  </div>
-
+			<div class="section">
+				<div class="section-header">
+					Preferred Location
+				</div>
+				<div>
+					{returnLocation(location)}
+				</div>
+			</div>
+			<div class="section">
+				<div class="section-header">
+					Change Password
+				</div>
+				<div>
+					{<ChangeMyPassword/>}
+				</div>
+			</div>
 		</div>
-		  <footer>
-			<br></br><br></br><br></br><br></br>
-		  </footer>
-	  </div>
 	);
   }
-
 } //end of class
 
 function returnLocation(location){
@@ -148,12 +147,9 @@ function returnLocation(location){
 
 const ChangeMyPassword = () =>
 <AuthUserContext.Consumer>
-{authUser =>
-  <div>
-  <h3 className="section"> Change My Password</h3>
-  <p> Change my password </p> <PasswordChangeForm />
-  </div>
-}
+	{authUser =>
+		<div><PasswordChangeForm /></div>
+	}
 </AuthUserContext.Consumer>;
 
 

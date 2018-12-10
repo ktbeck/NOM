@@ -1,4 +1,20 @@
-#single-review {
-    border: solid black 1px;
-    padding: 2px;
+.review-section {
+	font-size: 16px;
+}
+.review-section .submit-button {
+	margin: 0 10px;
+	padding: 6px 12px;
+}
+.rating {
+	padding: 15px 0 35px 0;
+}
+.single-review {
+	padding: 20px 0;
+}
+.review-name {
+	font-weight: 700;
+}
+.review-text {
+	font-size: 20px;
+	line-height: 2em;
 }

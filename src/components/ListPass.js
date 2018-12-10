@@ -47,6 +47,8 @@ function validate(numMeals, mealPrice) {
 		nmError = 'Please enter a number';
 	else if (numMeals < 0)
 		nmError = 'Please enter a positive number';
+	else if (numMeals > 999)
+		nmError = 'Please enter a number < 999';
 
 	var mpError = '';
 	// eslint-disable-next-line
@@ -54,6 +56,8 @@ function validate(numMeals, mealPrice) {
 		mpError = 'Please enter a price';
 	else if (mealPrice < 0)
 		mpError = 'Please enter a positive number';
+	else if (mealPrice > 999)
+		mpError = 'Please enter a number < 999';
 
 	return {
 		numMeals: nmError,
@@ -134,12 +138,12 @@ class ListPassForm extends Component {
 		const isDisabled = Object.keys(errors).some(x => errors[x]);
 		return (
 			<div id='ListPassForm'>
-				<div className='form-title'>
-					Update Your Listings
+				<div className='subheader'>
+					Update Passes
 				</div>
 				<form onSubmit={this.onSubmit}>
 					<div className='form-element'>
-						<label><b>Meals Listed</b> </label>
+						<label>Number of Passes</label>
 						<input
 							type='text'
 							value={this.state.numMeals}
@@ -148,7 +152,7 @@ class ListPassForm extends Component {
 						<div className="error">{errors.numMeals}</div>
 					</div>
 					<div className='form-element'>
-						<label><b>Meal Price</b> </label>
+						<label>Selling Price</label>
 						<input
 							type='text'
 							value={this.state.mealPrice}
@@ -157,7 +161,7 @@ class ListPassForm extends Component {
 						<div className="error">{errors.mealPrice}</div>
 					</div>
 					<div className='form-element'>
-						<label><b>Preferred Dining Hall</b></label><br/>
+						<label>Preferred Dining Hall</label><br/>
 
 						<select
 							value={this.state.preferredLocation}
@@ -176,7 +180,9 @@ class ListPassForm extends Component {
 							))}
 						</select>
 					</div>
-					<input type="submit" disabled={isDisabled} />
+					<button class="submit-button submit-button-orange" type="submit" disabled={isDisabled}>
+						Update
+					</button>
 				</form>
 			</div>
 		);
