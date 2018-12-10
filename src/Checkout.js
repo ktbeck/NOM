@@ -16,7 +16,7 @@ const successPayment = (seller, numMeal)  => {
   sell.on("child_added",(snapshot)=> 
         snapshot.ref.update({numMeals: numMeal - 1 })
     );
-  window.location.reload();
+  //window.location.reload();
 };
 
 const errorPayment = data => {
