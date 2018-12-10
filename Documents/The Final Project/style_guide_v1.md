@@ -12,5 +12,3 @@ Note: This document contains all of the style guidelines for our team. It will a
 - "-" for css id names
 - Identation with tabs
 
-
-## TODO: ADD THINGS
