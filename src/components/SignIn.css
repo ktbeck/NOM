@@ -1,0 +1,52 @@
+#signin-page {
+    text-align: center;
+    font-family: "Futura", sans-serif;
+    padding-top: 100px;
+}
+
+.registration-form {
+	border-radius: 8px;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+    display: block;
+    margin: 0 auto;
+    width: 450px;
+    padding: 60px 0px;
+}
+.registration-form form {
+	width: 300px;
+	margin: 0 auto;
+}
+.registration-form input {
+	width: 100%;
+	height: 28px;
+    line-height: 2em;
+    margin: 16px 0;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.registration-form input:focus {
+	outline: none;
+	border-bottom: 3px solid #ff7149;
+	height: 26px;
+}
+.submit-button {
+	margin-top: 25px;
+	border-radius: 25px;
+	display: inline-block;
+	padding: 11px 24px;
+	color: #ff7149;
+	font-weight: 700;
+	font-size: 16px;
+}
+.submit-button:focus {
+	outline: none;
+}
+.submit-button-orange {
+	color: white;
+	font-weight: 700;
+	font-size: 16px;
+	background-color: #ff7149;
+	border: none;
+}

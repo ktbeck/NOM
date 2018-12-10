@@ -1,0 +1,71 @@
+body{
+	background-color: white;
+}
+.nav {
+	height: 45px;
+	padding: 0px 20px 4px 20px;
+	border-bottom: 1px solid #ececec;
+}
+.title{
+	color: #ff7149; /* orange */
+	font-family: "Futura", sans-serif;
+	font-size: 38px;
+	font-weight: bold;
+	display: inline;
+}
+#title-landing {
+	text-align: center;
+}
+#title-home {
+	text-align: left;
+}
+.title a {
+	text-decoration: none;
+	color: #ff7149;
+}
+ul {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0;
+  	padding: 6px 0;
+  	float: right;
+}
+li {
+	list-style: none;
+	text-align: center;
+	padding: 14px 16px;
+}
+.nav-link {
+	padding: 9px 16px;
+	margin-right: 10px;
+	font-size: 15px;
+	font-weight: 700;
+}
+#signup-link {
+	border-radius: 20px;
+	background-color: #ff7149;
+}
+#signup-link a{
+	text-decoration: none;
+	color: white;
+}
+#signin-link a{
+	text-decoration: none;
+	color: #ff7149;
+}
+#linknav{
+	text-decoration: none;
+	font-family: "Futura", sans-serif;
+	color: #ff7149;
+}
+#linknav:hover{
+	color: #000080; /* navy blue */
+}
+#button{
+	border: 2px solid #4CAF50;
+	border-radius: 8px;
+	padding: 5px;
+	padding-left: 7px;
+	padding-right: 7px;
+	font-family: "Futura", sans-serif;
+}

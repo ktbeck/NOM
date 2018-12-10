@@ -1,0 +1,69 @@
+body{
+    /* background-image: url(../images/food.jpeg); */
+    /* background-size: cover; */
+    background-color: white;
+}
+
+#welcome-message{
+  padding: 20px 60px;
+  background-image: url("../images/food.jpeg");
+  background-size: cover;
+  font-family: "Futura", sans-serif;
+  color: white;
+  text-align: left;
+  height: 80vh;
+}
+#welcome-message h1 {
+  padding-top: 190px;
+}
+.action-button {
+  margin-top: 5px;
+  border-radius: 25px;
+  background-color: #ff7149;
+  display: inline-block;
+  padding: 11px 24px;
+}
+.action-button a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+}
+.container{
+  margin-top: 0px;
+}
+.statement{
+  font-family: "Futura", sans-serif;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 40px 20px;
+}
+#mission-statement-text {
+  line-height: 2em;
+}
+#team-cont{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.box{
+  margin: 10px;
+}
+#mission-cont{
+  background-color: #ff7149;
+  color: white;
+  min-height: 50vh;
+}
+#meetus-cont{
+  background-color: white;
+  color: black;
+  min-height: 50vh;
+}
+
+#contactus-cont{
+  background-color: black;
+  color: white;
+  min-height: 50vh;
+}
+#contactus-cont .action-button{
+  margin: 40px 0;
+}
