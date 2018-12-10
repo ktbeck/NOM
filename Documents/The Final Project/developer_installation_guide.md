@@ -11,4 +11,3 @@ Note: Users do not need to install anything. Thus, we have written this document
 
 3. Our API keys are not published on github. You will need to generate your own API keys, or get access to our official accounts. 
 
-## TODO: make these instructions more specific
